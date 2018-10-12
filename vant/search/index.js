@@ -1,23 +1,14 @@
-Component({
-  externalClasses: ['custom-class', 'cancel-class'],
-
-  options: {
-    multipleSlots: true,
-    addGlobalClass: true
-  },
-
-  properties: {
+import { VantComponent } from '../common/component';
+VantComponent({
+  field: true,
+  classes: ['cancel-class'],
+  props: {
+    focus: Boolean,
     disabled: Boolean,
     readonly: Boolean,
     showAction: Boolean,
     useActionSlot: Boolean,
     placeholder: String,
-    value: {
-      type: String,
-      observer(currentValue) {
-        this.setData({ currentValue });
-      }
-    },
     background: {
       type: String,
       value: '#f2f2f2'
@@ -27,32 +18,28 @@ Component({
       value: -1
     }
   },
-
-  attached() {
-    this.setData({ currentValue: this.data.value });
-  },
-
   methods: {
-    onChange(event) {
-      this.triggerEvent('change', event.detail);
+    onChange: function onChange(event) {
+      this.setData({
+        value: event.detail
+      });
+      this.$emit('change', event.detail);
     },
-
-    onCancel() {
-      this.setData({ currentValue: '' });
-      this.triggerEvent('cancel');
-      this.triggerEvent('change', '');
+    onCancel: function onCancel() {
+      this.setData({
+        value: ''
+      });
+      this.$emit('cancel');
+      this.$emit('change', '');
     },
-
-    onSearch() {
-      this.triggerEvent('search', this.data.currentValue);
+    onSearch: function onSearch() {
+      this.$emit('search', this.data.value);
     },
-
-    onFocus() {
-      this.triggerEvent('focus');
+    onFocus: function onFocus() {
+      this.$emit('focus');
     },
-
-    onBlur() {
-      this.triggerEvent('blur');
+    onBlur: function onBlur() {
+      this.$emit('blur');
     }
   }
 });

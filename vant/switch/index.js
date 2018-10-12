@@ -1,11 +1,8 @@
-Component({
-  options: {
-    addGlobalClass: true
-  },
-
-  externalClasses: ['custom-class', 'node-class'],
-
-  properties: {
+import { VantComponent } from '../common/component';
+VantComponent({
+  field: true,
+  classes: ['node-class'],
+  props: {
     checked: Boolean,
     loading: Boolean,
     disabled: Boolean,
@@ -14,13 +11,24 @@ Component({
       value: '30px'
     }
   },
-
+  watch: {
+    checked: function checked(value) {
+      this.setData({
+        value: value
+      });
+    }
+  },
+  created: function created() {
+    this.setData({
+      value: this.data.checked
+    });
+  },
   methods: {
-    onClick() {
+    onClick: function onClick() {
       if (!this.data.disabled && !this.data.loading) {
-        const checked = !this.data.checked;
-        this.triggerEvent('input', checked);
-        this.triggerEvent('change', checked);
+        var checked = !this.data.checked;
+        this.$emit('input', checked);
+        this.$emit('change', checked);
       }
     }
   }

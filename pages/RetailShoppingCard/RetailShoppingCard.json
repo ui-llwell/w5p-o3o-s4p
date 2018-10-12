@@ -1,1 +1,6 @@
-{}
+{
+  "usingComponents": {
+    "van-submit-bar": "../../vant/submit-bar/index",
+    "van-icon": "../../vant/icon/index"
+  }
+}

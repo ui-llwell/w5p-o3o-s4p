@@ -1,6 +1,8 @@
 {
   "pages":[
+    "pages/RetailShoppingCard/RetailShoppingCard",
 
+    
     "pages/testCart/testCart",
     
     "pages/logs/logs",
@@ -14,7 +16,7 @@
     "pages/navOffline/navOffline",
     "pages/navMine/navMine",
 
-    "pages/RetailShoppingCard/RetailShoppingCard",
+    
     "pages/RetailOrderConfirm/RetailOrderConfirm",
     "pages/RetailOrderDetails/RetailOrderDetails",
 

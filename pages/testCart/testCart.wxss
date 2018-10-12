@@ -53,6 +53,7 @@ page {
 }
 
 .shoppingList{
+  margin: 20rpx;
   padding-bottom: 110rpx;
 }
 

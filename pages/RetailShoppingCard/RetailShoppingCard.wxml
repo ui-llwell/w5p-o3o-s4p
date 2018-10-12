@@ -1,2 +1,13 @@
 <!--pages/RetailShoppingCard/RetailShoppingCard.wxml-->
-<text>pages/RetailShoppingCard/RetailShoppingCard.wxml</text>
+<view class='RetailShoppingCard'>
+  <view class='wrap'>
+    <view class='content'>aaa</view>
+    <view class='footer'>
+    <van-submit-bar
+  price="{{ 3050 }}"
+  button-text="提交订单"
+  bind:submit="onSubmit"
+/>
+    </view>
+  </view>
+</view>
