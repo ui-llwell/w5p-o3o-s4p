@@ -1,0 +1,41 @@
+{
+  "pages":[
+
+    "pages/testCart/testCart",
+    
+    "pages/logs/logs",
+    "pages/test/test",
+    
+
+    "pages/index/index",
+    "pages/indexDetails/indexDetails",
+
+    "pages/navRetail/navRetail",
+    "pages/navOffline/navOffline",
+    "pages/navMine/navMine",
+
+    "pages/RetailShoppingCard/RetailShoppingCard",
+    "pages/RetailOrderConfirm/RetailOrderConfirm",
+    "pages/RetailOrderDetails/RetailOrderDetails",
+
+    "pages/OfflineScanShopcode/OfflineScanShopcode",
+    "pages/OfflineShoppingCard/OfflineShoppingCard",
+    "pages/OfflineOrderConfirm/OfflineOrderConfirm",
+    "pages/OfflineOrderDetails/OfflineOrderDetails",
+    "pages/OfflineOrderLogistics/OfflineOrderLogistics",
+
+    "pages/goodsDetails/goodsDetails",
+    "pages/OrderList/OrderList",
+
+    "pages/mineAfterSale/mineAfterSale"
+
+
+
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle":"black"
+  }
+}
