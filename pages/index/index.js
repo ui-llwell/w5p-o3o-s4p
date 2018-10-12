@@ -7,7 +7,45 @@ Page({
     motto: 'Hello World',
     userInfo: {},
     hasUserInfo: false,
-    canIUse: wx.canIUse('button.open-type.getUserInfo')
+    canIUse: wx.canIUse('button.open-type.getUserInfo'),
+    imgUrls: [
+      {
+        img: 'http://img.ui.cn/data/file/7/7/6/992677.png',
+        name: '首都机场蔚蓝书店正式',
+        name_text: '入驻流连O2O',
+        time: '2018-8-30 19:00',
+        icon_text1: '北京首都机场T3航站楼',
+        icon_text2: '8012-44356',
+        icon_text3: 'AM8:00-PM8：00',
+        icon_text4: '仅支持零售',
+      },
+      {
+        img: 'http://img.ui.cn/data/file/7/7/6/992677.png',
+        name: '首都机场蔚蓝书店正式',
+        name_text: '入驻流连O2O',
+        time: '2018-8-30 19:00',
+        icon_text1: '北京首都机场T3航站楼',
+        icon_text2: '8012-44356',
+        icon_text3: 'AM8:00-PM8：00',
+        icon_text4: '仅支持零售',
+      },
+      {
+        img: 'http://img.ui.cn/data/file/7/7/6/992677.png',
+        name: '首都机场蔚蓝书店正式',
+        name_text: '入驻流连O2O',
+        time: '2018-8-30 19:00',
+        icon_text1: '北京首都机场T3航站楼',
+        icon_text2: '8012-44356',
+        icon_text3: 'AM8:00-PM8：00',
+        icon_text4: '仅支持零售',
+      }
+    ],
+    swiperIndex: 0
+  },
+  swiperChange(e) {
+    this.setData({
+      swiperIndex: e.detail.current
+    })
   },
   //事件处理函数
   bindViewTap: function() {
@@ -50,5 +88,6 @@ Page({
       userInfo: e.detail.userInfo,
       hasUserInfo: true
     })
-  }
+  },
+
 })

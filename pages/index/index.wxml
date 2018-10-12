@@ -1,2 +1,30 @@
 <!--index.wxml-->
-index
+<view class='list'>
+  <swiper class='wrap' circular="{{true}}" indicator-dots="{{false}}" autoplay="{{false}}" previous-margin="{{'20rpx'}}" next-margin="{{'20rpx'}}" bindchange="swiperChange">
+    <block wx:for="{{imgUrls}}" wx:key="{{index}}">
+      <swiper-item >
+        <!-- <image src="{{item.img}}" class="slide-image {{swiperIndex == index ? 'active' : ''}}"/> -->
+        <view class="slide-image {{swiperIndex == index ? 'active' : ''}}">
+          
+          <text class='wrap_name'>{{item.name}}</text>
+          <text class='wrap_name_text'>{{item.name_text}}</text>
+          <view class='wrap_tiem'>
+            <image src='http://llwell-wxapp.oss-cn-beijing.aliyuncs.com/O2OShop/top_icon_calendar@3x.png'></image><text >{{item.time}}</text>
+          </view>
+          <image src="{{item.img}}" class="img"/>
+          <view class='wrap_nav'>
+            <!-- <view><image src='http://llwell-wxapp.oss-cn-beijing.aliyuncs.com/O2OShop/top_icon_location@3x.png'></image></view>
+            <view><image src='http://llwell-wxapp.oss-cn-beijing.aliyuncs.com/O2OShop/top_icon_phone@3x.png'></image></view>
+            <view><image src='http://llwell-wxapp.oss-cn-beijing.aliyuncs.com/O2OShop/top_icon_time@3x.png'></image></view>
+            <view><image src='http://llwell-wxapp.oss-cn-beijing.aliyuncs.com/O2OShop/top_icon_mode@3x.png'></image></view> -->
+          </view>
+          <view>
+            <text>点击查看</text>
+            <text>文章详情及商品列表</text>
+          </view>
+        </view>
+      </swiper-item>
+    </block>
+  </swiper>
+</view>
+
