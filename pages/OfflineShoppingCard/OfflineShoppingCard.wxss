@@ -1,1 +1,113 @@
 /* pages/OfflineShoppingCard/OfflineShoppingCard.wxss */
+page{
+  height: 100%;
+  background: #242a34;
+}
+.wrap{
+  width: 660rpx;
+  height: 1055rpx;
+  position: absolute;
+  top: 0;
+  bottom: 100rpx;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+.content{
+  height: 955rpx;
+  background: #fff;
+}
+.shoppingCardTitle{
+  height: 88rpx;
+  line-height: 88rpx;
+  background: #F7F7F9;
+  text-align: center;
+}
+.shoppingCardContext{
+  height: 867rpx;
+}
+
+
+.i-swipeout-wrap{
+  display: flex;
+}
+.unit .i-swipeout-demo-item{
+  border-bottom: 1px solid #E3E9EC;
+  background:transparent;
+}
+.unit .i-swipeout-demo-item>view{
+  padding-bottom: 16rpx;
+  padding-right: 10rpx;
+}
+
+.i-swipeout-wrap-center{
+  flex: 2;
+  width: 100rpx;
+  height: 100rpx;
+  
+}
+.i-swipeout-wrap-right{
+  font-size: 24rpx;
+  color: #5E5E5E;
+  margin-left: 20rpx;
+  flex: 9
+}
+.goodsName{
+  width: 480rpx;
+  font-size: 28rpx;
+  overflow: hidden;
+text-overflow:ellipsis;
+white-space: nowrap;
+}
+.goodsNum{
+  height: 70rpx;
+}
+
+/* 更改数量按钮三方组件样式部分 */
+.unit .inputNumber{
+  /* color: #f44393;
+  border-radius: 20px;
+  font-size:14px; */
+}
+.unit .inputNumber view {
+  /* border-radius: 20px;
+  min-width: 32px; */
+  border-color: transparent;
+  font-size: 40rpx;
+  color: #D0D0D0;
+}
+.unit .inputNumber input{
+  background: #06BEBD;
+  color: #fff;
+  /* box-shadow: 0 5px 10px 0 rgba(0,0,0,0.20); */
+  /* border-radius: 20px; */
+  /* border-color: transparent; */
+}
+
+.scanBtn{
+  margin-top: 20rpx;
+}
+.scanBtn-hover{
+  opacity: 0.8;
+}
+.scanBtn button{
+  border-radius: 0;
+  background: #06BEBD;
+  font-size: 34rpx;
+  color: #fff;
+}
+.footer .bar-class{
+  background: #333;
+}
+.footer .bar-class>view{
+  color: #fff;
+}
+.footer .price-class{
+  color: #fff;
+  font-size: 40rpx;
+}
+.footer .button-class{
+  background: #ED5564;
+  font-size: 36rpx;
+  color: #FFFFFF;
+}

@@ -1,13 +1,39 @@
 <!--pages/RetailShoppingCard/RetailShoppingCard.wxml-->
 <view class='RetailShoppingCard'>
   <view class='wrap'>
-    <view class='content'>aaa</view>
+    <view class='content'>
+      <view class='shoppingCardTitle'>{{shoppingCardData.title}}</view>
+      <scroll-view class="shoppingCardContext" scroll-y>
+        
+        <view class='unit' wx:for="{{shoppingCardData.ShoppingList}}" wx:key="index" >
+    
+        
+           <view class="i-swipeout-wrap " bindtap='gotoGoodsDetails'>
+              <image src='{{item.goodsImg}}' class='i-swipeout-wrap-center'></image> 
+              <view class="i-swipeout-wrap-right">
+                <view class='goodsName' >{{item.goodsName}}</view>
+                <view class='clearfix'>
+                  <view class='fl'> ¥{{item.goodsPrice}}</view>
+                  <view class='fr'>数量：{{item.goodsNum}}</view>
+                </view>
+              </view>
+           </view>
+        
+    
+</view>
+
+      </scroll-view>
+    </view>
     <view class='footer'>
-    <van-submit-bar
-  price="{{ 3050 }}"
-  button-text="提交订单"
-  bind:submit="onSubmit"
-/>
+      <van-submit-bar
+    price="{{ 10050 }}"
+    label="应支付："
+    button-text="立即付款"
+    bind:submit="gotoRetailOrderConfirm"
+    bar-class="bar-class"
+    price-class="price-class"
+    button-class="button-class"
+  />
     </view>
   </view>
 </view>

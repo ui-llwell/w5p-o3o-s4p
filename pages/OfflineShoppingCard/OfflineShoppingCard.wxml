@@ -1,2 +1,47 @@
 <!--pages/OfflineShoppingCard/OfflineShoppingCard.wxml-->
-<text>pages/OfflineShoppingCard/OfflineShoppingCard.wxml</text>
+<view class='OfflineShoppingCard'>
+  <view class='wrap'>
+    <view class='content'>
+      <view class='shoppingCardTitle'>{{shoppingCardData.title}}</view>
+      <scroll-view class="shoppingCardContext" scroll-y>
+        <view class='unit' wx:for="{{shoppingCardData.ShoppingList}}" wx:key="index" >
+          <i-swipeout  i-class="i-swipeout-demo-item" actions="{{actions}}" data-index="{{index}}" bind:change="sss">
+              <view slot="content">
+                <view class="i-swipeout-wrap " bindtap='gotoGoodsDetails'>
+                    <image src='{{item.goodsImg}}' class='i-swipeout-wrap-center'></image> 
+                    <view class="i-swipeout-wrap-right">
+                      <view class='goodsName' >{{item.goodsName}}</view>
+                      <view class='clearfix'>
+                      
+                        <view class='fl'> ¥{{item.goodsPrice}}</view>
+                        <view class='fr goodsNum' catchtap="prevent">
+                          <!-- <view class='fl' wx:if="{{item.edit == false}}">数量:{{item.goodsNum}}</view> -->
+                          <i-panel slot="right-icon">
+                          <i-input-number i-class="inputNumber" style="display:inline-block" data-index="{{index}}" value="{{item.goodsNum}}" min="1" max="100"  bindchange="addNumber" />
+                          </i-panel>
+                        </view>
+                      </view>
+                    </view>
+                </view>
+              </view>
+          </i-swipeout>
+        </view>
+      </scroll-view>
+    </view>
+    <view class='scanBtn'>
+      <button class="weui-btn"  hover-class="scanBtn-hover" >扫描商品码</button>
+    </view>
+    <view class='footer'>
+      <van-submit-bar
+    price="{{ 10050 }}"
+    label="应支付："
+    button-text="立即付款"
+    bind:submit="gotoRetailOrderConfirm"
+    bar-class="bar-class"
+    price-class="price-class"
+    button-class="button-class"
+  />
+    </view>
+  </view>
+</view>
+
