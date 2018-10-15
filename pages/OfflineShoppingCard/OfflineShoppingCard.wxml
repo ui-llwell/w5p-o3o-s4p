@@ -35,7 +35,7 @@
       <van-submit-bar
     price="{{ 10050 }}"
     label="应支付："
-    button-text="立即付款"
+    button-text="结 账"
     bind:submit="gotoRetailOrderConfirm"
     bar-class="bar-class"
     price-class="price-class"

@@ -1,5 +1,6 @@
 {
   "pages":[
+    "pages/OfflineShoppingCard/OfflineShoppingCard",
     "pages/RetailShoppingCard/RetailShoppingCard",
 
     
@@ -21,7 +22,7 @@
     "pages/RetailOrderDetails/RetailOrderDetails",
 
     "pages/OfflineScanShopcode/OfflineScanShopcode",
-    "pages/OfflineShoppingCard/OfflineShoppingCard",
+    
     "pages/OfflineOrderConfirm/OfflineOrderConfirm",
     "pages/OfflineOrderDetails/OfflineOrderDetails",
     "pages/OfflineOrderLogistics/OfflineOrderLogistics",
