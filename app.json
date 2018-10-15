@@ -1,6 +1,6 @@
 {
   "pages":[
-
+    
     "pages/index/index",
     "pages/indexDetails/indexDetails",
 
@@ -39,5 +39,25 @@
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "WeChat",
     "navigationBarTextStyle":"black"
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/navRetail/navRetail",
+        "text": "零售"
+      },
+      {
+        "pagePath": "pages/navOffline/navOffline",
+        "text": "O2O"
+      },
+      {
+        "pagePath": "pages/navMine/navMine",
+        "text": "我的"
+      }
+    ]
   }
 }

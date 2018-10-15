@@ -1,6 +1,20 @@
 //app.js
+const app = getApp();
 App({
   onLaunch: function () {
+
+    var isDebug = false;//true调试状态使用本地服务器，非调试状态使用远程服务器
+    if (!isDebug) {
+      //远程域名
+      wx.setStorageSync('domainName', "http://localhost:57682/api/Wx/")
+    }
+    else {
+      //本地测试域名
+      wx.setStorageSync('domainName', "http://192.168.0.11:55734/api/PG/")
+    }
+
+
+
     // 展示本地存储能力
     var logs = wx.getStorageSync('logs') || []
     logs.unshift(Date.now())
@@ -35,5 +49,36 @@ App({
   },
   globalData: {
     userInfo: null
+  },
+  Ajax: function (url, type, method, data, callback) {
+    // wx.showLoading({
+    //   title: 'loading',
+    //   duration:1000,
+    // });
+
+    var send = {
+      token: wx.getStorageSync('token'),
+      method: method,
+      param: data,
+    };
+    wx.request({
+      url: wx.getStorageSync('domainName') + url,
+      data: send,
+      method: type, // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
+      header: {
+        'content-type': 'application/json' // 默认值
+      }, // 设置请求的 header
+      success: function (res) {
+        // 发送请求成功执行的函数
+        if (typeof callback === 'function') {
+          callback(res.data);
+        }
+      },
+      fail: function (res) {
+      },
+      complete: function () {
+        // wx.hideLoading();
+      }
+    })
   }
 })

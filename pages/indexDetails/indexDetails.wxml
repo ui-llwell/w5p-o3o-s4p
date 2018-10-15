@@ -1,2 +1,57 @@
-<!--pages/indexDetails/indexDetails.wxml-->
-<text>pages/indexDetails/indexDetails.wxml</text>
+<view class='body'>
+  <view class='header'>
+    <image src='{{All.list.img}}'></image>
+  </view>
+  <view class='nav'>
+      <view class='nav_wrap'>
+        <view class='nav_wrap_logo'><image src='{{All.list.logo}}'></image></view>
+      </view>
+      <view class='nav_text'>
+        <text class='nav_h1'>{{All.list.text1}}</text>
+        <text class='nav_h2'>{{All.list.text2}}</text>
+        <view class='nav_h3'>
+          <image src='http://llwell-wxapp.oss-cn-beijing.aliyuncs.com/O2OShop/news_icon_phone@3x.png'></image>
+          <text>{{All.list.text3}}</text>
+        </view>
+
+      </view>
+  </view>
+  <view class='content'>
+    <view class='content_title'>{{All.list.text4}}</view>
+    <view class='content_text'>{{All.list.text5}}</view>
+  </view>
+  <view class='hot'>
+    <view class='hot_title'>{{All.list.text6}}</view>
+    <view class='hot_text'>{{All.list.text7}}</view>
+    <view class='hot_text'>{{All.list.text8}}</view>
+   
+  </view>
+  <view class='main'>
+     <view class='map'></view>
+  </view>
+  <view class='tag'>
+    {{All.list.text9}}
+  </view>
+  <view class='bottom'>
+    <view class="banner-swiper">
+      <swiper indicator-dots="{{false}}" autoplay="{{autoplay}}" current='{{swiperCurrent}}' 
+      indicator-color="{{beforeColor}}" indicator-active-color="{{afterColor}}" circular='{{circular}}' 
+      previous-margin="{{previousmargin}}" next-margin="{{nextmargin}}" bindchange="swiperChange" >
+      <block wx:for="{{All.arr}}" wx:key="key">
+        <swiper-item>
+          <view class="slide-image{{index == swiperCurrent ? ' active' : ''}}" bindchange="chuangEvent" id="{{index}}">
+            <image class='list_img' src="{{item.images}}"></image>
+            <view class='list_text'>
+              <text class='list_name'>{{item.text1}}</text>
+              <text class='list_color'>{{item.text2}}</text>
+            </view>
+          </view>
+        </swiper-item>
+      </block>
+      </swiper>
+      </view>
+
+      
+    </view>
+
+</view>
