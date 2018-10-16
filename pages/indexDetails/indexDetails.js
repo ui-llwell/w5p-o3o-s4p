@@ -18,7 +18,7 @@ Page({
     All: {
       list:{
         img: 'http://img.ui.cn/data/file/7/7/6/992677.png',
-        logo:'http://imgsrc.baidu.com/forum/w=580/sign=5729249949540923aa696376a259d1dc/ca816763f6246b60d6ab68ceebf81a4c500fa268.jpg',
+        logo: 'http://llwell-wxapp.oss-cn-beijing.aliyuncs.com/O2OShop/heart@3x.png',
         text1: '北京首都机场T3蔚蓝书店',
         text2: '北京市首都机场T3航站楼21-23',
         text3: '8012-44356',

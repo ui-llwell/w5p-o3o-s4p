@@ -53,11 +53,11 @@
   padding-top: 20rpx;
 }
 .nav_h3 {
-  width: 280rpx;
+  width: 480rpx;
   margin: 0 auto;
   display: block;
   padding-top: 20rpx;
-  
+  text-align: center;
 }
 .nav_h3 image {
   width:31rpx; 
@@ -66,7 +66,7 @@
 }
 .nav_h3 text {
   font-family: SourceSansPro-Regular;
-  font-size: 40rpx;
+  font-size: 38rpx;
   color: #FFFFFF;
 }
 .content {
@@ -75,6 +75,7 @@
   padding-top:47rpx;
   padding-bottom: 80rpx;
 }
+
 .content_title {
   font-family: PingFangSC-Regular;
   font-size: 36rpx;

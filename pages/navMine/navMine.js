@@ -5,7 +5,31 @@ Page({
    * 页面的初始数据
    */
   data: {
+    All: {
+      images: [
+        {
+          img: 'http://llwell-wxapp.oss-cn-beijing.aliyuncs.com/O2OShop/icon_unpaid@3x.png',
+          text: '待付款'
+        },{
+          img: 'http://llwell-wxapp.oss-cn-beijing.aliyuncs.com/O2OShop/icon_waiting_for_delivery@3x.png',
+          text: '待发货'
+        },{
+          img: 'http://llwell-wxapp.oss-cn-beijing.aliyuncs.com/O2OShop/icon_waiting_for_the_goods@3x.png',
+          text: '待收货'
+        },{
+          img: 'http://llwell-wxapp.oss-cn-beijing.aliyuncs.com/O2OShop/icon_finish@3x.png',
+          text: '已完成'
+        }],
+        logo:{
+          log: 'http://llwell-wxapp.oss-cn-beijing.aliyuncs.com/O2OShop/copyright@3x.png'
+        }
+    }
+  },
 
+  service:function(){
+    wx.navigateTo({
+      url: '../mineAfterSale/mineAfterSale',
+    })
   },
 
   /**

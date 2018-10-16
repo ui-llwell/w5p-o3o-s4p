@@ -1,13 +1,22 @@
 {
   "pages":[
 
-    "pages/OfflineShoppingCard/OfflineShoppingCard",
-    "pages/RetailShoppingCard/RetailShoppingCard",
-
-    
     "pages/index/index",
     "pages/indexDetails/indexDetails",
 
+     "pages/mineAfterSale/mineAfterSale",
+   
+    "pages/navMine/navMine",
+    "pages/navRetail/navRetail",
+    "pages/navOffline/navOffline",
+    
+    
+
+
+    "pages/OfflineShoppingCard/OfflineShoppingCard",
+    "pages/RetailShoppingCard/RetailShoppingCard",
+    
+    
     
     "pages/testCart/testCart",
     
@@ -17,9 +26,7 @@
 
     
 
-    "pages/navRetail/navRetail",
-    "pages/navOffline/navOffline",
-    "pages/navMine/navMine",
+    
 
     
     "pages/RetailOrderConfirm/RetailOrderConfirm",
@@ -32,9 +39,9 @@
     "pages/OfflineOrderLogistics/OfflineOrderLogistics",
 
     "pages/goodsDetails/goodsDetails",
-    "pages/OrderList/OrderList",
+    "pages/OrderList/OrderList"
 
-    "pages/mineAfterSale/mineAfterSale"
+   
 
 
 
@@ -49,19 +56,27 @@
     "list": [
       {
         "pagePath": "pages/index/index",
-        "text": "首页"
+        "text": "首页",
+        "iconPath": "static/img/top_normal@3x.png",
+        "selectedIconPath": "static/img/top_activation@3x.png"
       },
       {
         "pagePath": "pages/navRetail/navRetail",
-        "text": "零售"
+        "text": "零售",
+        "iconPath": "static/img/retail_normal@3x.png",
+        "selectedIconPath": "static/img/retail_activation@3x.png"
       },
       {
         "pagePath": "pages/navOffline/navOffline",
-        "text": "O2O"
+        "text": "O2O",
+        "iconPath": "static/img/o2o_normal@3x.png",
+        "selectedIconPath": "static/img/o2o_activation@3x.png"
       },
       {
         "pagePath": "pages/navMine/navMine",
-        "text": "我的"
+        "text": "我的",
+        "iconPath": "static/img/Personal_normal@3x.png",
+        "selectedIconPath": "static/img/Personal_activation@3x.png"
       }
     ]
   }

@@ -5,8 +5,9 @@
     "i-grid-icon": "../../iview/grid-icon/index",
     "i-grid-label": "../../iview/grid-label/index",
     "i-icon": "../../iview/icon/index",
-
     "van-button": "../../vant/button/index",
     "van-icon": "../../vant/icon/index"
   }
+   
+    
 }

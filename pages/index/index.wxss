@@ -74,16 +74,22 @@ swiper-item .active{
   font-size: 25rpx;
   color: #919499;
   width: 400rpx;
+  height: 40rpx;
   margin: 0 auto;
   text-align: center;
   padding: 15rpx 0 25rpx 0;
+  
 }
+.wrap_tiem_text {
+  
+  }
 .wrap_tiem image {
   display: inline-block;
   width: 23rpx;
   height: 25rpx;
   padding-right: 10rpx;
-  
+  overflow: hidden;
+  padding-top: 5rpx;
 }
 .wrap_nav {
   width: 600rpx;
@@ -151,7 +157,7 @@ swiper-item .active{
   height: 24rpx;
   display: block;
   margin: 0 auto 0;
-  padding-top: 12rpx;
+  padding-top: 9rpx;
 }
 .wrap_nav_text {
   font-family: PingFangSC-Regular;
@@ -174,6 +180,8 @@ swiper-item .active{
   float: left;
   margin-right: 13.5rpx;
 }
+
+
 .wrap_nav_right .img_wrap .img_wrap3 {
   width:25rpx;
   height: 25rpx;

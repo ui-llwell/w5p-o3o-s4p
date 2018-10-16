@@ -10,6 +10,7 @@ Page({
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
     imgUrls: [
       {
+        id:'001',
         img: 'http://img.ui.cn/data/file/7/7/6/992677.png',
         name: '首都机场蔚蓝书店正式',
         name_text: '入驻流连O2O',
@@ -21,6 +22,7 @@ Page({
        
       },
       {
+        id: '002',
         img: 'http://img.ui.cn/data/file/7/7/6/992677.png',
         name: '首都机场蔚蓝书店正式',
         name_text: '入驻流连O2O',
@@ -31,6 +33,7 @@ Page({
         icon_text4: '北京首都机场T3航站楼',
       },
       {
+        id: '003',
         img: 'http://img.ui.cn/data/file/7/7/6/992677.png',
         name: '首都机场蔚蓝书店正式',
         name_text: '入驻流连O2O',
@@ -41,6 +44,7 @@ Page({
         icon_text4: '北京首都机场T3航站楼',
       },
       {
+        id: '004',
         img: 'http://img.ui.cn/data/file/7/7/6/992677.png',
         name: '首都机场蔚蓝书店正式',
         name_text: '入驻流连O2O',
@@ -102,7 +106,8 @@ Page({
       hasUserInfo: true
     })
   },
-  next: function(){
+  next: function(e){
+    console.log(e)
     wx.navigateTo({
       url: '../indexDetails/indexDetails',
     })
