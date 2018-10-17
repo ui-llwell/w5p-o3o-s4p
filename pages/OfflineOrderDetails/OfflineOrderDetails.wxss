@@ -1,1 +1,119 @@
 /* pages/OfflineOrderDetails/OfflineOrderDetails.wxss */
+page {
+  width: 750rpx;
+  height: 100%;
+  /* background: #F2F2F2 url(http://llwell-wxapp.oss-cn-beijing.aliyuncs.com/O2OShop/copyright@3x.png) no-repeat center bottom;
+  background-size: 470rpx 80rpx; */
+  background: #F2F2F2;
+}
+.addres {
+  width: 750rpx;
+  overflow: hidden;
+  padding-top: 40rpx;
+  padding-bottom: 20rpx;
+  background: #fff;
+  margin-top: 4rpx;
+  margin-bottom: 10rpx;
+}
+.addres_left {
+  width: 106rpx;
+  min-height: 98rpx
+}
+.addres_left image {
+  width: 40rpx;
+  height: 53.4rpx;
+  display: block;
+  margin: 0 auto;
+  padding-top: 60rpx;
+}
+.addres_right {
+  width: 592rpx;
+  font-family: PingFangSC-Regular;
+  font-size: 28rpx;
+  color: #000000;
+}
+.list {
+  width: 750rpx;
+  overflow: hidden;
+  /* margin-top: 10rpx; */
+  padding: 24rpx 0;
+  background: #fff;
+}
+.list_left {
+ width: 180rpx;
+ height: 180rpx; 
+ margin-left: 42rpx;
+ overflow: hidden;
+}
+.list_left image {
+ width: 174rpx;
+ height: 178rpx; 
+ display: block;
+ padding-top: 2rpx;
+ 
+}
+.list_right {
+ width: 480rpx;
+ overflow: hidden;
+ padding-left: 30rpx;
+}
+.list_right_tit {
+  font-family: PingFangSC-Medium;
+  font-size: 24rpx;
+  color: #535353;
+  letter-spacing: 0;
+
+}
+.list_right_num {
+  float: right;
+  font-family: PingFangSC-Regular;
+  font-size: 28rpx;
+  color: #A7A7A7;
+  letter-spacing: 0;
+  margin-top: 64rpx;
+  margin-right: 10rpx;
+}
+.nav {
+  margin-top: 10rpx;
+  padding: 40rpx 0;
+  overflow: hidden;
+  background: #fff;
+}
+.nav_left {
+  width:106rpx;
+  min-height:98rpx;
+
+}
+.nav_left image {
+  width: 40rpx;
+  height: 32rpx;
+  display: block;
+  margin: 0 auto;
+  padding-top: 27rpx;
+}
+.nav_right {
+  width:520rpx;
+  min-height:98rpx;
+  font-family: PingFangSC-Regular;
+  font-size: 28rpx;
+  color: #000000;
+  padding-left: 20rpx;
+}
+
+.pay {
+  width:750rpx;
+  height:72rpx;
+  line-height: 72rpx;
+  background: #fff;
+  font-family: PingFangSC-Regular;
+  font-size: 28rpx;
+  color: #808080;
+  letter-spacing: 0.2px;
+  margin-top: 10rpx ;
+}
+.pay_left {
+  margin-left: 40rpx;
+}
+.pay_right {
+  margin-right: 36rpx;
+}

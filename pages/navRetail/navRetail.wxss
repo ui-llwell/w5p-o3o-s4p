@@ -1,1 +1,58 @@
 /* pages/navRetail/navRetail.wxss */
+
+page {
+  width: 750rpx;
+  height: 100%;
+  background: #2C3239;
+}
+.content {
+  width: 661rpx;
+  height: 943rpx;
+  position: absolute;
+  background: #fff;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+  
+
+}
+.content_top {
+  width: 661rpx;
+  height: 624rpx;
+  background: #F7F7F9;
+  position: relative;
+}
+.content_top_code {
+  width: 455rpx;
+  height: 455rpx;
+  margin: 0 auto;
+  padding-top: 85rpx;
+  border: 1rpx #fff solid;
+}
+.content_top_logo {
+  width:66rpx;
+  height:66rpx;
+  overflow:hidden;
+  position: absolute;
+  left: 50%;
+  bottom: -33rpx;
+  margin-left: -33rpx;
+}
+.content_top_logo image {
+  width:66rpx;
+  height:66rpx;
+}
+.content_bottom {
+  width: 661rpx;
+  height: 300rpx;
+  font-family: PingFangSC-Thin;
+  font-size: 40rpx;
+  color: #000000;
+  letter-spacing: -0.96px;
+  text-align: center;
+}
+.h1 {
+  padding-top: 96rpx;
+}

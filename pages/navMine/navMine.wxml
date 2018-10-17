@@ -18,7 +18,7 @@
   </view>
 
   <view class='content'>
-    <view class='content_wrap' wx:for='{{All.images}}'>
+    <view class='content_wrap' wx:for='{{All.images}}' data-index='{{index}}' bindtap='order' wx:key="{{index}}">
       <view class='content_img'><image src='{{item.img}}'></image></view>
       <view class='content_text'>{{item.text}}</view>
     </view>

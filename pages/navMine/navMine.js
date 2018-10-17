@@ -26,6 +26,13 @@ Page({
     }
   },
 
+  order: function(e){
+    console.log(e.currentTarget.dataset.index)
+    wx.navigateTo({
+      url: '../OrderList/OrderList',
+    })
+  },
+
   service:function(){
     wx.navigateTo({
       url: '../mineAfterSale/mineAfterSale',
