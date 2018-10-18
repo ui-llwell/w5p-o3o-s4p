@@ -1,0 +1,26 @@
+<!--pages/mineAfterSaleList/mineAfterSaleList.wxml-->
+<view class='body'>
+
+  <view class='con_main'>
+  <view class='con_title'>{{getData.orderTtle}}</view>
+    <view class='con_main_list' wx:for="{{getData.goodsList}}" wx:key="{{index}}">
+      <view class='con_main_list_left fl'>
+        <image src='{{item.goodsSrc}}'></image>
+      </view>
+      <view class='con_main_list_center fl'>
+        <text>{{item.goodsName}}</text>
+      </view>
+      <view class='con_main_list_right rl'>
+        <text>¥{{item.goodsPrice}}</text>
+      </view>
+    </view>
+    <view class='con_total'>您的售后服务正在进行中，请稍候</view>
+    <view class='con_all'>
+      <text class='hot' bindtap='details'>{{getData.details}}</text>
+    </view>
+  </view>
+ 
+  
+
+
+</view>

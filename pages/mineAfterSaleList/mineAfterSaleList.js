@@ -1,15 +1,26 @@
-// pages/navOffline/navOffline.js
+// pages/mineAfterSaleList/mineAfterSaleList.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    getData:{
-      id:''
+    getData: {
+      goodsList: [{
+        goodsSrc: 'http://img.ui.cn/data/file/7/7/6/992677.png',
+        goodsName: '丑娃娃身上的丑娃娃身上的还是丑娃娃身上的还是丑娃娃身上的还是丑娃娃身上的还是丑娃娃身上的还是丑娃娃身上的还是丑娃娃身上的还是丑娃娃身上的还是还是',
+        goodsPrice: '123',
+      }],
+      orderTtle: '流连旗舰店-O2O订单',
+      details: '查看详情',
     }
-  },
 
+  },
+  details:function(){
+    wx.navigateTo({
+      url: '../mineAfterSaleDetails/mineAfterSaleDetails',
+    })  
+  },
   /**
    * 生命周期函数--监听页面加载
    */
@@ -28,17 +39,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    const that = this
-    console.log(this.data.getData.id)
-    if (this.data.getData.id == ''){
-      wx.navigateTo({
-        url: '../OfflineScanShopcode/OfflineScanShopcode',
-      })
-    }else {
-      wx.navigateTo({
-        url: '../OfflineShoppingCard/OfflineShoppingCard',
-      })
-    }
+
   },
 
   /**

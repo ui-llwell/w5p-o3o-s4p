@@ -3,19 +3,34 @@
 
     
     
-    "pages/OfflineOrderDetails/OfflineOrderDetails",
-    "pages/OfflineOrderConfirm/OfflineOrderConfirm",
-    "pages/OfflineOrderLogistics/OfflineOrderLogistics",
+    
+    
+    "pages/navMine/navMine",
+    "pages/navRetail/navRetail",
+    "pages/navOffline/navOffline",
+    
 
     "pages/OrderList/OrderList",
     "pages/goodsDetails/goodsDetails",
 
-    "pages/navMine/navMine",
-    "pages/navRetail/navRetail",
-    "pages/navOffline/navOffline",
+    "pages/mineAfterSaleDetails/mineAfterSaleDetails",
+    "pages/mineAfterSaleList/mineAfterSaleList",
+
+
+    "pages/mineAboutUs/mineAboutUs",
+
 
     "pages/index/index",
     "pages/indexDetails/indexDetails",
+    
+    "pages/OfflineOrderDetails/OfflineOrderDetails",
+    "pages/OfflineOrderConfirm/OfflineOrderConfirm",
+    "pages/OfflineOrderLogistics/OfflineOrderLogistics",
+
+   
+   
+
+    
 
     "pages/mineAfterSale/mineAfterSale",
     

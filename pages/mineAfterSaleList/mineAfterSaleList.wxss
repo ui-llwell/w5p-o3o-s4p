@@ -1,0 +1,86 @@
+/* pages/mineAfterSaleList/mineAfterSaleList.wxss */
+page {
+  width: 750rpx;
+  height: 100%;
+  background: #F2F2F2;
+}
+.con_main {
+  width: 750rpx;
+  overflow: hidden;
+  padding-top: 38rpx;
+  background: #fff;
+}
+.con_main_list {
+  width: 690rpx;
+  overflow: hidden;
+  margin: 32rpx 0 32rpx 40rpx;
+}
+.con_main_list_left {
+  width: 152rpx;
+  height: 152rpx;
+}
+.con_main_list_left image {
+  display: block;
+  padding-top: 3.5rpx;
+  margin: 0 auto;
+  width: 110rpx;
+  height: 145rpx;
+}
+.con_main_list_center {
+  width: 326rpx;
+  overflow: hidden;
+  font-family: PingFangSC-Regular;
+  font-size: 24rpx;
+  color: #474747;
+  letter-spacing: 0.14px;
+  margin:0 20rpx;
+}
+.con_main_list_right {
+  width: 165rpx;
+  height: 152rpx;
+  overflow: hidden;
+  font-family: PingFangSC-Regular;
+  font-size: 24rpx;
+  color: #000000;
+  letter-spacing: 0.14px;
+  text-align: right;
+}
+.con_title {
+  width: 690rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  padding-left: 40rpx;
+  font-family: PingFangSC-Regular;
+  font-size: 28rpx;
+  color: #000000;
+  letter-spacing: 0.13px;
+  border-bottom: 1px solid #F2F2F2;
+}
+.con_total {
+  font-family: PingFangSC-Regular;
+  font-size: 24rpx;
+  color: #000000;
+  letter-spacing: 0.14px;
+  text-align: right;
+  padding-bottom: 20rpx;
+  width: 690rpx;
+  padding-left: 40rpx;
+  border-bottom: 1px solid #F2F2F2;
+}
+
+.con_all {
+  width: 690rpx;
+  padding-left: 40rpx;
+}
+.hot {
+  font-family: PingFangSC-Regular;
+  font-size: 28rpx;
+  color: #000000;
+  text-align: center;
+  padding: 2rpx 15rpx;
+  border: 1rpx solid #000;
+  border-radius: 30rpx;
+  float: right;
+  margin: 15rpx 0;
+  margin-left: 20rpx;
+}

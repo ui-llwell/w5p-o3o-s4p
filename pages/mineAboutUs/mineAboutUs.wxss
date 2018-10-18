@@ -1,0 +1,30 @@
+/* pages/mineAboutUs/mineAboutUs.wxss */
+page {
+  width: 750rpx;
+  height: 100%;
+  background: #F2F2F2;
+}
+.content {
+  width: 750rpx;
+  height: 580rpx;
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+}
+.content image {
+  width: 276rpx;
+  height: 276rpx;
+  margin: 0 auto 160rpx;
+  display: block;
+}
+.con_h1 {
+  font-family: PingFangSC-Thin;
+  font-size: 20rpx;
+  color: #000000;
+  letter-spacing: 0;
+  text-align: center;
+  margin-bottom: 15rpx;
+}

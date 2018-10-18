@@ -1,2 +1,5 @@
 <!--pages/navOffline/navOffline.wxml-->
-<text>pages/navOffline/navOffline.wxml</text>
+<!-- <text>pages/navOffline/navOffline.wxml</text> -->
+<view class='body'>
+  
+</view>

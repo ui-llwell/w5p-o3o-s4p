@@ -1,1 +1,26 @@
-/* pages/OfflineScanShopcode/OfflineScanShopcode.wxss */
+/* pages/navOffline/navOffline.wxss */
+page {
+  width: 750rpx;
+  height: 100%;
+  background: url(http://llwell-wxapp.oss-cn-beijing.aliyuncs.com/O2OShop/scanbg.png) no-repeat left top;
+}
+.qr_code {
+  width: 300rpx;
+  height: 300rpx;
+  margin: 0 auto;
+  padding-top: 185px
+}
+.qr_code image {
+  width: 300rpx;
+  height: 300rpx;
+}
+.title {
+  font-family: PingFangSC-Light;
+  font-size: 56rpx;
+  color: #FFFFFF;
+  letter-spacing: 0.2px;
+  text-align: center;
+  width: 750rpx;
+  display: block;
+  margin-top: 200rpx;
+}

@@ -52,7 +52,7 @@
   </view>
 
   <view class='main_nav line'>
-    <text class='main_title'>关于我们</text>
+    <text class='main_title' bindtap='about'>关于我们</text>
     <text class='main_theme'></text>
     <text class='main_logo weui-cell__ft weui-cell__ft_in-access'></text>
   </view>

@@ -1,13 +1,11 @@
-// pages/navOffline/navOffline.js
+// pages/mineAboutUs/mineAboutUs.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    getData:{
-      id:''
-    }
+
   },
 
   /**
@@ -28,17 +26,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    const that = this
-    console.log(this.data.getData.id)
-    if (this.data.getData.id == ''){
-      wx.navigateTo({
-        url: '../OfflineScanShopcode/OfflineScanShopcode',
-      })
-    }else {
-      wx.navigateTo({
-        url: '../OfflineShoppingCard/OfflineShoppingCard',
-      })
-    }
+
   },
 
   /**

@@ -1,2 +1,9 @@
-<!--pages/OfflineScanShopcode/OfflineScanShopcode.wxml-->
-<text>pages/OfflineScanShopcode/OfflineScanShopcode.wxml</text>
+<view class='body'>
+  <view class='qr_code'  bindtap="toSweepOrder">
+    <image src='http://llwell-wxapp.oss-cn-beijing.aliyuncs.com/O2OShop/icon_scan@3x.png'></image>
+  </view>
+  <text class='title'>
+    扫描店铺二维码
+    以开始购物
+  </text>
+</view>

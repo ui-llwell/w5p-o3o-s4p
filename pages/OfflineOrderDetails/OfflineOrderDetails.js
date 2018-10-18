@@ -15,14 +15,15 @@ Page({
         text6: 'http://img.ui.cn/data/file/7/7/6/992677.png',
         text7: '申通快递',
         text8: '342895678342905',
-        text9: '',
-        text10: '',
-
+        text9: '128',
+        text10: 'DHL22934239852984LC',
+        text11: '2018-8-13 14：23：07',
+        text12: '2018-8-13 14：23：34',
       },
       list: [{
         img: 'http://img.ui.cn/data/file/7/7/6/992677.png',
         title: '新西兰 Stremland新溪岛 进口蜂蜜天然美白千叶玫瑰蜂蜜 340g 礼盒装',
-        num: '7'
+        num: '2'
       },{
           img: 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1539685745806&di=e57bfede68f06cca9d72b2df1005e7f3&imgtype=0&src=http%3A%2F%2Fpic1.win4000.com%2Fpic%2F9%2F44%2Fb6869a0cc5_250_350.jpg',
           title: '新西兰 Stremland新溪岛 进口蜂蜜天然美白千叶玫瑰蜂蜜 340g 礼盒装新西兰 Stremland新溪岛 进口蜂蜜天然美白千叶玫瑰蜂蜜 340g 礼盒装新西兰 Stremland新溪岛 进口蜂蜜天然美白千叶玫瑰蜂蜜 340g 礼盒装',

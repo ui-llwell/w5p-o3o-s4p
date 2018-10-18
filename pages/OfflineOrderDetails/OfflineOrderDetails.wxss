@@ -117,3 +117,51 @@ page {
 .pay_right {
   margin-right: 36rpx;
 }
+.summary {
+  padding: 24rpx 0;
+  background: #fff;
+  margin-top: 10rpx;
+}
+.summary_h1 {
+  width: 600rpx;
+  margin-left: 42rpx;
+  font-family: PingFangSC-Regular;
+  font-size: 28rpx;
+  color: #A7A7A7;
+}
+.footer {
+  width: 750rpx;
+  overflow: hidden;
+}
+.footer_img {
+ float: right;
+ width: 130rpx;
+ height: 130rpx;
+ position: relative;
+ margin-top: 30rpx;
+ margin-bottom: 22rpx;
+ margin-right: 40rpx;
+}
+.footer_img image {
+  width: 130rpx;
+  height: 130rpx;
+}
+.service_1 {
+  position: absolute;
+  left: 41rpx;
+  top:15rpx;
+}
+.service_2 {
+  position: absolute;
+  left: 31rpx;
+  top:64rpx;
+}
+.footer_bottom {
+  width: 470rpx;
+  height: 80rpx;
+  background: #F2F2F2 url(http://llwell-wxapp.oss-cn-beijing.aliyuncs.com/O2OShop/copyright@3x.png) no-repeat center bottom;
+  background-size: 470rpx 80rpx;
+  clear: both;
+  margin: 0 auto 40rpx;
+  
+}

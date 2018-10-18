@@ -1,0 +1,10 @@
+<!--pages/mineAboutUs/mineAboutUs.wxml-->
+<!-- <text>pages/mineAboutUs/mineAboutUs.wxml</text> -->
+<view class='body'>
+  <view class='content'>
+    <image src='http://llwell-wxapp.oss-cn-beijing.aliyuncs.com/O2OShop/logo@3x.png'></image>
+    <view class='con_h1'>地址： 辽宁省大连市中山区五五路港湾中心2213A</view>
+    <view class='con_h1'>联系方式：（86）0411-8813 5549 / 133 3227 7736 朴经理</view>
+    <view class='con_h1'>Copyright © 2017-2018 岂止科技(大连)有限公司 All Rights Reserved</view>
+  </view>
+</view>

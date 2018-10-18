@@ -29,13 +29,18 @@ Page({
   order: function(e){
     console.log(e.currentTarget.dataset.index)
     wx.navigateTo({
-      url: '../OrderList/OrderList',
+      url: '../OrderList/OrderList?num=' + e.currentTarget.dataset.index,
     })
   },
 
   service:function(){
     wx.navigateTo({
-      url: '../mineAfterSale/mineAfterSale',
+      url: '../mineAfterSaleList/mineAfterSaleList',
+    })
+  },
+  about:function(){
+    wx.navigateTo({
+      url: "../mineAboutUs/mineAboutUs" ,
     })
   },
 
