@@ -114,7 +114,8 @@ Page({
     })
   },
   gotoGoodsDetails: function () {
-    console.log('跳页gotoGoodsDetails')
+    console.log('跳页gotoGoodsDetails');
+    
   },
   // 防止 点击编辑数量时 跳转事件
   prevent: function (e) {
@@ -131,6 +132,9 @@ Page({
   // 提交付款
   gotoRetailOrderConfirm: function () {
     console.log('跳页')
+    wx.navigateTo({
+      url: '../OfflineOrderConfirm/OfflineOrderConfirm',
+    })
   },
   /**
    * 生命周期函数--监听页面隐藏

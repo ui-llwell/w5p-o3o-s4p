@@ -41,7 +41,8 @@
                 
                         <text class='hot color'>{{item.payment}}</text>
                         <text class='hot' bindtap='details'>{{item.cancelL}}</text>
-                        <text class='hot' bindtap='details'>{{item.details}}</text>
+                        <text class='hot'  bindtap="{{item.orderType == 0 ? 'details' : 'retail'}}">{{item.details}}</text>
+                        <!-- <text class='hot'  bindtap='retail'>{{item.details}}</text> -->
                       </view>
                     </view>
 

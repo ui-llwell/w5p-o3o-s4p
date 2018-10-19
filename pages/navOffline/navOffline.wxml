@@ -1,5 +1,34 @@
 <!--pages/navOffline/navOffline.wxml-->
 <!-- <text>pages/navOffline/navOffline.wxml</text> -->
 <view class='body'>
-  
+  <view class='wrap'>
+    <view class='content'>
+      <view class='content_top'>
+        <image src='{{getData.arr.img}}'></image>
+        <view class='con_title'>{{getData.arr.title}}</view>
+        <view class='con_name'>{{getData.arr.name}}</view>
+        <view class="con_color"></view>
+      </view>
+      <view class='content_bottom'>
+        <view class='con_wrap' wx:for="{{getData.List}}" wx:key='{{index}}'>
+          
+          <view class='content_wrapLeft'>
+            <image src='{{item.logo}}' ></image>
+          </view>
+          <view class='content_wrapCenter'>
+            <text class='content_brand'>{{item.name}}</text>
+            <text class='content_num'>{{item.num}}个商品</text>
+          </view>
+          <view class='content_wrapRight'>
+              <view><image src='{{item.hand}}'></image>{{item.recommend}}</view>
+          </view>
+
+        </view>
+      </view>
+    </view>
+    <view class='mian' bindtap='start'>
+      <button >开始购物</button>
+    </view>
+
+  </view>
 </view>

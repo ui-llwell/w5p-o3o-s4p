@@ -5,8 +5,56 @@ Page({
    * 页面的初始数据
    */
   data: {
+    consignee: '',
+    All: {
+      list: {
+        text1: '售后服务类型',
+        text2: '退货退款',
+        text3: '74865912793465765',
+        text4: '第四次工业革命 作者：李登辉',
+        text5: '1',
+        text6: '168',
+        text7: '退款说明',
+        text8: 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1539685745806&di=e57bfede68f06cca9d72b2df1005e7f3&imgtype=0&src=http%3A%2F%2Fpic1.win4000.com%2Fpic%2F9%2F44%2Fb6869a0cc5_250_350.jpg',
+        text9: '上传图片',
+        text10: '45',
+        text11: '158',
+        text12: '30',
+        text13: '20'
+      },
+      
 
+    }
   },
+  consignee:function(e){
+    this.setData({
+      consignee: e.detail.value,
+    })
+    console.log(e.detail.value)
+  },
+  getmap:function(e){
+    console.log(e.detail.value)
+    if (wx.chooseAddress) {
+      let that = this
+      wx.chooseAddress({
+        success: function (res) {
+          //console.log(JSON.stringify(res))
+          console.log(res.userName)
+          that.setData({
+            consignee: res.userName,
+          
+          })
+          
+        },
+        fail: function (err) {
+          console.log(JSON.stringify(err))
+        }
+      })
+    } else {
+      console.log('当前微信版本不支持chooseAddress');
+    }
+  },
+
 
   /**
    * 生命周期函数--监听页面加载

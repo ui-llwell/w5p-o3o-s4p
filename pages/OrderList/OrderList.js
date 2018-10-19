@@ -166,6 +166,12 @@ Page({
       url: '../OfflineOrderDetails/OfflineOrderDetails',
     })
   },
+  retail: function(){
+    wx.navigateTo({
+      url: '../RetailOrderDetails/RetailOrderDetails',
+    })
+  },
+
   sale: function(){
     wx.navigateTo({
       url: '../mineAfterSale/mineAfterSale',

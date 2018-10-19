@@ -1,2 +1,52 @@
 <!--pages/RetailOrderDetails/RetailOrderDetails.wxml-->
-<text>pages/RetailOrderDetails/RetailOrderDetails.wxml</text>
+<view class='body'>
+  <!-- <view class='addres'>
+    <view class='addres_left fl'>
+      <image src='http://llwell-wxapp.oss-cn-beijing.aliyuncs.com/O2OShop/position@3x.png'></image>
+    </view>
+    <view class='addres_right fl'>
+      <view class='addres_name'>联系人：{{All.arr.text1}}</view>
+      <view class='addres_iphone'>联系电话：{{All.arr.text2}}</view>
+      <view class='addres_id'>身份证号：{{All.arr.text3}}</view>
+      <view class='addres_site'>{{All.arr.text4}}</view>
+    </view>
+  </view> -->
+  <view class='main'>
+    <view class='list' wx:for="{{All.list}}" wx:key="{{index}}">
+      <view class='list_left fl'>
+        <image mode='scaleToFill' src='{{item.img}}'></image>
+      </view>
+      <view class='list_right fl'>
+        <view class='list_right_tit'>{{item.title}}</view>
+        <view class='list_right_num'>X{{item.num}}</view>
+      </view>
+    </view>
+  </view>
+  <!-- <view class='nav'>
+    <view class='nav_left fl'>
+      <image src='http://llwell-wxapp.oss-cn-beijing.aliyuncs.com/O2OShop/Logistics@3x.png'></image>
+    </view>
+    <view class='nav_right fl'>
+      <view>快递公司：{{All.arr.text7}}</view>
+      <view>快递单号：{{All.arr.text8}}</view>
+    </view>
+  </view> -->
+  <view class='pay'>
+    <view class='pay_left fl'>实付款</view>
+    <view class='pay_right fr'>¥{{All.arr.text9}}</view>
+  </view>
+  <view class='summary'>
+    <view class='summary_h1'>订单编号：{{All.arr.text10}}</view>
+    <view class='summary_h1'>下单时间：{{All.arr.text11}}</view>
+    <view class='summary_h1'>支付时间：{{All.arr.text12}}</view>
+  </view>
+  <view class='footer'>
+    <view class='footer_img'>
+      <image src='http://llwell-wxapp.oss-cn-beijing.aliyuncs.com/O2OShop/order_icon_service@3x.png'></image>
+      <contact-button class='service_1' style='opacity:0' size="27" session-from="weapp" type="default-dark" ></contact-button>
+      <contact-button class='service_2' style='opacity:0' size="27" session-from="weapp" type="default-dark" ></contact-button>
+    </view>
+    <view class='footer_bottom'></view>
+  </view>
+
+</view>

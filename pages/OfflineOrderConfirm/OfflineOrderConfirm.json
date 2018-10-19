@@ -1,1 +1,9 @@
-{}
+{
+  "usingComponents": {
+    "van-submit-bar": "../../vant/submit-bar/index",
+    "van-icon": "../../vant/icon/index",
+    "i-input-number": "../../iview/input-number/index",
+    "i-swipeout": "../../iview/swipeout/index"
+  },
+  "navigationBarTitleText": "确认下单"
+}

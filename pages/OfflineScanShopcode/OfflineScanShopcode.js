@@ -22,8 +22,8 @@ Page({
           icon: 'success',
           duration: 2000
         })
-        wx.navigateTo({
-          url: '../QRCodePayment/QRCodePayment',
+        wx.switchTab({
+          url: '../navOffline/navOffline?shopid=1',
 
         })
 
@@ -40,7 +40,12 @@ Page({
     })
   },
 
-
+  bank:function(){
+    console.log(111)
+    wx.switchTab({
+      url: '../index/index',
+    })
+  },
 
   /**
    * 生命周期函数--监听页面加载

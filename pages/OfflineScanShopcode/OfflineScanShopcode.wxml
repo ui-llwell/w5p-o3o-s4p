@@ -1,4 +1,5 @@
 <view class='body'>
+  <view class='bank' bindtap='bank'>返回首页</view>
   <view class='qr_code'  bindtap="toSweepOrder">
     <image src='http://llwell-wxapp.oss-cn-beijing.aliyuncs.com/O2OShop/icon_scan@3x.png'></image>
   </view>

@@ -4,7 +4,7 @@
   <view class='content'>
     <view class='content_top'>
       <view class='content_top_code'></view>
-      <view class='content_top_logo'><image src='http://llwell-wxapp.oss-cn-beijing.aliyuncs.com/O2OShop/heart@3x.png'></image></view>
+      <view class='content_top_logo' bindtap='demo'><image src='http://llwell-wxapp.oss-cn-beijing.aliyuncs.com/O2OShop/heart@3x.png'></image></view>
     </view>
     <view class='content_bottom'>
       <view class='h1'>请在流连合作店铺消费时</view>

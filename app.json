@@ -2,13 +2,23 @@
   "pages":[
 
     
+    "pages/index/index",
+    "pages/indexDetails/indexDetails",
     
     
+    "pages/OfflineOrderConfirm/OfflineOrderConfirm",
+    "pages/OfflineOrderLogistics/OfflineOrderLogistics",
+    "pages/OfflineOrderDetails/OfflineOrderDetails",
     
+    
+
+
+    "pages/navOffline/navOffline",
     "pages/navMine/navMine",
     "pages/navRetail/navRetail",
-    "pages/navOffline/navOffline",
-    
+   
+    "pages/OfflineShoppingCard/OfflineShoppingCard",
+    "pages/RetailShoppingCard/RetailShoppingCard",
 
     "pages/OrderList/OrderList",
     "pages/goodsDetails/goodsDetails",
@@ -20,16 +30,12 @@
     "pages/mineAboutUs/mineAboutUs",
 
 
-    "pages/index/index",
-    "pages/indexDetails/indexDetails",
+   
     
-    "pages/OfflineOrderDetails/OfflineOrderDetails",
-    "pages/OfflineOrderConfirm/OfflineOrderConfirm",
-    "pages/OfflineOrderLogistics/OfflineOrderLogistics",
+    
 
    
-   
-
+    
     
 
     "pages/mineAfterSale/mineAfterSale",
@@ -37,8 +43,7 @@
    
    
     
-    "pages/OfflineShoppingCard/OfflineShoppingCard",
-    "pages/RetailShoppingCard/RetailShoppingCard",
+   
 
 
     
@@ -77,6 +82,9 @@
     "navigationBarTextStyle":"black"
   },
   "tabBar": {
+    "color": "#7F8389;",
+    "selectedColor": "#000",
+    "borderStyle": "#FAFAFC",
     "list": [
       {
         "pagePath": "pages/index/index",

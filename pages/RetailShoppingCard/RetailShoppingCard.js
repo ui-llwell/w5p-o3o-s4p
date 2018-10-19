@@ -122,6 +122,9 @@ Page({
   // 提交付款
   gotoRetailOrderConfirm: function () {
     console.log('跳页')
+    wx.navigateTo({
+      url: '../RetailOrderConfirm/RetailOrderConfirm',
+    })
   },
   /**
    * 生命周期函数--监听页面隐藏
