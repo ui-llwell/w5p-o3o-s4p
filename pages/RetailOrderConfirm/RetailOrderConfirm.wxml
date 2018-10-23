@@ -1,48 +1,19 @@
 <!--pages/RetailOrderConfirm/RetailOrderConfirm.wxml-->
 <view class='body'>
  <form bindsubmit="formSubmit" bindreset="formReset"> 
- <view class='content_bottom'>
-    <view class='content_bottom_left'>
-      <image   src='{{All.list.text8}}' mode='aspectFill'></image>
-    </view>
-    <view class='content_bottom_right'>
-      <text class='content_bottom_right_h1'>{{All.list.text4}}</text>
-      <view>共 <text class='color'>{{All.list.text5}}</text> 件商品，实付 <text class='color'>￥{{All.list.text6}}</text></view>
-    </view>
-  </view>
-  <!-- <view class='wrap'>
-    <view class='nav'>
-      <view class='nav_h1 fl' data-name="{{consignee}}" bindinput="consignee" value='{{consignee}}'>收货人</view>
-      <view class='nav_h2 fl'>*</view>
-      <input class='nav_h3 fl' placeholder='请输入收货人姓名' maxlength='11'></input>
-    </view>
-    <view class='nav'>
-      <view class='nav_h1 fl'>真实姓名</view>
-      <view class='nav_h2 fl'>*</view>
-      <input class='nav_h3 fl' placeholder='请输入收货人真实姓名' maxlength='11'></input>
-    </view>
-    <view class='nav'>
-      <view class='nav_h1 fl'>身份证号</view>
-      <view class='nav_h2 fl'>*</view>
-      <input class='nav_h3 fl' placeholder='请输入收货人身份证号' maxlength='18'></input>
-    </view>
-    <view class='nav'>
-      <view class='nav_h1 fl'>手机号码</view>
-      <view class='nav_h2 fl'>*</view>
-      <input class='nav_h3 fl' placeholder='请输入收货人手机号码' maxlength='11'></input>
-    </view>
-    <view class='nav'>
-      <view class='nav_h1 fl'>收货地址</view>
-      <view class='nav_h2 fl'>*</view>
-      <view class="page-section fl">
-        <view class="textarea-wrp">
-          <textarea maxlength="50" bindblur="bindTextAreaBlur" placeholder='请输入详细收货地址' auto-height />
-        </view>
+ <view style='height:20rpx;'></view>
+ <view class='content_wrap' wx:for="{{getData.list}}" wx:key='{{index}}'>
+    <view class='content_bottom'>
+      <view class='content_bottom_left'>
+        <image   src='{{item.retailImg}}' mode='aspectFit'></image>
+      </view>
+      <view class='content_bottom_right'>
+        <text class='content_bottom_right_h1'>{{item.retailTitle}}</text>
+        <view>共 <text class='color'>{{item.retailNum}}</text> 件商品，单价 <text class='color'>￥{{item.retailMoney}}</text></view>
       </view>
     </view>
-    <view class='map' bindtap='getmap'>获取微信地址信息</view>
-  </view> -->
-
+ </view>
+  <view style='height:10rpx;'></view>
   <view class='main'>
     <view class='main_wrap'>
       <view class='main_wrap_left fl'>商品小计</view>

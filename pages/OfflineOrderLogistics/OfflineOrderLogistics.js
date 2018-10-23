@@ -5,14 +5,34 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    courierNumber: '',
+    type: '顺丰',
+    logisticsList: [
+      {
+        context: '[韩国—仁川]包裹已到达[仁川海外仓]',
+        ftime: '2018.4.23 23:05 ',
+      },
+      {
+        context: '[韩国—仁川]包裹已到达[仁川海外仓]',
+        ftime: '2018.4.23 23:05',
+      },
+      {
+        context: '[韩国—仁川]包裹已到达[仁川海外仓]',
+        ftime: '2018.4.23 23:05',
+      }
+    ]
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
-
+  onLoad: function (obj) {
+    // var ttt = JSON.parse(obj.goodsMes);
+    // console.log(ttt)
+    // this.setData({
+    //   logisticsList: ttt.data,
+    //   courierNumber: ttt.nu,
+    // })
   },
 
   /**

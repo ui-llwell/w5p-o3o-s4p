@@ -26,6 +26,7 @@ Page({
           details:'查看详情',
           cancelL:'取消订单',
           payment:'立即付款',
+          logistics: '查看物流',
           goodsList:[{
             goodsSrc:'http://img.ui.cn/data/file/7/7/6/992677.png',
             goodsName:'丑娃娃身上的还是',
@@ -47,6 +48,7 @@ Page({
             details: '查看详情',
             cancelL: '取消订单',
             payment: '立即付款',
+            logistics: '查看物流',
             goodsList: [{
               goodsSrc: 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1539685745806&di=e57bfede68f06cca9d72b2df1005e7f3&imgtype=0&src=http%3A%2F%2Fpic1.win4000.com%2Fpic%2F9%2F44%2Fb6869a0cc5_250_350.jpg',
               goodsName: '丑娃娃身上的还是2',
@@ -71,6 +73,7 @@ Page({
           details: '查看详情',
           cancelL: '取消订单',
           payment: '立即付款',
+          logistics: '查看物流',
           goodsList: [{
             goodsSrc: 'http://img.ui.cn/data/file/7/7/6/992677.png',
             goodsName: '丑娃娃身上的还是',
@@ -94,6 +97,7 @@ Page({
           details: '查看详情',
           cancelL: '取消订单',
           payment: '立即付款',
+          logistics: '查看物流',
           goodsList: [{
             goodsSrc: 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1539685745806&di=e57bfede68f06cca9d72b2df1005e7f3&imgtype=0&src=http%3A%2F%2Fpic1.win4000.com%2Fpic%2F9%2F44%2Fb6869a0cc5_250_350.jpg',
             goodsName: '丑娃娃身上的还是2',
@@ -160,6 +164,11 @@ Page({
     //     }
     //   ]
     // }   
+  },
+  logistics:function(){
+    wx.navigateTo({
+      url: '../OfflineOrderLogistics/OfflineOrderLogistics',
+    })
   },
   details: function(){
     wx.navigateTo({

@@ -6,6 +6,19 @@ Page({
    */
   data: {
     consignee: '',
+    getData: {
+      list: [{
+        retailImg: 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1539685745806&di=e57bfede68f06cca9d72b2df1005e7f3&imgtype=0&src=http%3A%2F%2Fpic1.win4000.com%2Fpic%2F9%2F44%2Fb6869a0cc5_250_350.jpg',
+        retailTitle: '第四次工业革命 作者：李登辉',
+        retailNum: '7',
+        retailMoney: '178'
+      }, {
+        retailImg: 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1540189555679&di=2c62a3f6b3455aa09ec4a8364623e104&imgtype=0&src=http%3A%2F%2Fe.hiphotos.baidu.com%2Fimage%2Fpic%2Fitem%2Fbba1cd11728b4710fde1beb7cecec3fdfd0323fa.jpg',
+        retailTitle: '第四次工业革命 作者：李登辉',
+        retailNum: '7',
+        retailMoney: '178'
+      }]
+    },
     All: {
       list: {
         text1: '售后服务类型',

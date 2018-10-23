@@ -1,6 +1,74 @@
 //app.js
 const app = getApp();
+
 App({
+  golobDada:{
+    one: '',
+    goodsList: [
+      {
+        goodsId: '1',
+        goodsName: '特别长特别长特别长特别长特别长的耳机',
+        goodsImg: 'http://img.ui.cn/data/file/7/7/6/992677.png',
+        goodsPrice: 1,
+        goodsNum: 1,
+      }, {
+        goodsId: '2',
+        goodsName: '特别长特别长特别长特别长特别长的耳机',
+        goodsImg: 'http://img.ui.cn/data/file/7/7/6/992677.png',
+        goodsPrice: 2,
+        goodsNum: 2,
+      }, {
+        goodsId: '3',
+        goodsName: '特别长特别长特别长特别长特别长的耳机',
+        goodsImg: 'http://img.ui.cn/data/file/7/7/6/992677.png',
+        goodsPrice: 3,
+        goodsNum: 3,
+      }, {
+        goodsId: '4',
+        goodsName: '特别长特别长特别长特别长特别长的耳机',
+        goodsImg: 'http://img.ui.cn/data/file/7/7/6/992677.png',
+        goodsPrice: 4,
+        goodsNum: 4,
+      }, {
+        goodsId: '5',
+        goodsName: '特别长特别长特别长特别长特别长的耳机',
+        goodsImg: 'http://img.ui.cn/data/file/7/7/6/992677.png',
+        goodsPrice: 5,
+        goodsNum: 5,
+      }, {
+        goodsId: '6',
+        goodsName: '特别长特别长特别长特别长特别长的耳机',
+        goodsImg: 'http://img.ui.cn/data/file/7/7/6/992677.png',
+        goodsPrice: 6,
+        goodsNum: 6,
+      }, {
+        goodsId: '7',
+        goodsName: '特别长特别长特别长特别长特别长的耳机',
+        goodsImg: 'http://img.ui.cn/data/file/7/7/6/992677.png',
+        goodsPrice: 7,
+        goodsNum: 7,
+      }, {
+        goodsId: '8',
+        goodsName: '特别长特别长特别长特别长特别长的耳机',
+        goodsImg: 'http://img.ui.cn/data/file/7/7/6/992677.png',
+        goodsPrice: 8,
+        goodsNum: 8,
+      }, {
+        goodsId: '9',
+        goodsName: '特别长特别长特别长特别长特别长的耳机',
+        goodsImg: 'http://img.ui.cn/data/file/7/7/6/992677.png',
+        goodsPrice: 9,
+        goodsNum: 9,
+      }, {
+        goodsId: '10',
+        goodsName: '特别长特别长特别长特别长特别长的耳机',
+        goodsImg: 'http://img.ui.cn/data/file/7/7/6/992677.png',
+        goodsPrice: 10,
+        goodsNum: 10,
+      }
+    ]
+  },
+
   onLaunch: function () {
 
     var isDebug = false;//true调试状态使用本地服务器，非调试状态使用远程服务器

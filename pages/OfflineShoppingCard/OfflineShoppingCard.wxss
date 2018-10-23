@@ -111,3 +111,21 @@ white-space: nowrap;
   font-size: 36rpx;
   color: #FFFFFF;
 }
+.empty {
+  width: 660rpx;
+  height: 867px;
+}
+.empty_img {
+  width: 340rpx;
+  height: 390rpx;
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+}
+.empty_img image {
+  width: 340rpx;
+  height: 390rpx;
+}

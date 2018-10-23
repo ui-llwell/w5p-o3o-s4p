@@ -68,9 +68,8 @@ page {
 .con_main_list_left image {
   display: block;
   padding-top: 3.5rpx;
-  margin: 0 auto;
-  width: 110rpx;
-  height: 145rpx;
+  width: 140rpx;
+  height: 140rpx;
 }
 .con_main_list_center {
   width: 326rpx;

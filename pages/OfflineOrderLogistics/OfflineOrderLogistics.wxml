@@ -1,2 +1,9 @@
-<!--pages/OfflineOrderLogistics/OfflineOrderLogistics.wxml-->
-<text>pages/OfflineOrderLogistics/OfflineOrderLogistics.wxml</text>
+<view class="logistics_wrap">
+  <view class='courierNumber'>{{type}}快递单号：{{courierNumber}}</view>
+  <view class="logistics_list">
+    <view class="logistics_list_li" wx:for="{{logisticsList}}" wx:key='{{index}}' >
+      <view class="logistics_list_li_status">{{item.context}}</view>
+      <view class="logistics_list_li_time">{{item.ftime}}</view>
+    </view>
+  </view>
+</view>

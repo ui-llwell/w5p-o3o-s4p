@@ -83,11 +83,52 @@ Page({
     }
   },
 
+  //添加消费记录扫描二维码 成功或失败
+  toSweepOrder: function () {
+    var that = this;
+    var show;
+    wx.scanCode({
+      success: (res) => {
+        this.show = "结果:" + res.result + "二维码类型:" + res.scanType + "字符集:" + res.charSet + "路径:" + res.path;
+        that.setData({
+          show: this.show
+        })
+        wx.showToast({
+          title: '成功',
+          icon: 'success',
+          duration: 2000
+        })
+        wx.navigateTo({
+          url: '../QRCodePayment/QRCodePayment',
+
+        })
+
+      },
+      fail: (res) => {
+        wx.showToast({
+          title: '失败',
+          icon: 'loading',
+          duration: 2000
+        })
+      },
+      complete: (res) => {
+      }
+    })
+  },
+
+  ShoppingListDetails: function(e){
+    //console.log(e.detail.current)
+    console.log(e.currentTarget.dataset.index);
+    wx.navigateTo({
+      url: '../goodsDetails/goodsDetails',
+    })
+  },
+
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    console.log(getApp())
   },
 
   /**
@@ -125,6 +166,7 @@ Page({
   addNumber(e) {
     console.log('ww', e);
     let curNum = 'shoppingCardData.ShoppingList[' + e.currentTarget.dataset.index + '].goodsNum';
+    console.log(e.detail.value,)
     this.setData({
       [curNum]: e.detail.value,
     })

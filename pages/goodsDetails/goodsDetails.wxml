@@ -1,2 +1,69 @@
 <!--pages/goodsDetails/goodsDetails.wxml-->
-<text>pages/goodsDetails/goodsDetails.wxml</text>
+
+<view class='body'>
+  <view class='header'>
+    <view class='header_logo'>
+      <image mode='aspectFit' src='{{getData.ShoppingList.goodsImg}}'></image>
+    </view>
+  </view>
+  <view class='content'>
+   <view class='con_logo'>
+    <image src='http://llwell-wxapp.oss-cn-beijing.aliyuncs.com/O2OShop/heart@3x.png'></image>
+   </view>
+   <view class='con_wrap'>
+
+    <view class='con_wrap_top'>
+      <view class='con_wrap_top_left fl' >
+        {{getData.ShoppingList.ShoppingList}}
+      </view>
+      <view class='con_wrap_top_right rl' catchtap="prevent">
+        
+        <!-- <view class='subtraction fl'>-</view>
+          <view class='con_num fl'>{{getData.ShoppingList.goodsNum}} </view>
+        <view class='addition fl'>+</view> -->
+
+        <i-panel slot="right-icon">
+          <i-input-number i-class="inputNumber" style="display:inline-block; win-width：30rpx;" data-index="{{index}}" value="{{getData.ShoppingList.goodsNum}}" min="1" max="100"  bindchange="addNumber" />
+        </i-panel>
+      </view>
+    </view> 
+
+    <view class='con_wrap_bottom'>
+      <view class='con_wrap_bottom_left fl'>
+        <view class='wrap_h1'>价格：￥{{getData.ShoppingList.goodsPrice}}</view>
+        <view class='wrap_h1'>毛重/净含量：{{getData.ShoppingList.goodsWight}}</view>
+      </view>
+      <view class='con_wrap_bottom_right fl'>
+        <view class='wrap_h1'>原产国/地：{{getData.ShoppingList.goodsMadeIn}}</view>
+        <view class='wrap_h1'>规格：{{getData.ShoppingList.goodsSpecifications}}</view>
+      </view>
+    </view>
+
+    <view class='bankcars' bindtap='bank'>
+      <view>返回购物车</view>
+    </view>
+
+
+
+
+
+    <!-- <view class="i-swipeout-wrap-right">
+      <view class='goodsName' >{{item.goodsName}}</view>
+      <view class='clearfix'>
+      
+        <view class='fl'> ¥{{item.goodsPrice}}</view>
+        <view class='fr goodsNum' catchtap="prevent">
+         
+          <i-panel slot="right-icon">
+          <i-input-number i-class="inputNumber" style="display:inline-block" data-index="{{index}}" value="{{item.goodsNum}}" min="1" max="100"  bindchange="addNumber" />
+          </i-panel>
+        </view>
+      </view>
+    </view>  -->
+    
+
+   </view> 
+
+  </view>
+
+</view>

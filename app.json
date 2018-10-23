@@ -1,27 +1,45 @@
 {
   "pages":[
 
+
     
-    "pages/index/index",
-    "pages/indexDetails/indexDetails",
-    
-    
-    "pages/OfflineOrderConfirm/OfflineOrderConfirm",
-    "pages/OfflineOrderLogistics/OfflineOrderLogistics",
-    "pages/OfflineOrderDetails/OfflineOrderDetails",
     
     
 
+
+    "pages/OfflineShoppingCard/OfflineShoppingCard",
+    "pages/RetailShoppingCard/RetailShoppingCard",
+
+    
+    "pages/goodsDetails/goodsDetails",
+    "pages/OrderList/OrderList",
+
+
+
+    "pages/index/index",
+    "pages/indexDetails/indexDetails",
+    
+
+    
+
+    
+
+    
+
+    "pages/OfflineOrderLogistics/OfflineOrderLogistics",
+    "pages/OfflineOrderConfirm/OfflineOrderConfirm",
+    "pages/OfflineOrderDetails/OfflineOrderDetails",
+
+    
+  
 
     "pages/navOffline/navOffline",
     "pages/navMine/navMine",
     "pages/navRetail/navRetail",
    
-    "pages/OfflineShoppingCard/OfflineShoppingCard",
-    "pages/RetailShoppingCard/RetailShoppingCard",
+    
 
-    "pages/OrderList/OrderList",
-    "pages/goodsDetails/goodsDetails",
+    
 
     "pages/mineAfterSaleDetails/mineAfterSaleDetails",
     "pages/mineAfterSaleList/mineAfterSaleList",

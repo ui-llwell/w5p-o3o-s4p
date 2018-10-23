@@ -29,8 +29,8 @@ page {
   height: 230rpx; 
   padding: 0 34rpx;
   background: #fff;
-  margin-top: 20rpx;
-  margin-bottom: 10rpx;
+  /* margin-top: 20rpx;
+  margin-bottom: 10rpx; */
 }
 .content_bottom_left {
   width: 180rpx;
