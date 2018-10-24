@@ -3,17 +3,17 @@
   <view class='wrap'>
     <view class='content'>
       <view class='shoppingCardTitle'>{{shoppingCardData.title}}</view>
-      <view class='empty' wx:if="{{shoppingCardData.ShoppingList == ''}}">
+      <!-- <view class='empty' wx:if="{{shoppingCardData.ShoppingList == ''}}">
         <view class='empty_img'>
           <image src= 'http://llwell-wxapp.oss-cn-beijing.aliyuncs.com/O2OShop/nogoods@3x.png'></image>
         </view>
-      </view>
+      </view> -->
       <scroll-view class="shoppingCardContext" scroll-y>
         <view class='unit' wx:for="{{shoppingCardData.ShoppingList}}" wx:key="index" >
           <i-swipeout  i-class="i-swipeout-demo-item" actions="{{actions}}" data-index="{{index}}" bind:change="sss">
               <view slot="content">
                 <view class="i-swipeout-wrap " bindtap='gotoGoodsDetails'>
-                    <image data-index="{{index}}" bindtap='ShoppingListDetails' src='{{item.goodsImg}}' class='i-swipeout-wrap-center'></image> 
+                    <image data-shopid='{{item.goodsId}}' data-goodsnum='{{item.goodsNum}}' data-index="{{index}}" bindtap='ShoppingListDetails' src='{{item.goodsImg}}' class='i-swipeout-wrap-center'></image> 
                     <view class="i-swipeout-wrap-right">
                       <view class='goodsName' >{{item.goodsName}}</view>
                       <view class='clearfix'>

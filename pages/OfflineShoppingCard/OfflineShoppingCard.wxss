@@ -112,8 +112,9 @@ white-space: nowrap;
   color: #FFFFFF;
 }
 .empty {
+
   width: 660rpx;
-  height: 867px;
+  overflow: hidden;
 }
 .empty_img {
   width: 340rpx;

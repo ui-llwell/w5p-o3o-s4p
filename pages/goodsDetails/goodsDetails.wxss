@@ -74,7 +74,8 @@ page {
 
   width: 224rpx;
   float: right;
-  margin-top: 48rpx;
+  margin-top: 28rpx;
+ 
 }
 .subtraction {
   font-size: 60rpx;
@@ -165,7 +166,7 @@ page {
   border-color: transparent;
   background: none;
   font-size: 40rpx;
-  
+  min-width: 32px;
 }
 .con_wrap_top_right .inputNumber input{
   background: #06BEBD;

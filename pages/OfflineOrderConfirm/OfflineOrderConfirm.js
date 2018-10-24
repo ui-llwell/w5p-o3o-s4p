@@ -5,7 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    consignee: '',
+    
     getData: {
       list: [{
         retailImg: 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1539685745806&di=e57bfede68f06cca9d72b2df1005e7f3&imgtype=0&src=http%3A%2F%2Fpic1.win4000.com%2Fpic%2F9%2F44%2Fb6869a0cc5_250_350.jpg',
@@ -17,7 +17,12 @@ Page({
         retailTitle: '第四次工业革命 作者：李登辉',
         retailNum: '7',
         retailMoney: '178'
-      }]
+      }],
+      consignee: '',
+      realName: '',
+      idNum: '',
+      iphoneNum: '',
+      address: ''
     },
     All: {
       list: {
@@ -43,7 +48,26 @@ Page({
     this.setData({
       consignee: e.detail.value,
     })
-    console.log(e.detail.value)
+  },
+  realName: function (e) {
+    this.setData({
+      realName: e.detail.value,
+    })
+  },
+  idNum: function (e) {
+    this.setData({
+      idNum: e.detail.value,
+    })
+  },
+  iphoneNum: function (e) {
+    this.setData({
+      iphoneNum: e.detail.value,
+    })
+  },
+  address: function (e) {
+    this.setData({
+      address: e.detail.value,
+    })
   },
   getmap:function(e){
     console.log(e.detail.value)
@@ -51,11 +75,14 @@ Page({
       let that = this
       wx.chooseAddress({
         success: function (res) {
-          //console.log(JSON.stringify(res))
+          console.log(JSON.stringify(res))
           console.log(res.userName)
           that.setData({
             consignee: res.userName,
-          
+            realName: res.userName,
+            iphoneNum: res.telNumber,
+            address: res.provinceName + res.cityName + res.countyName + res.detailInfo
+
           })
           
         },

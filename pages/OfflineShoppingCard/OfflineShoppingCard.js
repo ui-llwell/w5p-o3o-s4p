@@ -5,6 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    lists: [],
     actions: [
       {
         name: '删除',
@@ -17,68 +18,70 @@ Page({
     ],
     shoppingCardData: {
       title: "首都机场零售店",
+      lists:[],
       ShoppingList: [
-        {
-          goodsId: '1',
-          goodsName: '特别长特别长特别长特别长特别长的耳机',
-          goodsImg: 'http://img.ui.cn/data/file/7/7/6/992677.png',
-          goodsPrice: 1,
-          goodsNum: 1,
-        }, {
-          goodsId: '2',
-          goodsName: '特别长特别长特别长特别长特别长的耳机',
-          goodsImg: 'http://img.ui.cn/data/file/7/7/6/992677.png',
-          goodsPrice: 2,
-          goodsNum: 2,
-        }, {
-          goodsId: '3',
-          goodsName: '特别长特别长特别长特别长特别长的耳机',
-          goodsImg: 'http://img.ui.cn/data/file/7/7/6/992677.png',
-          goodsPrice: 3,
-          goodsNum: 3,
-        }, {
-          goodsId: '4',
-          goodsName: '特别长特别长特别长特别长特别长的耳机',
-          goodsImg: 'http://img.ui.cn/data/file/7/7/6/992677.png',
-          goodsPrice: 4,
-          goodsNum: 4,
-        }, {
-          goodsId: '5',
-          goodsName: '特别长特别长特别长特别长特别长的耳机',
-          goodsImg: 'http://img.ui.cn/data/file/7/7/6/992677.png',
-          goodsPrice: 5,
-          goodsNum: 5,
-        }, {
-          goodsId: '6',
-          goodsName: '特别长特别长特别长特别长特别长的耳机',
-          goodsImg: 'http://img.ui.cn/data/file/7/7/6/992677.png',
-          goodsPrice: 6,
-          goodsNum: 6,
-        }, {
-          goodsId: '7',
-          goodsName: '特别长特别长特别长特别长特别长的耳机',
-          goodsImg: 'http://img.ui.cn/data/file/7/7/6/992677.png',
-          goodsPrice: 7,
-          goodsNum: 7,
-        }, {
-          goodsId: '8',
-          goodsName: '特别长特别长特别长特别长特别长的耳机',
-          goodsImg: 'http://img.ui.cn/data/file/7/7/6/992677.png',
-          goodsPrice: 8,
-          goodsNum: 8,
-        }, {
-          goodsId: '9',
-          goodsName: '特别长特别长特别长特别长特别长的耳机',
-          goodsImg: 'http://img.ui.cn/data/file/7/7/6/992677.png',
-          goodsPrice: 9,
-          goodsNum: 9,
-        }, {
-          goodsId: '10',
-          goodsName: '特别长特别长特别长特别长特别长的耳机',
-          goodsImg: 'http://img.ui.cn/data/file/7/7/6/992677.png',
-          goodsPrice: 10,
-          goodsNum: 10,
-        }
+        // {
+        //   goodsId: '1',
+        //   goodsName: '特别长特别长特别长特别长特别长的耳机',
+        //   goodsImg: 'http://img.ui.cn/data/file/7/7/6/992677.png',
+        //   goodsPrice: 1,
+        //   goodsNum: 1,
+        // }, {
+        //   goodsId: '2',
+        //   goodsName: '特别长特别长特别长特别长特别长的耳机',
+        //   goodsImg: 'http://img.ui.cn/data/file/7/7/6/992677.png',
+        //   goodsPrice: 2,
+        //   goodsNum: 2,
+        // }, 
+        // {
+        //   goodsId: '3',
+        //   goodsName: '特别长特别长特别长特别长特别长的耳机',
+        //   goodsImg: 'http://img.ui.cn/data/file/7/7/6/992677.png',
+        //   goodsPrice: 3,
+        //   goodsNum: 3,
+        // }, {
+        //   goodsId: '4',
+        //   goodsName: '特别长特别长特别长特别长特别长的耳机',
+        //   goodsImg: 'http://img.ui.cn/data/file/7/7/6/992677.png',
+        //   goodsPrice: 4,
+        //   goodsNum: 4,
+        // }, {
+        //   goodsId: '5',
+        //   goodsName: '特别长特别长特别长特别长特别长的耳机',
+        //   goodsImg: 'http://img.ui.cn/data/file/7/7/6/992677.png',
+        //   goodsPrice: 5,
+        //   goodsNum: 5,
+        // }, {
+        //   goodsId: '6',
+        //   goodsName: '特别长特别长特别长特别长特别长的耳机',
+        //   goodsImg: 'http://img.ui.cn/data/file/7/7/6/992677.png',
+        //   goodsPrice: 6,
+        //   goodsNum: 6,
+        // }, {
+        //   goodsId: '7',
+        //   goodsName: '特别长特别长特别长特别长特别长的耳机',
+        //   goodsImg: 'http://img.ui.cn/data/file/7/7/6/992677.png',
+        //   goodsPrice: 7,
+        //   goodsNum: 7,
+        // }, {
+        //   goodsId: '8',
+        //   goodsName: '特别长特别长特别长特别长特别长的耳机',
+        //   goodsImg: 'http://img.ui.cn/data/file/7/7/6/992677.png',
+        //   goodsPrice: 8,
+        //   goodsNum: 8,
+        // }, {
+        //   goodsId: '9',
+        //   goodsName: '特别长特别长特别长特别长特别长的耳机',
+        //   goodsImg: 'http://img.ui.cn/data/file/7/7/6/992677.png',
+        //   goodsPrice: 9,
+        //   goodsNum: 9,
+        // }, {
+        //   goodsId: '10',
+        //   goodsName: '特别长特别长特别长特别长特别长的耳机',
+        //   goodsImg: 'http://img.ui.cn/data/file/7/7/6/992677.png',
+        //   goodsPrice: 10,
+        //   goodsNum: 10,
+        // }
       ]
     }
   },
@@ -87,21 +90,67 @@ Page({
   toSweepOrder: function () {
     var that = this;
     var show;
+    
     wx.scanCode({
       success: (res) => {
-        this.show = "结果:" + res.result + "二维码类型:" + res.scanType + "字符集:" + res.charSet + "路径:" + res.path;
+        //console.log('ss', res.result)
+        //var oneList = res.result;
+        // console.log('shuzu',getApp().aglobalDada.goodsList)
+        // var arr = getApp().aglobalDada.goodsList
+        
+        var a = {
+          goodsId: '9',
+          goodsName: '特别长特别长特别长特别长特别长的耳机',
+          goodsImg: 'http://img.ui.cn/data/file/7/7/6/992677.png',
+          goodsPrice: 9,
+          goodsNum: 9,
+        }
+        // var lists = this.data.lists;
+        // var newData = { n1: 1, n2: 2 };
+        // lists.push(newData);//实质是添加lists数组内容，使for循环多一次
+        // this.setData({
+        //   lists: lists,
+        // })  
+        // that.data.shoppingCardData.lists = arr
+        
+        var list = getApp().aglobalDada.goodsList
+        list.push(a)
         that.setData({
-          show: this.show
+          'shoppingCardData.ShoppingList': list
         })
-        wx.showToast({
-          title: '成功',
-          icon: 'success',
-          duration: 2000
-        })
-        wx.navigateTo({
-          url: '../QRCodePayment/QRCodePayment',
+        
+        console.log('add', this.data.shoppingCardData.ShoppingList)
 
-        })
+
+
+
+
+
+        // var arr = getApp().aglobalDada.goodsList
+        // getApp().aglobalDada.goodsList.push(a)
+        // console.log('ok', getApp().aglobalDada.goodsList)
+        // that.setData({
+        //   ShoppingList: getApp().aglobalDada.goodsList.push(a)
+        // })
+
+
+
+
+        // that.data.shoppingCardData.lists = arr
+        // console.log('ok', that.data.shoppingCardData.lists)
+        // this.show = "结果:" + res.result + "二维码类型:" + res.scanType + "字符集:" + res.charSet + "路径:" + res.path;
+        // that.setData({
+        //   show: this.show
+        // })
+        // wx.showToast({
+        //   title: '成功',
+        //   icon: 'success',
+        //   duration: 2000
+        // })
+        // wx.navigateTo({
+        //   url: '../QRCodePayment/QRCodePayment',
+
+        // })
 
       },
       fail: (res) => {
@@ -118,9 +167,14 @@ Page({
 
   ShoppingListDetails: function(e){
     //console.log(e.detail.current)
-    console.log(e.currentTarget.dataset.index);
+    console.log('id',e.currentTarget.dataset.shopid);
+    //console.log(getApp().aglobalDada.goodsList)
+    console.log('num',e.currentTarget.dataset.goodsnum);
+    console.log('e', e.currentTarget);
+    //console.log(e)
     wx.navigateTo({
-      url: '../goodsDetails/goodsDetails',
+      //url: '../goodsDetails/goodsDetails?goodsNum=' + e.currentTarget.dataset.goodsNum,
+      url: "../goodsDetails/goodsDetails?shopid=" + e.currentTarget.dataset.shopid + "&goodsnum=" + e.currentTarget.dataset.goodsnum + "&index=" + e.currentTarget.dataset.index,
     })
   },
 
@@ -128,7 +182,11 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    console.log(getApp())
+    // console.log(this.data.shoppingCardData.ShoppingList)
+    // var arr = getApp().aglobalDada.goodsList
+    
+   
+    
   },
 
   /**
@@ -142,7 +200,10 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    let that = this
+    that.setData({
+      'shoppingCardData.ShoppingList': getApp().aglobalDada.goodsList
+    })
   },
   // =====================================================
   sss: function (e) {

@@ -24,17 +24,17 @@
     <view class='nav'>
       <view class='nav_h1 fl'>真实姓名</view>
       <view class='nav_h2 fl'>*</view>
-      <input class='nav_h3 fl' placeholder='请输入收货人真实姓名' maxlength='11'></input>
+      <input class='nav_h3 fl' data-name="{{realName}}" bindinput="realName" value='{{realName}}' placeholder='请输入收货人真实姓名' maxlength='11'></input>
     </view>
     <view class='nav'>
       <view class='nav_h1 fl'>身份证号</view>
       <view class='nav_h2 fl'>*</view>
-      <input class='nav_h3 fl' placeholder='请输入收货人身份证号' maxlength='18'></input>
+      <input class='nav_h3 fl'  data-name="{{idNum}}" bindinput="idNum" value='{{idNum}}' placeholder='请输入收货人身份证号' maxlength='18'></input>
     </view>
     <view class='nav'>
       <view class='nav_h1 fl'>手机号码</view>
       <view class='nav_h2 fl'>*</view>
-      <input class='nav_h3 fl' placeholder='请输入收货人手机号码' maxlength='11'></input>
+      <input class='nav_h3 fl'  data-name="{{iphoneNum}}" bindinput="iphoneNum" value='{{iphoneNum}}' placeholder='请输入收货人手机号码' maxlength='11'></input>
     </view>
     <view class='nav'>
       <view class='nav_h1 fl'>收货地址</view>
@@ -42,7 +42,7 @@
       <!-- <input class='nav_h3 fl' placeholder='请输入详细收货地址' maxlength='11'></input> -->
       <view class="page-section fl">
         <view class="textarea-wrp">
-          <textarea maxlength="50" bindblur="bindTextAreaBlur" placeholder='请输入详细收货地址' auto-height />
+          <textarea  data-name="{{address}}" bindinput="address" value='{{address}}' maxlength="50" bindblur="bindTextAreaBlur" placeholder='请输入详细收货地址' auto-height />
         </view>
       </view>
     </view>

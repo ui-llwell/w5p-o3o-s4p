@@ -17,7 +17,7 @@
       </view>
       <view class='content_bottom'>
         <view class='content_bottom_left'>
-          <image   src='{{All.list.text8}}' mode='aspectFill'></image>
+          <image   src='{{All.list.text8}}' mode='aspectFit'></image>
         </view>
         <view class='content_bottom_right'>
           <text class='content_bottom_right_h1'>{{All.list.text4}}</text>

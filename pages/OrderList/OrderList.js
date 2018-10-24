@@ -13,6 +13,7 @@ Page({
     sliderOffset: 0,
     sliderLeft: 0,
     getData:{
+      imglog:'http://llwell-wxapp.oss-cn-beijing.aliyuncs.com/O2OShop/copyright@3x.png',
       unpayData:{
         orderList:[{
           id:0,
@@ -111,59 +112,13 @@ Page({
           }],
         }]
       },
+    
       shipData:{},
-      finishData:{}
+      finishData:{
+        orderList:[]
+      }
     },
-    // All: {
-    //   // list: [{
-    //   //   img: 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1539685745806&di=e57bfede68f06cca9d72b2df1005e7f3&imgtype=0&src=http%3A%2F%2Fpic1.win4000.com%2Fpic%2F9%2F44%2Fb6869a0cc5_250_350.jpg',
-    //   //   title: '第四次工业革命 作者：李登辉',
-    //   //   money: '798.00'
-    //   // }, {
-    //   //   img: 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1539685745806&di=e57bfede68f06cca9d72b2df1005e7f3&imgtype=0&src=http%3A%2F%2Fpic1.win4000.com%2Fpic%2F9%2F44%2Fb6869a0cc5_250_350.jpg',
-    //   //   title: '第四次工业革命 作者：李登辉',
-    //   //   money: '798.00'
-    //   // }],
-    //   logo: {
-    //     log: 'http://llwell-wxapp.oss-cn-beijing.aliyuncs.com/O2OShop/copyright@3x.png'
-    //   },
-    //   cons:[{
-    //     list: [{
-    //       img: 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1539685745806&di=e57bfede68f06cca9d72b2df1005e7f3&imgtype=0&src=http%3A%2F%2Fpic1.win4000.com%2Fpic%2F9%2F44%2Fb6869a0cc5_250_350.jpg',
-    //       title: '第四次工业革命 作者：李登辉',
-    //       money: '798.00',
-    //       sale: '申请售后'
-    //     }, {
-    //       img: 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1539685745806&di=e57bfede68f06cca9d72b2df1005e7f3&imgtype=0&src=http%3A%2F%2Fpic1.win4000.com%2Fpic%2F9%2F44%2Fb6869a0cc5_250_350.jpg',
-    //       title: '第四次工业革命 作者：李登辉',
-    //       money: '798.00'
-    //     }],
-    //     text1: '蔚蓝书店北京机场店-零售订单',
-    //     text2: '1',
-    //     text3:'1596.00',
-    //     text4: '查看详情',
-    //     text5: '取消订单',
-    //     text6: '立即付款',
-    //   },
-    //     {
-    //       list: [{
-    //         img: 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1539685745806&di=e57bfede68f06cca9d72b2df1005e7f3&imgtype=0&src=http%3A%2F%2Fpic1.win4000.com%2Fpic%2F9%2F44%2Fb6869a0cc5_250_350.jpg',
-    //         title: '第四次工业革命 作者：李登辉',
-    //         money: '798.00'
-    //       }, {
-    //           img: 'http://img.ui.cn/data/file/7/7/6/992677.png',
-    //         title: '第四次工业革命 作者：李登辉',
-    //         money: '798.00'
-    //       }],
-    //       text1: '蔚蓝书店北京机场店-零售订单',
-    //       text2: '1',
-    //       text3: '1596.00',
-    //       text4: '查看详情',
-    //       text5: '取消订单',
-    //       text6: '立即付款',
-    //     }
-    //   ]
-    // }   
+    
   },
   logistics:function(){
     wx.navigateTo({

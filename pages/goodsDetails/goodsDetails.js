@@ -26,8 +26,11 @@ Page({
   },
   bank:function(){
     console.log(111)
-    wx.navigateTo({
-      url: '../OfflineShoppingCard/OfflineShoppingCard',
+    // wx.back({
+    //   url: '../OfflineShoppingCard/OfflineShoppingCard',
+    // })
+    wx.navigateBack({
+      delta: 2
     })
   },
   ShoppingListDetails: function (e) {
@@ -67,7 +70,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    console.log(options)
   },
 
   /**
@@ -81,6 +84,14 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
+    // var cartItems = wx.getStorageSync("cartItems") || []
+    // var exist = cartItems.find(function (el) {
+    //   return el.id == e.target.dataset.id
+    // })
+
+    console.log(getApp().aglobalDada.goodsList)
+    var cartItems = getApp().aglobalDada.goodsList.goodsNum
+    console.log('11', cartItems)
 
   },
 

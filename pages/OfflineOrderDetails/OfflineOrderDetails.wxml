@@ -14,7 +14,7 @@
   </view>
   <view class='list' wx:for="{{All.list}}" wx:key="{{index}}">
     <view class='list_left fl'>
-      <image mode='scaleToFill' src='{{item.img}}'></image>
+      <image mode='aspectFit' src='{{item.img}}'></image>
     </view>
     <view class='list_right fl'>
       <view class='list_right_tit'>{{item.title}}</view>

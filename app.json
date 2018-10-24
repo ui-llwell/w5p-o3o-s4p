@@ -3,12 +3,21 @@
 
 
     
-    
-    
 
 
+    "pages/index/index",
+    "pages/indexDetails/indexDetails",
+
+    "pages/OfflineOrderConfirm/OfflineOrderConfirm",
+    "pages/OfflineOrderLogistics/OfflineOrderLogistics",
+    "pages/OfflineOrderDetails/OfflineOrderDetails",
+    
     "pages/OfflineShoppingCard/OfflineShoppingCard",
     "pages/RetailShoppingCard/RetailShoppingCard",
+    
+
+
+    
 
     
     "pages/goodsDetails/goodsDetails",
@@ -16,8 +25,7 @@
 
 
 
-    "pages/index/index",
-    "pages/indexDetails/indexDetails",
+    
     
 
     
@@ -26,10 +34,7 @@
 
     
 
-    "pages/OfflineOrderLogistics/OfflineOrderLogistics",
-    "pages/OfflineOrderConfirm/OfflineOrderConfirm",
-    "pages/OfflineOrderDetails/OfflineOrderDetails",
-
+   
     
   
 

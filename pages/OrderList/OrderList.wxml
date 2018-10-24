@@ -45,6 +45,14 @@
                         <!-- <text class='hot'  bindtap='retail'>{{item.details}}</text> -->
                       </view>
                     </view>
+                    <view class='noData'  wx:if="{{getData.payData.orderList == ''}}">
+                      <view class='noData_text'>
+                        您还没有相关记录哦
+                      </view>
+                      <view>
+                        <image class='noData_img' src='{{getData.imglog}}'></image>
+                      </view>
+                    </view>
 
                   </view>
               <!-- *******已付款****** -->    
@@ -118,7 +126,7 @@
               <!-- *******已完成****** -->    
                   <view class="weui-tab__content" hidden="{{activeIndex != 3}}">
                   
-                    <view class='content' wx:for="{{getData.payData.orderList}}" wx:key="{{index}}">
+                    <view class='content' wx:for="{{getData.finishData.orderList}}" wx:key="{{index}}">
                         <view class='con_title'>{{item.orderType == 0 ? '蔚蓝书店北京机场店-零售订单' : '流连旗舰店-O2O订单'}}</view>
                         <view class='line'></view>
                         <view class='con_main'>
@@ -146,14 +154,21 @@
                           <text class='hot' bindtap="{{item.orderType == 0 ? 'retail' : 'details'}}">{{item.details}}</text>
                         </view>
                       </view>
-                  
+                      <view class='noData' wx:if="{{getData.finishData.orderList == ''}}" >
+                        <view class='noData_text'>
+                          您还没有相关记录哦
+                        </view>
+                        <view>
+                          <image class='noData_img' src='{{getData.imglog}}'></image>
+                        </view>
+                    </view>
                   </view>
               </view>
           </view>
       </view>
   </view>
   <view class='footer'>
-    <image src='{{All.logo.log}}'></image>
+    <image src='{{getData.imglog}}'></image>
   </view>
 </view>
 <!-- 选项卡 -->

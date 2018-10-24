@@ -146,3 +146,30 @@ page {
   margin:59rpx 0 0;
   margin-left: 20rpx;
 }
+
+.noData {
+  width: 750rpx;
+  height: 500rpx;
+  background:#F2F2F2;
+  position: absolute;
+  left: 0;
+  top: 25%;
+  right: 0;
+  bottom: 0;
+}
+.noData_text{
+  width:100%;
+  text-align:center;
+  background-size:180rpx 180rpx;
+  color:  #B3B3B3;
+  padding-top: 240rpx;
+  font-size: 32rpx;
+}
+.noData_img {
+  width: 470rpx;
+  height: 80rpx;
+  margin: 0rpx auto 0;
+  display: block;
+  padding-top: 75rpx;
+
+}
