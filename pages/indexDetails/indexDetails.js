@@ -1,10 +1,13 @@
 // pages/indexDetails/indexDetails.js
+const app = getApp();
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
+    Alls: {},
+
     swiperCurrent: 0,
     indicatorDots: true,
     autoplay: false,
@@ -64,7 +67,38 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    console.log('shopid', options.shopid)
+    this.getShopInfo(options.shopid)
+  },
 
+
+  getShopInfo: function (shopId) {
+    const that = this;
+    app.Ajax(
+      'Home',
+      'POST',
+      'GetHomeShopInfo',
+      { id: shopId },
+      function (json) {
+        console.log('shopIdjson', json);
+        if (json.success) {
+          that.setData({
+            Alls: json.data
+          })
+          console.log('Alls',that.data.Alls)
+          wx.setNavigationBarTitle({
+            title: json.data.shopName
+          })
+        } else {
+          app.Toast('', 'none', 3000, json.msg.code);
+          // wx.showToast({
+          //   title: json.msg.msg,
+          //   icon: 'none',
+          //   duration: 2500
+          // });
+        }
+      }
+    )
   },
 
   /**

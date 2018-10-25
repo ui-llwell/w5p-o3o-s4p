@@ -95,30 +95,36 @@ Page({
 
   },
   // =====================================================
-  sss:function(e){
-    e.prevent;
-    console.log('2222', e.currentTarget.dataset.index)
-    let curIndex = e.currentTarget.dataset.index
-    this.data.shoppingCardData.ShoppingList.splice(curIndex, 1);
-    this.setData({
-      'shoppingCardData.ShoppingList': this.data.shoppingCardData.ShoppingList,
-    })
-  },
-  gotoGoodsDetails: function () {
+  // sss:function(e){
+  //   e.prevent;
+  //   console.log('e', e.currentTarget.dataset.index)
+  //   let curIndex = e.currentTarget.dataset.index
+  //   this.data.shoppingCardData.ShoppingList.splice(curIndex, 1);
+  //   this.setData({
+  //     'shoppingCardData.ShoppingList': this.data.shoppingCardData.ShoppingList,
+  //   })
+  // },
+  gotoGoodsDetails: function (e) {
+    console.log('num',e.currentTarget.dataset.index)
     console.log('跳页gotoGoodsDetails')
+    wx.navigateTo({
+     // url: '../RetailGoodsDetails/RetailGoodsDetails?shopid=' + e.currentTarget.dataset.index,
+      url: "../RetailGoodsDetails/RetailGoodsDetails?shopid=" + e.currentTarget.dataset.index
+                                        
+    })
   },
   // 防止 点击编辑数量时 跳转事件
   prevent: function (e) {
     e.prevent;
   },
   // 修改数量
-  addNumber(e) {
-    console.log('ww', e);
-    let curNum = 'shoppingCardData.ShoppingList[' + e.currentTarget.dataset.index + '].goodsNum';
-    this.setData({
-      [curNum]: e.detail.value,
-    })
-  },
+  // addNumber(e) {
+  //   console.log('ww', e);
+  //   let curNum = 'shoppingCardData.ShoppingList[' + e.currentTarget.dataset.index + '].goodsNum';
+  //   this.setData({
+  //     [curNum]: e.detail.value,
+  //   })
+  // },
   // 提交付款
   gotoRetailOrderConfirm: function () {
     console.log('跳页')

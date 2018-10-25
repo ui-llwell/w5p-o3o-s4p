@@ -16,16 +16,7 @@
       <view class='con_wrap_top_left fl' >
         {{getData.ShoppingList.ShoppingList}}
       </view>
-      <view class='con_wrap_top_right rl' catchtap="prevent">
-        
-        <!-- <view class='subtraction fl'>-</view>
-          <view class='con_num fl'>{{getData.ShoppingList.goodsNum}} </view>
-        <view class='addition fl'>+</view> -->
-
-        <i-panel slot="right-icon">
-          <i-input-number i-class="inputNumber" style="display:inline-block; win-width：30rpx;" data-index="{{index}}" value="{{shoppingCardData.shopCommodity.goodsNum}}" min="1" max="100"  bindchange="addNumber" />
-        </i-panel>
-      </view>
+      
     </view> 
 
     <view class='con_wrap_bottom'>

@@ -1,19 +1,23 @@
 {
   "pages":[
-
-
     
-
-
+    
     "pages/index/index",
     "pages/indexDetails/indexDetails",
+    "pages/start/start",
+
+
+    "pages/OfflineShoppingCard/OfflineShoppingCard",
+    "pages/RetailShoppingCard/RetailShoppingCard",
+
+    "pages/RetailGoodsDetails/RetailGoodsDetails",
+    
 
     "pages/OfflineOrderConfirm/OfflineOrderConfirm",
     "pages/OfflineOrderLogistics/OfflineOrderLogistics",
     "pages/OfflineOrderDetails/OfflineOrderDetails",
     
-    "pages/OfflineShoppingCard/OfflineShoppingCard",
-    "pages/RetailShoppingCard/RetailShoppingCard",
+    
     
 
 

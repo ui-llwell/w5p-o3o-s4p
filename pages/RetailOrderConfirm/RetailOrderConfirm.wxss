@@ -176,3 +176,15 @@ text-align: right;
 padding:10rpx 35rpx 94rpx 0;
 
 }
+.hot {
+  background: #fff;
+  width: 750rpx;
+  padding: 20rpx 0;
+  font-family:PingFangSC-Regular;
+font-size:24rpx;
+color:#606060;
+letter-spacing:0;
+float:right;
+text-align: right;
+/* text-indent:  */
+}

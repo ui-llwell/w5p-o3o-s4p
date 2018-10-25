@@ -46,14 +46,19 @@ swiper-item .active{
 }
 .wrap_name {
   
-  display: block;
-  width:600rpx;
-  font-family: PingFangSC-Regular;
-  font-size: 38rpx;
-  color: #242A34;
-  text-align: center;
-  padding-top:23rpx; 
- 
+  display:block;
+width:396rpx;
+margin:0 auto;
+font-family:PingFangSC-Regular;
+font-size:38rpx;
+color:#242A34;
+text-align:center;
+padding-top:23rpx;
+overflow:hidden;
+height:96rpx;
+line-height:128%;
+
+
 }
 .wrap_name_text {
   display: block;

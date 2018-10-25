@@ -8,7 +8,7 @@
         <view class='unit' wx:for="{{shoppingCardData.ShoppingList}}" wx:key="index" >
     
         
-           <view class="i-swipeout-wrap " bindtap='gotoGoodsDetails'>
+           <view class="i-swipeout-wrap " bindtap='gotoGoodsDetails' data-index="{{index}}">
               <image src='{{item.goodsImg}}' class='i-swipeout-wrap-center'></image> 
               <view class="i-swipeout-wrap-right">
                 <view class='goodsName' >{{item.goodsName}}</view>

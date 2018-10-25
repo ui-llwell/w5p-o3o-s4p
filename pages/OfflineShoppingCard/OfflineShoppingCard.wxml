@@ -38,7 +38,7 @@
     </view>
     <view class='footer'>
       <van-submit-bar
-    price="{{ 10050 }}"
+    price="{{ total }}"
     label="应支付："
     button-text="结 账"
     bind:submit="gotoRetailOrderConfirm"

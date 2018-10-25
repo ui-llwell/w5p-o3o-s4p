@@ -1,0 +1,180 @@
+/* pages/goodsDetails/goodsDetails.wxss */
+page {
+  width: 750rpx;
+  height: 100%;
+  background: #2C3239;
+}
+.header {
+  width: 750rpx;
+  height: 641rpx;
+  background: #fff;
+}
+
+.header_logo {
+  width: 350rpx;
+  height: 350rpx;
+  /* position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  */
+  margin:0 auto;
+  position: relative;
+  padding-top: 220rpx;
+} 
+.header_logo image {
+  width: 300rpx;
+  height: 300rpx;
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+}
+.content {
+  width: 661rpx;
+  margin: 0 auto;
+  position: relative;
+}
+.con_logo {
+  width:66rpx;
+  height:66rpx;
+  position:absolute;
+  left:50%;
+  top:-33rpx;
+  margin-left:-33rpx;
+  border-radius:50%;
+}
+.con_logo image {
+  width:66rpx;
+  height:66rpx;
+}
+.con_wrap {
+  padding-top: 71rpx;
+  color: #fff;
+  width: 661rpx;
+  overflow: hidden;
+}
+.con_wrap_top {
+  width: 661rpx;
+  overflow: hidden;
+}
+.con_wrap_top_left {
+  width: 100%;
+  font-family: PingFangSC-Regular;
+  font-size: 40rpx;
+  color: #FFFFFF;
+  letter-spacing: -0.5px;
+}
+
+.con_wrap_top_right {
+  /* width: 190rpx; */
+
+  width: 224rpx;
+  float: right;
+  margin-top: 28rpx;
+ 
+}
+.subtraction {
+  font-size: 60rpx;
+}
+.con_num {
+  width: 58rpx;
+  height: 58rpx;
+  line-height: 58rpx;
+  text-align: center;
+  background: #06BEBD;
+  font-size: 30rpx;
+  border-radius: 50%;
+  margin: 27rpx 30rpx 0;
+}
+.addition {
+  font-size: 50rpx;
+  padding-top: 14rpx;
+  
+}
+
+.con_wrap_bottom {
+  width: 661rpx;
+  overflow: hidden;
+  margin-top: 42rpx;
+  font-family: PingFangSC-Regular;
+  font-size: 30rpx;
+  color: #FFFFFF;
+  letter-spacing: -0.25px;
+}
+.con_wrap_bottom_left {
+  width: 50%;
+}
+.con_wrap_bottom_right {
+  width: 50%;
+}
+.wrap_h1 {
+  padding-bottom: 10rpx;
+}
+.bankcars {
+  margin: 32rpx 0;
+}
+.bankcars view {
+  width: 661rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  font-family: PingFangSC-Regular;
+  font-size: 34rpx;
+  color: #FFFFFF;
+  letter-spacing: -0.24px;
+  text-align: center;
+  background: #ED5564;
+}
+
+
+
+
+
+
+/* 加减 */
+.i-swipeout-wrap-right{
+  font-size: 30rpx;
+  color: #fff;
+  margin-left: 20rpx;
+  flex: 9
+}
+.goodsName{
+  width: 480rpx;
+  font-size: 28rpx;
+  overflow: hidden;
+  text-overflow:ellipsis;
+  white-space: nowrap;
+}
+.goodsNum{
+  height: 70rpx;
+}
+
+/* 更改数量按钮三方组件样式部分 */
+.con_wrap_top_right .inputNumber{
+  color: #fff;
+  border-radius: 50%;
+  /* font-size:30px;
+  background: #06BEBD; */
+  font-size: 40rpx;
+}
+.con_wrap_top_right .inputNumber view {
+  /* border-radius: 20px;
+  min-width: 32px; */
+  border-color: transparent;
+  background: none;
+  font-size: 40rpx;
+  min-width: 32px;
+}
+.con_wrap_top_right .inputNumber input{
+  background: #06BEBD;
+  color: #fff;
+  /* box-shadow: 0 5px 10px 0 rgba(0,0,0,0.20); */
+  /* border-radius: 20px; */
+  /* border-color: transparent; */
+  border-radius: 50%;
+  width: 58rpx;
+  height: 58rpx;
+}

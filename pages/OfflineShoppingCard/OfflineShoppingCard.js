@@ -6,6 +6,7 @@ Page({
    */
   data: {
     lists: [],
+    total: 0,    //总金额
     actions: [
       {
         name: '删除',
@@ -119,7 +120,7 @@ Page({
           'shoppingCardData.ShoppingList': list
         })
         
-        console.log('add', this.data.shoppingCardData.ShoppingList)
+        //console.log('add', this.data.shoppingCardData.ShoppingList)
 
 
 
@@ -204,11 +205,32 @@ Page({
     that.setData({
       'shoppingCardData.ShoppingList': getApp().aglobalDada.goodsList
     })
+    console.log('okok', this.data.shoppingCardData.ShoppingList)
+    var arr = this.data.shoppingCardData.ShoppingList
+
+    // for (var i in arr) {
+    //   that.data.total += Number(arr[i].price) * Number(arr[i].count);
+    //   that.data.goodsCount += Number(arr[i].count);
+    // }
+    for (var i in arr) {
+      console.log('i' ,arr[i])
+      // that.data.total += Number(arr[i].price) * Number(arr[i].count);
+      // that.data.goodsCount += Number(arr[i].count);
+      //that.data.total += (arr[i].goodsNum) * (arr[i].goodsPrice)
+
+      that.data.total += Number(arr[i].goodsPrice) * Number(arr[i].goodsNum);
+      //that.data.goodsCount += Number(arr[i].count);
+      console.log('all', that.data.total)
+    }
+
+
+
+
   },
   // =====================================================
   sss: function (e) {
     e.prevent;
-    console.log('2222', e.currentTarget.dataset.index)
+    //console.log('2222', e.currentTarget.dataset.index)
     let curIndex = e.currentTarget.dataset.index
     this.data.shoppingCardData.ShoppingList.splice(curIndex, 1);
     this.setData({
