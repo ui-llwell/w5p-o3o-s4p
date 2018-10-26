@@ -21,13 +21,15 @@
     <view class='content_text'>{{Alls.content}}</view>
   </view>
   <view class='hot'>
-    <view class='hot_title'>{{All.list.text6}}</view>
-    <view class='hot_text'>{{All.list.text7}}</view>
-    <view class='hot_text'>{{All.list.text8}}</view>
+    <view class='hot_title'>商家留言</view>
+    <view class='hot_text'>{{Alls.mapUrl}}</view>
+    <!-- <view class='hot_text'>{{All.list.text8}}</view> -->
    
   </view>
   <view class='main'>
-     <view class='map'></view>
+     <view class='map'>
+      <image src='{{Alls.imgUrl}}'></image>
+     </view>
   </view>
   <view class='tag'>
     {{All.list.text9}}

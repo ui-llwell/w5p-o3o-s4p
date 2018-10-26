@@ -6,7 +6,18 @@ Page({
    */
   data: {
     lists: [],
+    a:{
+      goodsId: '9',
+      goodsName: '特别长特别长特别长特别长特别长的耳机',
+      goodsImg: 'http://img.ui.cn/data/file/7/7/6/992677.png',
+      goodsPrice: 9,
+      goodsNum: 1,
+    },
+    iscart: false,
+    cart: [], //数据
+    count: 1,   //商品数量默认是1
     total: 0,    //总金额
+    goodsCount: 0, //数量
     actions: [
       {
         name: '删除',
@@ -104,8 +115,9 @@ Page({
           goodsName: '特别长特别长特别长特别长特别长的耳机',
           goodsImg: 'http://img.ui.cn/data/file/7/7/6/992677.png',
           goodsPrice: 9,
-          goodsNum: 9,
+          goodsNum: 1,
         }
+       
         // var lists = this.data.lists;
         // var newData = { n1: 1, n2: 2 };
         // lists.push(newData);//实质是添加lists数组内容，使for循环多一次
@@ -114,12 +126,64 @@ Page({
         // })  
         // that.data.shoppingCardData.lists = arr
         
-        var list = getApp().aglobalDada.goodsList
+        // var list = getApp().globalData.goodsList
+        // console.log(list)
+        // list.push(a)
+        // that.setData({
+        //   'shoppingCardData.ShoppingList': list
+        // })
+        
+        var list = getApp().globalData.goodsList
+        console.log(list)
+        console.log('a', that.data.a)
         list.push(a)
         that.setData({
           'shoppingCardData.ShoppingList': list
         })
-        
+
+        // for (var i in list) {
+        //   // 列表中某一项item的id == 点击事件传递过来的id。则是被点击的项
+        //   if (list[i].goodsId == list[i].goodsId) {
+        //     // 给goodsList数组的当前项添加count元素，值为1，用于记录添加到购物车的数量
+        //     this.data.a.count = 1;
+        //     //console.log(this.data.goodslist[i].count)
+        //     // 获取购物车的缓存数组（没有数据，则赋予一个空数组）
+        //     //var arr = wx.getStorageSync('cart') || [];
+        //     var arr = this.data.shoppingCardData.ShoppingList
+        //     //wx.setStorageSync('token', json.data.token);
+        //     // 如果购物车有数据
+        //     if (arr.length > 0) {
+        //       // 遍历购物车数组
+        //       for (var j in arr) {
+        //         // 判断购物车内的item的id，和事件传递过来的id，是否相等
+        //         // console.log(arr[j].id)
+        //         if (arr[j].goodsId == list[i].goodsId) {
+        //           // 相等的话，给count+1（即再次添加入购物车，数量+1）
+        //           arr[j].count = arr[j].count + 1;
+        //           // 最后，把购物车数据，存放入缓存（此处不用再给购物车数组push元素进去，因为这个是购物车有的，直接更新当前数组即可）
+        //           return;
+        //         }
+        //       }
+        //       // 遍历完购物车后，没有对应的item项，把goodslist的当前项放入购物车数组
+        //       // var a = arr.push(this.data.list[i]);
+        //       var a = list.push(that.data.a)
+        //     }
+        //     // 购物车没有数据，把item项push放入当前数据（第一次存放时）
+        //     else {
+        //       //arr.push(list);
+        //       list.push(that.data.a)
+        //       that.setData({
+        //         'shoppingCardData.ShoppingList': list
+        //       })
+        //     }
+        //   }
+        // }
+
+
+
+
+
+
         //console.log('add', this.data.shoppingCardData.ShoppingList)
 
 
@@ -201,27 +265,42 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    let that = this
+    var that = this
     that.setData({
-      'shoppingCardData.ShoppingList': getApp().aglobalDada.goodsList
+      'shoppingCardData.ShoppingList': getApp().globalData.goodsList
     })
-    console.log('okok', this.data.shoppingCardData.ShoppingList)
-    var arr = this.data.shoppingCardData.ShoppingList
+    //console.log('okok', this.data.shoppingCardData.ShoppingList)
+    // var arr = this.data.shoppingCardData.ShoppingList
+    // //console.log(arr)
+    // if (arr.length > 0) {
+    //   for (var i in arr) {
+    //     console.log('for',arr[i])
+    //     that.data.total += Number(arr[i].goodsPrice) * Number(arr[i].goodsNum) * 100
+    //   }
+    //   // 更新数据
+    //   this.setData({
+    //     total: that.data.total,
+    //   });
+    //   console.log('money',that.data.total,)
+    // }
+
+    that.getsumTotal()
+
 
     // for (var i in arr) {
     //   that.data.total += Number(arr[i].price) * Number(arr[i].count);
     //   that.data.goodsCount += Number(arr[i].count);
     // }
-    for (var i in arr) {
-      console.log('i' ,arr[i])
-      // that.data.total += Number(arr[i].price) * Number(arr[i].count);
-      // that.data.goodsCount += Number(arr[i].count);
-      //that.data.total += (arr[i].goodsNum) * (arr[i].goodsPrice)
+    // for (var i in arr) {
+    //   console.log('i' ,arr[i])
+    //   // that.data.total += Number(arr[i].price) * Number(arr[i].count);
+    //   // that.data.goodsCount += Number(arr[i].count);
+    //   //that.data.total += (arr[i].goodsNum) * (arr[i].goodsPrice)
 
-      that.data.total += Number(arr[i].goodsPrice) * Number(arr[i].goodsNum);
-      //that.data.goodsCount += Number(arr[i].count);
-      console.log('all', that.data.total)
-    }
+    //   that.data.total += Number(arr[i].goodsPrice) * Number(arr[i].goodsNum);
+    //   //that.data.goodsCount += Number(arr[i].count);
+    //   console.log('all', that.data.total)
+    // }
 
 
 
@@ -246,13 +325,35 @@ Page({
     e.prevent;
   },
   // 修改数量
+
   addNumber(e) {
+    console.log("+",e)
+    var that = this
     console.log('ww', e);
     let curNum = 'shoppingCardData.ShoppingList[' + e.currentTarget.dataset.index + '].goodsNum';
     console.log(e.detail.value,)
     this.setData({
       [curNum]: e.detail.value,
     })
+    
+    that.getsumTotal()
+    // var arr = this.data.shoppingCardData.ShoppingList
+    // //console.log(arr)
+    // if (arr.length > 0) {
+    //   for (var i in arr) {
+    //     console.log('for', arr[i])
+    //     that.data.total += Number(arr[i].goodsPrice) * Number(arr[i].goodsNum) * 100
+    //   }
+    //   // 更新数据
+    //   this.setData({
+    //     total: that.data.total,
+    //   });
+    //   console.log('money', that.data.total, )
+    // }
+
+    
+
+
   },
   // 提交付款
   gotoRetailOrderConfirm: function () {
@@ -294,5 +395,18 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+  getsumTotal: function () {
+    var that = this
+    var arr = this.data.shoppingCardData.ShoppingList
+
+    for (var i = 0; i < arr.length; i++) {
+      that.data.total += Number(arr[i].goodsPrice) * Number(arr[i].goodsNum) * 100
+
+    }
+    //更新数据
+    that.setData({
+      total: that.data.total,
+    })
   }
 })

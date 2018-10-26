@@ -14,6 +14,26 @@ Page({
    */
   onLoad: function (options) {
 
+    // var that = this;
+    // // 查看是否授权
+    // wx.getSetting({
+    //   success: function (res) {
+    //     if (res.authSetting['scope.userInfo']) {
+    //       wx.getUserInfo({
+    //         success: function (res) {
+    //           //从数据库获取用户信息
+    //           //用户已经授权过
+    //           wx.switchTab({
+    //             url: '../index/index'
+    //           })
+    //         }
+    //       });
+    //     }
+    //   }
+    // })
+
+  
+
   },
 
   /**
@@ -70,18 +90,17 @@ Page({
     console.log(111)
     var that = this;
     //此处授权得到userInfo
-     console.log(e.detail.userInfo);
+     //console.log(e.detail.userInfo);
     //接下来写业务代码
     app.Ajax(
       'Open',
       'POST',
       'UserReg',
       { ...e.detail.userInfo },
-      console.log('userInfo', ...e.detail.userInfo),
-      console.log(1111),
       function (json) {
-        console.log('json', json);
+        console.log('json注册', json);
         if (json.success) {
+          console.log('跳转')
           wx.switchTab({
             url: '../index/index',
           })
@@ -96,6 +115,6 @@ Page({
     //   delta: 1
     // })
 
-  }
+  },
   
 })

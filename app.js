@@ -2,64 +2,18 @@
 const app = getApp();
 
 App({
+  
+  globalData: {
+    register: false,
+    one: '',
+    goodsList: [],
+  },
+
   aglobalDada:{
+    register: false,
     one: '',
     goodsList: [
       // {
-      //   goodsId: '1',
-      //   goodsName: '特别长特别长特别长特别长特别长的耳机',
-      //   goodsImg: 'http://img.ui.cn/data/file/7/7/6/992677.png',
-      //   goodsPrice: 1,
-      //   goodsNum: 1,
-      // }, {
-      //   goodsId: '2',
-      //   goodsName: '特别长特别长特别长特别长特别长的耳机',
-      //   goodsImg: 'http://img.ui.cn/data/file/7/7/6/992677.png',
-      //   goodsPrice: 2,
-      //   goodsNum: 2,
-      // }, {
-      //   goodsId: '3',
-      //   goodsName: '特别长特别长特别长特别长特别长的耳机',
-      //   goodsImg: 'http://img.ui.cn/data/file/7/7/6/992677.png',
-      //   goodsPrice: 3,
-      //   goodsNum: 3,
-      // }, {
-      //   goodsId: '4',
-      //   goodsName: '特别长特别长特别长特别长特别长的耳机',
-      //   goodsImg: 'http://img.ui.cn/data/file/7/7/6/992677.png',
-      //   goodsPrice: 4,
-      //   goodsNum: 4,
-      // }, {
-      //   goodsId: '5',
-      //   goodsName: '特别长特别长特别长特别长特别长的耳机',
-      //   goodsImg: 'http://img.ui.cn/data/file/7/7/6/992677.png',
-      //   goodsPrice: 5,
-      //   goodsNum: 5,
-      // }, {
-      //   goodsId: '6',
-      //   goodsName: '特别长特别长特别长特别长特别长的耳机',
-      //   goodsImg: 'http://img.ui.cn/data/file/7/7/6/992677.png',
-      //   goodsPrice: 6,
-      //   goodsNum: 6,
-      // }, {
-      //   goodsId: '7',
-      //   goodsName: '特别长特别长特别长特别长特别长的耳机',
-      //   goodsImg: 'http://img.ui.cn/data/file/7/7/6/992677.png',
-      //   goodsPrice: 7,
-      //   goodsNum: 7,
-      // }, {
-      //   goodsId: '8',
-      //   goodsName: '特别长特别长特别长特别长特别长的耳机',
-      //   goodsImg: 'http://img.ui.cn/data/file/7/7/6/992677.png',
-      //   goodsPrice: 8,
-      //   goodsNum: 8,
-      // }, {
-      //   goodsId: '9',
-      //   goodsName: '特别长特别长特别长特别长特别长的耳机',
-      //   goodsImg: 'http://img.ui.cn/data/file/7/7/6/992677.png',
-      //   goodsPrice: 9,
-      //   goodsNum: 9,
-      // }, {
       //   goodsId: '10',
       //   goodsName: '特别长特别长特别长特别长特别长的耳机',
       //   goodsImg: 'http://img.ui.cn/data/file/7/7/6/992677.png',
@@ -70,7 +24,7 @@ App({
   },
 
   onLaunch: function () {
-
+    var that = this;
     var isDebug = false;//true调试状态使用本地服务器，非调试状态使用远程服务器
     if (!isDebug) {
       //远程域名
@@ -82,7 +36,7 @@ App({
     }
 
 
-
+    // console.log('Appglobaol~~~', that.aglobalDada.register);
     // 展示本地存储能力
     // var logs = wx.getStorageSync('logs') || []
     // logs.unshift(Date.now())
@@ -90,6 +44,7 @@ App({
 
     // 登录
     wx.login({
+      
       success: res => {
         // 发送 res.code 到后台换取 openId, sessionKey, unionId
         
@@ -99,56 +54,42 @@ App({
           'POST',
           'Login',
           { code: res.code },
+
           function (json) {
-            console.log('~~~',json);
+            //console.log('~~~',json);
             if (json.success) {
-
               wx.setStorageSync('token', json.data.token);
-              // console.log(json.data.token);
+              wx.setStorageSync('isReg', json.data.isReg);
+              //console.log(json.data.isReg);
               //console.log(options);
+
+              // that.setData({
+              //   'aglobalDada.register': json.data.isReg
+              // })
+              // that.aglobalDada.register = json.data.isReg;
+
+
+              // console.log('Appglobao~~~', that.aglobalDada.register);
+
+
+
               if (json.data.isReg) {
+               
                 // wx.switchTab({
-                //   url: '../record/record',
+                //   url: '../index/index'
                 // })
-                wx.redirectTo({
-                  url: '../index/index'
-                })
               } else {
-                // console.log(options);
-                // if (options.query.shop === undefined) {
-                //   wx.redirectTo({
-                //     url: '../index/index'
-                //   })
-                // }
-
+                console.log(2)
               }
-
-            // } else {
-            //   if (wx.getStorageSync('langIndex') == 1) {
-            //     wx.showToast({
-            //       title: '로그인 실패 하였습니다',
-            //       icon: 'none',
-            //       duration: 1500
-            //     })
-            //   } else {
-            //     wx.showToast({
-            //       title: '登录失败',
-            //       icon: 'none',
-            //       duration: 1500
-            //     })
-            //   }
-
-              console.log(json.msg.code);
-              console.log(json.msg.msg);
+              // console.log(json.msg.code);
+              // console.log(json.msg.msg);
             }
-
           }
         );
 
-
       }
     })
-    // 获取用户信息
+    //获取用户信息
     // wx.getSetting({
     //   success: res => {
     //     if (res.authSetting['scope.userInfo']) {
@@ -156,7 +97,12 @@ App({
     //       wx.getUserInfo({
     //         success: res => {
     //           // 可以将 res 发送给后台解码出 unionId
-    //           this.globalData.userInfo = res.userInfo
+    //           //this.globalData.userInfo = res.userInfo
+
+    //           console.log('跳转')
+    //           wx.switchTab({
+    //             url: '../index/index',
+    //           })  
 
     //           // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
     //           // 所以此处加入 callback 以防止这种情况
@@ -168,6 +114,7 @@ App({
     //     }
     //   }
     // })
+    
   },
   // globalData: {
   //   userInfo: null

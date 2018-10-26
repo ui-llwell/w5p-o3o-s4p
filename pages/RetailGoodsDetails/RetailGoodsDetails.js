@@ -13,7 +13,7 @@ Page({
       ShoppingList:
         {
           goodsId: '1',
-          ShoppingList: '特别长特特别长特别长特别长特别长特别长特别长特别长特别长别长特别长特别长',
+          ShoppingList: '长别长特别长特别长',
           goodsImg: 'http://img.ui.cn/data/file/7/7/6/992677.png',
           goodsPrice: 1,
           goodsNum: 1,

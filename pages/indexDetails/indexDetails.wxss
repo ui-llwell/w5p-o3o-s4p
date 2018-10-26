@@ -129,7 +129,12 @@
 .map {
   width: 750rpx;
   height: 332rpx;
-  background: pink
+  /* background: pink */
+}
+.map image {
+  width: 750rpx;
+  height: 332rpx;
+  display: block;
 }
 .tag {
   width: 750rpx;

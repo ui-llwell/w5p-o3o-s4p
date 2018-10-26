@@ -1,14 +1,17 @@
 {
   "pages":[
-    
+
+
+   "pages/OfflineShoppingCard/OfflineShoppingCard",
+   "pages/RetailShoppingCard/RetailShoppingCard",
     
     "pages/index/index",
     "pages/indexDetails/indexDetails",
+   
     "pages/start/start",
+    
 
-
-    "pages/OfflineShoppingCard/OfflineShoppingCard",
-    "pages/RetailShoppingCard/RetailShoppingCard",
+    
 
     "pages/RetailGoodsDetails/RetailGoodsDetails",
     

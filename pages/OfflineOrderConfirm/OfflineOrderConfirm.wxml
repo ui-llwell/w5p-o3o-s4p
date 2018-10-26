@@ -10,10 +10,11 @@
       </view>
       <view class='content_bottom_right'>
         <text class='content_bottom_right_h1'>{{item.retailTitle}}</text>
-        <view>共 <text class='color'>{{item.retailNum}}</text> 件商品，实付 <text class='color'>￥{{item.retailMoney}}</text></view>
+        <view>数量  <text class='color'>{{item.retailNum}}</text>，单价 <text class='color'>￥{{item.retailMoney}}</text></view>
       </view>
     </view>
   </view>
+  <view class='hot'>共1件商品 合计：¥1596.00（含运费 ¥0.00）</view>
   <view style='height:10rpx;'></view>
   <view class='wrap'>
     <view class='nav'>
@@ -48,7 +49,7 @@
     </view>
     <view class='map' bindtap='getmap'>获取微信地址信息</view>
   </view>
-
+  
   <view class='main'>
     <view class='main_wrap'>
       <view class='main_wrap_left fl'>商品小计</view>

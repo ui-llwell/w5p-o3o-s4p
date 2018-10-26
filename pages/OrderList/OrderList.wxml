@@ -30,6 +30,7 @@
                           </view>
                           <view class='con_main_list_right fl'>
                             <text>¥{{item.goodsPrice}}</text>
+                            <view>X{{item.goodsNum}}</view>
                           </view>
                         </view>
                       </view>
@@ -71,6 +72,7 @@
                           </view>
                           <view class='con_main_list_right fl'>
                             <text>¥{{item.goodsPrice}}</text>
+                            <view>X{{item.goodsNum}}</view>
                             <view class='sale' bindtap='sale'>{{item.sale}}</view>
                           </view>
                         </view>
@@ -104,6 +106,7 @@
                           </view>
                           <view class='con_main_list_right fl'>
                             <text>¥{{item.goodsPrice}}</text>
+                            <view>X{{item.goodsNum}}</view>
                             <!-- <view class='sale' bindtap='sale'>{{item.sale}}</view> -->
                           </view>
                         </view>
@@ -139,6 +142,7 @@
                             </view>
                             <view class='con_main_list_right fl'>
                               <text>¥{{item.goodsPrice}}</text>
+                              <view>X{{item.goodsNum}}</view>
                               <view class='sale' bindtap='sale'>{{item.sale}}</view>
                             </view>
                           </view>

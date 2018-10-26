@@ -2,7 +2,40 @@
   width: 750rpx;
   height: 100%;
   background-color:rgba(44,50,57,1);
+  position: relative;
 }
+.page {
+  width: 750rpx;
+  height: 100%;
+  background-color:rgba(0,0,0,.5);
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 999;
+}
+.page_but {
+  width: 250rpx;
+  height: 80rpx;
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+}
+.page_but .page_but {
+  width: 250rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  padding: 0;
+  text-align: center;
+  font-size: 28rpx;
+  background: #06BEBD;
+  color: #fff;
+}
+
+
+
 .list {
   width: 750rpx;
   height:939rpx;

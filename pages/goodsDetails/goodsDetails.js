@@ -98,9 +98,8 @@ Page({
    */
   onShow: function (options) {
    
-
-    console.log('fff',getApp().aglobalDada.goodsList)
-    var cartItems = getApp().aglobalDada.goodsList[this.data.getData.listindex]
+    console.log('fff', getApp().globalData.goodsList)
+    var cartItems = getApp().globalData.goodsList[this.data.getData.listindex]
     console.log('11', cartItems)
 
     console.log('xx', this.data.getData.listindex)

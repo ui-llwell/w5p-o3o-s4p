@@ -7,7 +7,6 @@ Page({
    */
   data: {
     Alls: {},
-
     swiperCurrent: 0,
     indicatorDots: true,
     autoplay: false,
