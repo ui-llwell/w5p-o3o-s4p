@@ -133,13 +133,36 @@ Page({
         //   'shoppingCardData.ShoppingList': list
         // })
         
+
+
         var list = getApp().globalData.goodsList
-        console.log(list)
-        console.log('a', that.data.a)
-        list.push(a)
+        console.log('listaaa', list)
+        var pre=""
+        var exist = getApp().globalData.goodsList.find(function (el) {
+          console.log('el',el)
+          console.log('goodsId', a.goodsId)
+          return el.goodsId == a.goodsId
+        })
+       
+        
+        console.log('ex',exist)
+        if (exist) {
+          console.log( getApp().globalData.goodsList.goodsNum,7777777)
+          exist.goodsNum = parseInt(exist.goodsNum) + 1
+          //getApp().globalData.goodsList.goodsNum +1
+        } else {
+          list.push(a)
+        }
+        // console.log(list)
+        // console.log('a', that.data.a)
+        // list.push(a)
+
         that.setData({
           'shoppingCardData.ShoppingList': list
         })
+
+
+        that.getsumTotal()
 
         // for (var i in list) {
         //   // 列表中某一项item的id == 点击事件传递过来的id。则是被点击的项
@@ -250,7 +273,7 @@ Page({
     // console.log(this.data.shoppingCardData.ShoppingList)
     // var arr = getApp().aglobalDada.goodsList
     
-   
+    //this.getsumTotal()
     
   },
 
@@ -308,6 +331,7 @@ Page({
   },
   // =====================================================
   sss: function (e) {
+    var that = this
     e.prevent;
     //console.log('2222', e.currentTarget.dataset.index)
     let curIndex = e.currentTarget.dataset.index
@@ -315,6 +339,7 @@ Page({
     this.setData({
       'shoppingCardData.ShoppingList': this.data.shoppingCardData.ShoppingList,
     })
+    that.getsumTotal()
   },
   gotoGoodsDetails: function () {
     console.log('跳页gotoGoodsDetails');
@@ -397,16 +422,40 @@ Page({
 
   },
   getsumTotal: function () {
+    var sum = 0
     var that = this
+    that.setData({
+      'shoppingCardData.ShoppingList': getApp().globalData.goodsList
+    })
+
+
+
     var arr = this.data.shoppingCardData.ShoppingList
-
-    for (var i = 0; i < arr.length; i++) {
-      that.data.total += Number(arr[i].goodsPrice) * Number(arr[i].goodsNum) * 100
-
+    console.log("arr1", this.data.shoppingCardData.ShoppingList)
+    if (this.data.shoppingCardData.ShoppingList)
+    {
+      for (var i = 0; i < that.data.shoppingCardData.ShoppingList.length; i++) {
+        // console.log("第一次")
+        // console.log("arr", that.data.shoppingCardData.ShoppingList[i].goodsPrice)
+        // console.log("arr", that.data.shoppingCardData.ShoppingList[i].goodsNum)
+        
+        sum += that.data.shoppingCardData.ShoppingList[i].goodsPrice * that.data.shoppingCardData.ShoppingList[i].goodsNum * 100
+        console.log(sum)
+      }
     }
+    
+
+    // for (var i = 0; i < arr.length; i++) {
+    // //that.data.total += Number(arr[i].goodsPrice) * Number(arr[i].goodsNum) * 100
+    //   that.data.total = Number(arr[i].goodsPrice) * Number(arr[i].goodsNum) * 100
+    //   console.log("arr", arr)
+    //   console.log("arr", Number(arr[i].goodsPrice))
+    //   console.log("arr", Number(arr[i].goodsNum))
+    // }
+    
     //更新数据
     that.setData({
-      total: that.data.total,
+      total: sum,
     })
   }
 })
