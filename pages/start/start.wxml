@@ -1,1 +1,2 @@
-<button open-type="getUserInfo" class='goLogIn' bindgetuserinfo="bindGetUserInfo">授权登入</button>
+<image class='img' src='http://llwell-wxapp.oss-cn-beijing.aliyuncs.com/A-test/qingqiqiu.gif' mode="widthFix" bindtap='login'></image>
+<button open-type="getUserInfo" class='page_but' bindgetuserinfo="bindGetUserInfo">开始购物吧</button>

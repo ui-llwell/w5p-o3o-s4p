@@ -5,9 +5,9 @@ const app = getApp()
 Page({
   data: {
     register: '',
-    allData: {
-      listShop: []
-    },
+    // allData: {
+    //   listShop: []
+    // },
     listShop: [],
     motto: 'Hello World',
     userInfo: {},
@@ -123,13 +123,19 @@ Page({
       'GetHomeShopList',
       {},
       function (json) {
-         //console.log('json..', json)
+         console.log('json..', json)
         if (json.success) {
           // that.imageLoad();
+          // that.setData({
+          //   listShop: json.data
+          // })
           that.setData({
-            listShop: json.data
+            listShop: json.data.homeShopList
           })
-          //console.log('data', that.data.listShop)
+          // that.data.listShop = json.data.homeShopList
+          // console.log('1111listShop', that.data.imgUrls)
+          // console.log('22222istShop', that.data.listShop)
+          // console.log('data', that.data.listShop)
         } else {
           app.Toast('', 'none', 3000, json.msg.code);
           // wx.showToast({
@@ -157,36 +163,36 @@ Page({
     })
   },
   
-  bindGetUserInfo: function (e) {
-    //console.log(111)
-    var that = this;
-    //此处授权得到userInfo
-    console.log(e.detail.userInfo);
-    //接下来写业务代码
-    app.Ajax(
-      'Open',
-      'POST',
-      'UserReg',
-      { ...e.detail.userInfo },
-      function (json) {
-        console.log('json注册', json);
-        if (json.success) {
-          console.log('跳转')
-          wx.switchTab({
-            url: '../index/index',
-          })
-        } else {
-          console.log('ssssssss')
-        }
+  // bindGetUserInfo: function (e) {
+  //   //console.log(111)
+  //   var that = this;
+  //   //此处授权得到userInfo
+  //   console.log(e.detail.userInfo);
+  //   //接下来写业务代码
+  //   app.Ajax(
+  //     'Open',
+  //     'POST',
+  //     'UserReg',
+  //     { ...e.detail.userInfo },
+  //     function (json) {
+  //       console.log('json注册', json);
+  //       if (json.success) {
+  //         console.log('跳转')
+  //         wx.switchTab({
+  //           url: '../index/index',
+  //         })
+  //       } else {
+  //         console.log('ssssssss')
+  //       }
 
-      }
-    );
-    //最后，记得返回刚才的页面
-    // wx.navigateBack({
-    //   delta: 1
-    // })
+  //     }
+  //   );
+  //   //最后，记得返回刚才的页面
+  //   // wx.navigateBack({
+  //   //   delta: 1
+  //   // })
 
-  },
+  // },
 
 
 })

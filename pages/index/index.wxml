@@ -1,9 +1,10 @@
 <!--index.wxml-->
-<view class='page' hidden='{{register}}'>
+
+<!-- <view class='page' hidden='{{register}}'>
   <view class='page_but'>
     <button class='page_but' open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">开始购物</button>
   </view>
-</view>
+</view> -->
 <view class='list'>
   <swiper class='wrap' circular="{{true}}" indicator-dots="{{false}}" autoplay="{{false}}" previous-margin="{{'46rpx'}}" next-margin="{{'46rpx'}}" bindchange="swiperChange">
     <block wx:for="{{listShop}}" wx:key="{{index}}" >

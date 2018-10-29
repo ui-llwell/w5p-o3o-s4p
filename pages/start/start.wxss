@@ -1,1 +1,28 @@
 /* pages/start/start.wxss */
+
+page{
+  /* width: 150%;
+  height: 200px; */
+  background: url('http://llwell-wxapp.oss-cn-beijing.aliyuncs.com/A-test/fengche.gif') no-repeat  center -45%;
+ 
+} 
+.img{
+  width: 300rpx;
+}
+
+.page_but {
+  width: 250rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  padding: 0;
+  text-align: center;
+  font-size: 28rpx;
+  background: #06BEBD;
+  color: #fff;
+  position: absolute;
+  left: 0;
+  top: 881rpx;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+}

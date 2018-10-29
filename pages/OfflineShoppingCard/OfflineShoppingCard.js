@@ -137,9 +137,9 @@ Page({
 
         var list = getApp().globalData.goodsList
         console.log('listaaa', list)
-        var pre=""
+        //var pre=""
         var exist = getApp().globalData.goodsList.find(function (el) {
-          console.log('el',el)
+          console.log('el', el.goodsId)
           console.log('goodsId', a.goodsId)
           return el.goodsId == a.goodsId
         })

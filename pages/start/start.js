@@ -47,7 +47,12 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    let that = this
+    that.setData({
+      register: wx.getStorageSync('isReg')
+    })
+    // console.log('indexglobaol.register111~~~', getApp().aglobalDada.register)
+    console.log('hree', wx.getStorageSync('isReg'))
   },
 
   /**
@@ -86,11 +91,41 @@ Page({
   },
 
   /**/
+  // bindGetUserInfo: function (e) {
+  //   console.log(111)
+  //   var that = this;
+  //   //此处授权得到userInfo
+  //    //console.log(e.detail.userInfo);
+  //   //接下来写业务代码
+  //   app.Ajax(
+  //     'Open',
+  //     'POST',
+  //     'UserReg',
+  //     { ...e.detail.userInfo },
+  //     function (json) {
+  //       console.log('json注册', json);
+  //       if (json.success) {
+  //         console.log('跳转')
+  //         wx.switchTab({
+  //           url: '../index/index',
+  //         })
+  //       } else {
+  //         console.log('ssssssss')
+  //       }
+
+  //     }
+  //   );
+  //   //最后，记得返回刚才的页面
+  //   // wx.navigateBack({
+  //   //   delta: 1
+  //   // })
+
+  // },
   bindGetUserInfo: function (e) {
-    console.log(111)
+    //console.log(111)
     var that = this;
     //此处授权得到userInfo
-     //console.log(e.detail.userInfo);
+    console.log(e.detail.userInfo);
     //接下来写业务代码
     app.Ajax(
       'Open',
@@ -116,5 +151,6 @@ Page({
     // })
 
   },
-  
+
+
 })

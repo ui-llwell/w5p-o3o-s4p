@@ -75,11 +75,14 @@ App({
 
               if (json.data.isReg) {
                
-                // wx.switchTab({
-                //   url: '../index/index'
-                // })
+                wx.switchTab({
+                  url: '../index/index'
+                })
               } else {
-                console.log(2)
+                console.log('返回start页')
+                wx.navigateTo({
+                  url: '../start/start',
+                })
               }
               // console.log(json.msg.code);
               // console.log(json.msg.msg);

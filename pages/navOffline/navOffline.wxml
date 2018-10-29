@@ -4,23 +4,23 @@
   <view class='wrap'>
     <view class='content'>
       <view class='content_top'>
-        <image src='{{getData.arr.img}}'></image>
-        <view class='con_title'>{{getData.arr.title}}</view>
-        <view class='con_name'>{{getData.arr.name}}</view>
+        <image src='{{All.shopImg}}'></image>
+        <view class='con_title'>{{All.shopName}}</view>
+        <view class='con_name'>{{All.shopDesc}}</view>
         <view class="con_color"></view>
       </view>
       <view class='content_bottom'>
-        <view class='con_wrap' wx:for="{{getData.List}}" wx:key='{{index}}'>
+        <view class='con_wrap' wx:for="{{All.hotGoods}}" wx:key='{{index}}'>
           
           <view class='content_wrapLeft'>
-            <image src='{{item.logo}}' ></image>
+            <image src='{{item.goodsImg}}' ></image>
           </view>
           <view class='content_wrapCenter'>
-            <text class='content_brand'>{{item.name}}</text>
-            <text class='content_num'>{{item.num}}个商品</text>
+            <text class='content_brand'>{{item.goodsName}}</text>
+            <text class='content_num'>{{item.goodsPrice}}个商品</text>
           </view>
           <view class='content_wrapRight'>
-              <view><image src='{{item.hand}}'></image>{{item.recommend}}</view>
+              <view><image src='http://llwell-wxapp.oss-cn-beijing.aliyuncs.com/PurchasingAssistantPersonal/shop_icon_recommend@3x.png'></image>掌柜推荐</view>
           </view>
 
         </view>

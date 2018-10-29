@@ -1,49 +1,52 @@
 // pages/navOffline/navOffline.js
+
+const app = getApp()
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    shopid:"1",
-    getData:{
-      arr:{
-        img: 'http://llwell-wxapp.oss-cn-beijing.aliyuncs.com/PurchasingAssistantPersonal/shop_img_rebate@3x.png',
-        title: '北京首都机场T3蔚蓝书店',
-        name: '本店主营书籍、唱片、文具'
-      },
-      List: [{
-        logo: 'http://llwell-wxapp.oss-cn-beijing.aliyuncs.com/PurchasingAssistantPersonal/top_img_consumption@3x.png',
-        name: 'MCM',
-        num: '15',
-        hand: 'http://llwell-wxapp.oss-cn-beijing.aliyuncs.com/PurchasingAssistantPersonal/shop_icon_recommend@3x.png',
-        recommend: '掌柜推荐',
-      }, {
-        logo: 'http://llwell-wxapp.oss-cn-beijing.aliyuncs.com/PurchasingAssistantPersonal/top_img_receipt@3x.png',
-        name: 'DOSHISHA',
-        num: '7',
-        hand: 'http://llwell-wxapp.oss-cn-beijing.aliyuncs.com/PurchasingAssistantPersonal/shop_icon_recommend@3x.png',
-        recommend: '掌柜推荐',
-      }, {
-        logo: 'http://llwell-wxapp.oss-cn-beijing.aliyuncs.com/PurchasingAssistantPersonal/top_img_consumption@3x.png',
-        name: 'ELFA PHARM',
-        num: '37',
-        hand: 'http://llwell-wxapp.oss-cn-beijing.aliyuncs.com/PurchasingAssistantPersonal/shop_icon_hot@3x.png',
-        recommend: '热销品牌',
-      }, {
-        logo: 'http://llwell-wxapp.oss-cn-beijing.aliyuncs.com/PurchasingAssistantPersonal/top_img_receipt@3x.png',
-        name: 'DOSHISHA',
-        num: '27',
-        hand: 'http://llwell-wxapp.oss-cn-beijing.aliyuncs.com/PurchasingAssistantPersonal/shop_icon_hot@3x.png',
-        recommend: '热销品牌',
-      }, {
-        logo: 'http://llwell-wxapp.oss-cn-beijing.aliyuncs.com/PurchasingAssistantPersonal/top_img_consumption@3x.png',
-        name: 'Roboto-Light',
-        num: '37',
-        hand: 'http://llwell-wxapp.oss-cn-beijing.aliyuncs.com/PurchasingAssistantPersonal/shop_icon_recommend@3x.png',
-        recommend: '掌柜推荐',
-      }]
-    }
+    All: {},
+    shopId:"",
+    // getData:{
+    //   arr:{
+    //     img: 'http://llwell-wxapp.oss-cn-beijing.aliyuncs.com/PurchasingAssistantPersonal/shop_img_rebate@3x.png',
+    //     title: '北京首都机场T3蔚蓝书店',
+    //     name: '本店主营书籍、唱片、文具'
+    //   },
+    //   List: [{
+    //     logo: 'http://llwell-wxapp.oss-cn-beijing.aliyuncs.com/PurchasingAssistantPersonal/top_img_consumption@3x.png',
+    //     name: 'MCM',
+    //     num: '15',
+    //     hand: 'http://llwell-wxapp.oss-cn-beijing.aliyuncs.com/PurchasingAssistantPersonal/shop_icon_recommend@3x.png',
+    //     recommend: '掌柜推荐',
+    //   }, {
+    //     logo: 'http://llwell-wxapp.oss-cn-beijing.aliyuncs.com/PurchasingAssistantPersonal/top_img_receipt@3x.png',
+    //     name: 'DOSHISHA',
+    //     num: '7',
+    //     hand: 'http://llwell-wxapp.oss-cn-beijing.aliyuncs.com/PurchasingAssistantPersonal/shop_icon_recommend@3x.png',
+    //     recommend: '掌柜推荐',
+    //   }, {
+    //     logo: 'http://llwell-wxapp.oss-cn-beijing.aliyuncs.com/PurchasingAssistantPersonal/top_img_consumption@3x.png',
+    //     name: 'ELFA PHARM',
+    //     num: '37',
+    //     hand: 'http://llwell-wxapp.oss-cn-beijing.aliyuncs.com/PurchasingAssistantPersonal/shop_icon_hot@3x.png',
+    //     recommend: '热销品牌',
+    //   }, {
+    //     logo: 'http://llwell-wxapp.oss-cn-beijing.aliyuncs.com/PurchasingAssistantPersonal/top_img_receipt@3x.png',
+    //     name: 'DOSHISHA',
+    //     num: '27',
+    //     hand: 'http://llwell-wxapp.oss-cn-beijing.aliyuncs.com/PurchasingAssistantPersonal/shop_icon_hot@3x.png',
+    //     recommend: '热销品牌',
+    //   }, {
+    //     logo: 'http://llwell-wxapp.oss-cn-beijing.aliyuncs.com/PurchasingAssistantPersonal/top_img_consumption@3x.png',
+    //     name: 'Roboto-Light',
+    //     num: '37',
+    //     hand: 'http://llwell-wxapp.oss-cn-beijing.aliyuncs.com/PurchasingAssistantPersonal/shop_icon_recommend@3x.png',
+    //     recommend: '掌柜推荐',
+    //   }]
+    // }
   },
   start:function(){
     wx.navigateTo({
@@ -55,10 +58,11 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    console.log(options)
-    this.setData({
-      shop:''
-    })
+    console.log('op',options)
+    // this.setData({
+    //   shop:''
+    // })
+    this.getShopShow()
   },
 
   /**
@@ -68,13 +72,16 @@ Page({
 
   },
 
+
+
+
   /**
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    const that = this
-    console.log(this.data.shopid)
-    if (this.data.shopid == ''){
+    var that = this
+    console.log('no',this.data.shopid)
+    if (this.data.shopid == 'undefined'){
       wx.redirectTo({
         url: '../OfflineScanShopcode/OfflineScanShopcode',
       })
@@ -118,5 +125,33 @@ Page({
    */
   onShareAppMessage: function () {
 
-  }
+  },
+  getShopShow: function () {
+    const that = this;
+    // 方法组名称为：User（代购用户），不是系统通用用户Users
+    app.Ajax(
+      'Shop',
+      'POST',
+      'GetShopInfo',
+      { shopId: 1},
+      function (json) {
+        console.log('qajson..', json.data)
+        if (json.success) {
+          // that.imageLoad();
+          that.setData({
+            All: json.data
+          })
+          console.log('All',that.data.All)
+          //console.log('data', that.data.listShop)
+        } else {
+          app.Toast('', 'none', 3000, json.msg.code);
+          // wx.showToast({
+          //   title: json.msg.msg,
+          //   icon: 'none',
+          //   duration: 2500
+          // });
+        }
+      }
+    )
+  },
 })

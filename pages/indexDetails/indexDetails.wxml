@@ -22,13 +22,13 @@
   </view>
   <view class='hot'>
     <view class='hot_title'>商家留言</view>
-    <view class='hot_text'>{{Alls.mapUrl}}</view>
+    <view class='hot_text'>{{Alls.message}}</view>
     <!-- <view class='hot_text'>{{All.list.text8}}</view> -->
    
   </view>
   <view class='main'>
      <view class='map'>
-      <image src='{{Alls.imgUrl}}'></image>
+      <image src='{{Alls.mapUrl}}'></image>
      </view>
   </view>
   <view class='tag'>
@@ -45,7 +45,7 @@
             <image class='list_img' src="{{item.slt}}"></image>
             <view class='list_text'>
               <text class='list_name'>{{item.goodsName}}</text>
-              <text class='list_color'>{{item.price}}</text>
+              <text class='list_color'>￥{{item.price}}</text>
             </view>
           </view>
         </swiper-item>

@@ -4,5 +4,6 @@
     "van-icon": "../../vant/icon/index",
     "i-input-number": "../../iview/input-number/index",
     "i-swipeout": "../../iview/swipeout/index"
-  }
+  },
+  "navigationBarTitleText": "零售商城"
 }

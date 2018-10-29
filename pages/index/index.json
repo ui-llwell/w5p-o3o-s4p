@@ -7,7 +7,8 @@
     "i-icon": "../../iview/icon/index",
     "van-button": "../../vant/button/index",
     "van-icon": "../../vant/icon/index"
-  }
+  },
+  "navigationBarTitleText": "O2O商城"
    
     
 }

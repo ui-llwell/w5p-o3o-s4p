@@ -28,7 +28,7 @@ page {
   width: 455rpx;
   height: 455rpx;
   margin: 0 auto;
-  padding-top: 85rpx;
+  /* padding-top: 85rpx; */
   border: 1rpx #fff solid;
 }
 .content_top_logo {
@@ -55,4 +55,9 @@ page {
 }
 .h1 {
   padding-top: 96rpx;
+}
+
+.canvasImg{
+  /* width: 100%;
+  height: 100% */
 }
