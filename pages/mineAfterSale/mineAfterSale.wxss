@@ -275,10 +275,11 @@ line-height:120rpx;
   padding: 0 20rpx;
   border-radius: 10rpx;
 }
-.button {
+.body .button {
   background: #1AAD19;
   width: 750rpx;
-  height: 100rpx;
+  height: 130rpx;
+  
   line-height: 100rpx;
   font-family: PingFangSC-Regular;
   font-size: 40rpx;

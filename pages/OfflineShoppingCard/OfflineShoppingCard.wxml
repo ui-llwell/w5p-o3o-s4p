@@ -12,7 +12,7 @@
         <view class='unit' wx:for="{{shoppingCardData.ShoppingList}}" wx:key="index" >
           <i-swipeout  i-class="i-swipeout-demo-item" actions="{{actions}}" data-index="{{index}}" bind:change="sss">
               <view slot="content">
-                <view class="i-swipeout-wrap " bindtap='gotoGoodsDetails'>
+                <view class="i-swipeout-wrap " data-index="{{index}}" bindtap='gotoGoodsDetails'>
                     <image data-shopid='{{item.goodsId}}' data-goodsnum='{{item.goodsNum}}' data-index="{{index}}" bindtap='ShoppingListDetails' src='{{item.goodsImg}}' class='i-swipeout-wrap-center'></image> 
                     <view class="i-swipeout-wrap-right">
                       <view class='goodsName' >{{item.goodsName}}</view>

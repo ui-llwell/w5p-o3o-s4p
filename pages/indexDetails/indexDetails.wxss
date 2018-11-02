@@ -176,7 +176,7 @@ height: 522rpx;
 .list_img {
   width: 650rpx;
   height: 350rpx;
-
+  border: 1rpx solid #DEDEDE;
 }
 .list_name {
  display: block;

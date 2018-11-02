@@ -5,6 +5,9 @@ Page({
    * 页面的初始数据
    */
   data: {
+    seccode: '',
+    iuser:'',
+    itel:'',
     atempFilePaths: '',
     All:{
       list: {
@@ -29,9 +32,27 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  bindTextAreaBlur: function (e) {
-    console.log(e.detail.value)
+  // bindTextAreaBlur: function (e) {
+  //   console.log(e.detail.value)
+  // },
+
+  iuser: function (e) {
+    this.setData({
+      iuser: e.detail.value
+    })
   },
+  itel: function (e) {
+    this.setData({
+      itel: e.detail.value
+    })
+  },
+
+
+
+  formSubmit: function (e) {
+    console.log('form发生了submit事件，携带数据为：', e.detail.value)
+  },
+
 
   //图片上传
 
@@ -68,7 +89,7 @@ Page({
 
 
   onLoad: function (options) {
-
+    
   },
 
   /**
@@ -82,7 +103,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    console.log('fff', this.data.seccode)
   },
 
   /**

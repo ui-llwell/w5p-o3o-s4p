@@ -144,7 +144,7 @@ Page({
           return el.goodsId == a.goodsId
         })
        
-        
+        //加数据
         console.log('ex',exist)
         if (exist) {
           console.log( getApp().globalData.goodsList.goodsNum,7777777)
@@ -153,6 +153,10 @@ Page({
         } else {
           list.push(a)
         }
+        
+        //list.push(a)
+
+
         // console.log(list)
         // console.log('a', that.data.a)
         // list.push(a)
@@ -252,8 +256,8 @@ Page({
       }
     })
   },
-
-  ShoppingListDetails: function(e){
+ // ShoppingListDetails: function (e) {
+  gotoGoodsDetails: function(e){
     //console.log(e.detail.current)
     console.log('id',e.currentTarget.dataset.shopid);
     //console.log(getApp().aglobalDada.goodsList)
@@ -292,6 +296,7 @@ Page({
     that.setData({
       'shoppingCardData.ShoppingList': getApp().globalData.goodsList
     })
+    console.log("总", this.data.shoppingCardData.ShoppingList)
     //console.log('okok', this.data.shoppingCardData.ShoppingList)
     // var arr = this.data.shoppingCardData.ShoppingList
     // //console.log(arr)
@@ -329,11 +334,11 @@ Page({
 
 
   },
-  // =====================================================
+  // ===================================================== 删除
   sss: function (e) {
     var that = this
     e.prevent;
-    //console.log('2222', e.currentTarget.dataset.index)
+    console.log('2222', e.currentTarget.dataset.index)
     let curIndex = e.currentTarget.dataset.index
     this.data.shoppingCardData.ShoppingList.splice(curIndex, 1);
     this.setData({
@@ -341,10 +346,10 @@ Page({
     })
     that.getsumTotal()
   },
-  gotoGoodsDetails: function () {
-    console.log('跳页gotoGoodsDetails');
+  // gotoGoodsDetails: function () {
+  //   console.log('跳页gotoGoodsDetails');
     
-  },
+  // },
   // 防止 点击编辑数量时 跳转事件
   prevent: function (e) {
     e.prevent;
@@ -382,7 +387,7 @@ Page({
   },
   // 提交付款
   gotoRetailOrderConfirm: function () {
-    console.log('跳页')
+    console.log('222跳页')
     wx.navigateTo({
       url: '../OfflineOrderConfirm/OfflineOrderConfirm',
     })
