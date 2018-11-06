@@ -49,7 +49,7 @@ Page({
   
   //轮播图的切换事件
   swiperChange: function (e) {
-    console.log(e.detail.current);
+    //console.log(e.detail.current);
     this.setData({
       swiperCurrent: e.detail.current //获取当前轮播图片的下标
     })
@@ -79,12 +79,12 @@ Page({
       'GetHomeShopInfo',
       { id: shopId },
       function (json) {
-        console.log('shopIdjson', json);
+        //console.log('shopIdjson', json);
         if (json.success) {
           that.setData({
             Alls: json.data
           })
-          console.log('Alls',that.data.Alls)
+          //console.log('Alls',that.data.Alls)
           wx.setNavigationBarTitle({
             title: json.data.shopName
           })

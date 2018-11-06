@@ -16,7 +16,14 @@
               <view class="weui-tab__panel">
               <!-- *******待付款****** -->
                   <view class="weui-tab__content" hidden="{{activeIndex != 0}}">
-
+                    <!-- <view class='noData' wx:if="{{getData.unpayData.orderList == ''}}">
+                      <view class='noData_text'>
+                        您还没有相关记录哦
+                      </view>
+                      <view>
+                        <image class='noData_img' src='{{getData.imglog}}'></image>
+                      </view>
+                    </view> -->
                     <view class='content' wx:for="{{getData.unpayData.orderList}}" wx:key="{{index}}">
                       <view class='con_title'>{{item.orderType == 0 ? '蔚蓝书店北京机场店-零售订单' : '流连旗舰店-O2O订单'}}</view>
                       <view class='line'></view>
@@ -41,12 +48,12 @@
                       <view class='con_all'>
                 
                         <text class='hot color'>{{item.payment}}</text>
-                        <text class='hot' bindtap='details'>{{item.cancelL}}</text>
+                        <text class='hot' bindtap='cancel'>{{item.cancelL}}</text>
                         <text class='hot'  bindtap="{{item.orderType == 0 ? 'retail' : 'details'}}">{{item.details}}</text>
                         <!-- <text class='hot'  bindtap='retail'>{{item.details}}</text> -->
                       </view>
                     </view>
-                    <view class='noData'  wx:if="{{getData.payData.orderList == ''}}">
+                    <view class='noData'  wx:if="{{getData.unpayData.orderList == ''}}">
                       <view class='noData_text'>
                         您还没有相关记录哦
                       </view>
@@ -54,7 +61,9 @@
                         <image class='noData_img' src='{{getData.imglog}}'></image>
                       </view>
                     </view>
-
+                    <view class='footer' wx:if="{{getData.unpayData.orderList != ''}}">
+                      <image src='{{getData.imglog}}'></image>
+                    </view>    
                   </view>
               <!-- *******已付款****** -->    
                   <view class="weui-tab__content" hidden="{{activeIndex != 1}}">
@@ -88,12 +97,24 @@
                         <text class='hot' bindtap="{{item.orderType == 0 ? 'retail' : 'details'}}">{{item.details}}</text>
                       </view>
                     </view>
+                    
+                    <view class='noData'  wx:if="{{getData.payData.orderList == ''}}">
+                      <view class='noData_text'>
+                        您还没有相关记录哦
+                      </view>
+                      <view>
+                        <image class='noData_img' src='{{getData.imglog}}'></image>
+                      </view>
+                    </view>
 
+                    <view class='footer' wx:if="{{getData.payData.orderList != ''}}">
+                      <image src='{{getData.imglog}}'></image>
+                    </view> 
                   </view>
               <!-- *******已发货****** -->    
                   <view class="weui-tab__content" hidden="{{activeIndex != 2}}">
 
-                    <view class='content' wx:if="{{item.orderType != 0}}" wx:for="{{getData.payData.orderList}}" wx:key="{{index}}">
+                    <view class='content' wx:if="{{item.orderType != 0}}" wx:for="{{getData.deliverGoods.orderList}}" wx:key="{{index}}">
                       <view class='con_title'>{{item.orderType == 0 ? '蔚蓝书店北京机场店-零售订单' : '流连旗舰店-O2O订单'}}</view>
                       <view class='line'></view>
                       <view class='con_main'>
@@ -124,6 +145,18 @@
                       </view>
                     </view>
 
+                    <view class='noData'  wx:if="{{getData.deliverGoods.orderList == ''}}">
+                      <view class='noData_text'>
+                        您还没有相关记录哦
+                      </view>
+                      <view>
+                        <image class='noData_img' src='{{getData.imglog}}'></image>
+                      </view>
+                    </view>
+
+                    <view class='footer' wx:if="{{getData.deliverGoods.orderList != ''}}">
+                      <image src='{{getData.imglog}}'></image>
+                    </view> 
 
                   </view>
               <!-- *******已完成****** -->    
@@ -158,21 +191,27 @@
                           <text class='hot' bindtap="{{item.orderType == 0 ? 'retail' : 'details'}}">{{item.details}}</text>
                         </view>
                       </view>
-                      <view class='noData' wx:if="{{getData.finishData.orderList == ''}}" >
+                      
+                      <view class='noData'  wx:if="{{getData.finishData.orderList == ''}}">
                         <view class='noData_text'>
                           您还没有相关记录哦
                         </view>
                         <view>
                           <image class='noData_img' src='{{getData.imglog}}'></image>
                         </view>
-                    </view>
+                      </view>
+
+                      <view class='footer' wx:if="{{getData.finishData.orderList != ''}}">
+                        <image src='{{getData.imglog}}'></image>
+                      </view> 
+
                   </view>
               </view>
           </view>
       </view>
   </view>
-  <view class='footer'>
+  <!-- <view class='footer'>
     <image src='{{getData.imglog}}'></image>
-  </view>
+  </view> -->
 </view>
 <!-- 选项卡 -->

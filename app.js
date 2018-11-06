@@ -4,6 +4,8 @@ const app = getApp();
 App({
   
   globalData: {
+    shopid:'',
+    shopidSign:false,
     register: false,
     one: '',
     goodsList: [],

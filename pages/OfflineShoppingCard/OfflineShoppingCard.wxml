@@ -34,7 +34,7 @@
       </scroll-view>
     </view>
     <view class='scanBtn'>
-      <button class="weui-btn"  hover-class="scanBtn-hover" bindtap="toSweepOrder">扫描商品码</button>
+      <button class="weui-btn"   hover-class="scanBtn-hover" bindtap="toSweepOrder">扫描商品码</button>
     </view>
     <view class='footer'>
       <van-submit-bar
@@ -45,6 +45,7 @@
     bar-class="bar-class"
     price-class="price-class"
     button-class="button-class"
+    disabled="{{ total =='0.00' }}"
   />
     </view>
   </view>

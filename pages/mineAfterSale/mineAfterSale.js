@@ -8,6 +8,7 @@ Page({
     seccode: '',
     iuser:'',
     itel:'',
+    about:'',
     atempFilePaths: '',
     All:{
       list: {
@@ -46,7 +47,11 @@ Page({
       itel: e.detail.value
     })
   },
-
+  bindTextAreaBlur:function(){
+    // this.setData({
+    //   about: e.detail.value
+    // })
+  },
 
 
   formSubmit: function (e) {

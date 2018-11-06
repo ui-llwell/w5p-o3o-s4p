@@ -33,7 +33,7 @@
         <view class='nav_title'>{{All.list.text7}}</view>
         <view class="page-section">
           <view class="textarea-wrp">
-            <textarea maxlength="-1" bindblur="bindTextAreaBlur" placeholder='请描述您想退款的原因' auto-height />
+            <textarea maxlength="-1" bindblur="bindTextAreaBlur"   value='{{about}}' placeholder='请描述您想退款的原因' auto-height />
           </view>
         </view>
       </view>
@@ -68,7 +68,7 @@
       </view>
     </view>
   </view>
-  <button class='button'  disabled="{{iuser=='' || itel =='' }}" formType="submit">{{All.list.text13}}</button>
-
+  <button class='button'  disabled="{{iuser=='' || itel ==''  }}" formType="submit">{{All.list.text13}}</button>
+  <view style='width:750rpx; height:30rpx; background:#f2f2f2;;'></view>
 </view>
 </form>

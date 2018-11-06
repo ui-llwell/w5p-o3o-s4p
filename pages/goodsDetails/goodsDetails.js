@@ -28,7 +28,7 @@ Page({
 
   },
   bank:function(){
-    console.log(111)
+    //console.log(111)
     // wx.back({
     //   url: '../OfflineShoppingCard/OfflineShoppingCard',
     // })
@@ -38,7 +38,7 @@ Page({
   },
   ShoppingListDetails: function (e) {
     //console.log(e.detail.current)
-    console.log(e.currentTarget.dataset.index);
+    //console.log(e.currentTarget.dataset.index);
     wx.navigateTo({
       url: '../goodsDetails/goodsDetails',
     })
@@ -54,8 +54,8 @@ Page({
   },
   // 修改数量
   addNumber(e) {
-    console.log('ww', e);
-    console.log(e.detail.value,)
+   // console.log('ww', e);
+   // console.log(e.detail.value,)
     //let curNum = 'getData.ShoppingList.goodsNum'; this.data.shoppingCardData.shopCommodity
     let curNum = 'shoppingCardData.shopCommodity.goodsNum'; 
     this.setData({
@@ -64,7 +64,7 @@ Page({
   },
   // 提交付款
   gotoRetailOrderConfirm: function () {
-    console.log('跳页')
+   // console.log('跳页')
     wx.navigateTo({
       url: '../OfflineOrderConfirm/OfflineOrderConfirm',
     })
@@ -82,7 +82,7 @@ Page({
   //   console.log('x', listindex)
 
     this.data.getData.listindex = options.index
-    console.log('x',this.data.getData.listindex)
+    //console.log('x',this.data.getData.listindex)
 
   },
 
@@ -98,11 +98,11 @@ Page({
    */
   onShow: function (options) {
    
-    console.log('fff', getApp().globalData.goodsList)
+   // console.log('fff', getApp().globalData.goodsList)
     var cartItems = getApp().globalData.goodsList[this.data.getData.listindex]
-    console.log('11', cartItems)
+  //  console.log('11', cartItems)
 
-    console.log('xx', this.data.getData.listindex)
+  //  console.log('xx', this.data.getData.listindex)
 
     // let that = this  shopCommodity
     // that.setData({
@@ -113,7 +113,7 @@ Page({
     that.setData({
       'shoppingCardData.shopCommodity': cartItems
     })
-    console.log('qa', this.data.shoppingCardData.shopCommodity)
+  //  console.log('qa', this.data.shoppingCardData.shopCommodity)
 
 
     

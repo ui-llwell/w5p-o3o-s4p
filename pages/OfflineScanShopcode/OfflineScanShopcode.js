@@ -1,6 +1,11 @@
 // pages/OfflineScanShopcode/OfflineScanShopcode.js
-Page({
+const app = getApp();
 
+Page({
+  // globalData: {
+    
+  //   shopid: '',
+  // },
   /**
    * 页面的初始数据
    */
@@ -22,9 +27,13 @@ Page({
           icon: 'success',
           duration: 2000
         })
+        app.globalData.shopid = 1
+        app.globalData.shopidSign = true
         wx.switchTab({
-          url: '../navOffline/navOffline?shopid=1',
-
+          
+          //url: '../navOffline/navOffline?shopid=1',
+          url: '../navOffline/navOffline',
+         
         })
 
       },

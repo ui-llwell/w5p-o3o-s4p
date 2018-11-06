@@ -12,10 +12,10 @@ Page({
           text: '待付款'
         },{
           img: 'http://llwell-wxapp.oss-cn-beijing.aliyuncs.com/O2OShop/icon_waiting_for_delivery@3x.png',
-          text: '待发货'
+          text: '已付款'
         },{
           img: 'http://llwell-wxapp.oss-cn-beijing.aliyuncs.com/O2OShop/icon_waiting_for_the_goods@3x.png',
-          text: '待收货'
+          text: '已发货'
         },{
           img: 'http://llwell-wxapp.oss-cn-beijing.aliyuncs.com/O2OShop/icon_finish@3x.png',
           text: '已完成'

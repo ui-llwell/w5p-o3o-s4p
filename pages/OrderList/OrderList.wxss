@@ -104,6 +104,8 @@ page {
 .con_all {
   width: 690rpx;
   margin-left: 40rpx;
+  overflow: hidden;
+  padding: 8rpx 0;
 }
 .hot {
   font-family: PingFangSC-Regular;

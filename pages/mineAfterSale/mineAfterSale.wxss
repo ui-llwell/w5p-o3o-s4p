@@ -287,4 +287,6 @@ line-height:120rpx;
   border-radius: none;
   text-align: center;
   border-top: 30rpx solid #f2f2f2;
+  
+
 }

@@ -38,6 +38,25 @@ Page({
     }
   },
 
+  pay:function(){
+    // wx.requestPayment({
+    //   timeStamp: '',
+    //   nonceStr: '',
+    //   package: '',
+    //   signType: 'MD5',
+    //   paySign: '',
+    //   success(res) {
+    //     console.log('ok')
+    //    },
+    //   fail(res) {
+    //     console.log('no')   
+    //    }
+    // })
+    wx.navigateTo({
+      url: '../OrderList/OrderList?num=0' 
+    })
+  },
+
   /**
    * 生命周期函数--监听页面加载
    */

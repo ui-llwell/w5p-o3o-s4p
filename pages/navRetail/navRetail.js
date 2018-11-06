@@ -41,9 +41,9 @@ Page({
       'GetScanCode',
       {},
       function (json) {
-        console.log('GetScanCode', json);
+        //console.log('GetScanCode', json);
         if (json.success) {
-          console.log('QR', json.data)
+          //console.log('QR', json.data)
           wx.sendSocketMessage({
             data: 'getPayState:' + json.data
           })
@@ -83,7 +83,7 @@ Page({
     })
 
     wx.onSocketOpen(function (res) {
-      console.log('xin')
+      //console.log('xin')
       that.getScanCode();
 
     })

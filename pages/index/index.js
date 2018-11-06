@@ -76,7 +76,8 @@ Page({
       url: '../logs/logs'
     })
   },
-  onLoad: function () {
+  onLoad: function (options) {
+    //console.log('传值index', options)
     // if (app.globalData.userInfo) {
     //   this.setData({
     //     userInfo: app.globalData.userInfo,
@@ -123,7 +124,7 @@ Page({
       'GetHomeShopList',
       {},
       function (json) {
-         console.log('json..', json)
+         //console.log('json..', json)
         if (json.success) {
           // that.imageLoad();
           // that.setData({
@@ -157,7 +158,7 @@ Page({
   // },
 
   next: function(e){
-    console.log(e.currentTarget.dataset.shopid)
+    //console.log(e.currentTarget.dataset.shopid)
     wx.navigateTo({
       url: '../indexDetails/indexDetails?shopid=' + e.currentTarget.dataset.shopid,
     })

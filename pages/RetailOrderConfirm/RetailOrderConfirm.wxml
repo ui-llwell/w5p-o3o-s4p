@@ -39,7 +39,7 @@
   <view class='title'>*根据国家政策，清关所用姓名须与收件人姓名相同</view>
 
 
- <view class='footer'>
+ <view class='footer' bindtap='pay'>
       <van-submit-bar
     price="{{ 10050 }}"
     label="应支付："

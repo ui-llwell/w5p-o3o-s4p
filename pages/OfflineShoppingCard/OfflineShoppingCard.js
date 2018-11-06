@@ -32,62 +32,7 @@ Page({
       title: "首都机场零售店",
       lists:[],
       ShoppingList: [
-        // {
-        //   goodsId: '1',
-        //   goodsName: '特别长特别长特别长特别长特别长的耳机',
-        //   goodsImg: 'http://img.ui.cn/data/file/7/7/6/992677.png',
-        //   goodsPrice: 1,
-        //   goodsNum: 1,
-        // }, {
-        //   goodsId: '2',
-        //   goodsName: '特别长特别长特别长特别长特别长的耳机',
-        //   goodsImg: 'http://img.ui.cn/data/file/7/7/6/992677.png',
-        //   goodsPrice: 2,
-        //   goodsNum: 2,
-        // }, 
-        // {
-        //   goodsId: '3',
-        //   goodsName: '特别长特别长特别长特别长特别长的耳机',
-        //   goodsImg: 'http://img.ui.cn/data/file/7/7/6/992677.png',
-        //   goodsPrice: 3,
-        //   goodsNum: 3,
-        // }, {
-        //   goodsId: '4',
-        //   goodsName: '特别长特别长特别长特别长特别长的耳机',
-        //   goodsImg: 'http://img.ui.cn/data/file/7/7/6/992677.png',
-        //   goodsPrice: 4,
-        //   goodsNum: 4,
-        // }, {
-        //   goodsId: '5',
-        //   goodsName: '特别长特别长特别长特别长特别长的耳机',
-        //   goodsImg: 'http://img.ui.cn/data/file/7/7/6/992677.png',
-        //   goodsPrice: 5,
-        //   goodsNum: 5,
-        // }, {
-        //   goodsId: '6',
-        //   goodsName: '特别长特别长特别长特别长特别长的耳机',
-        //   goodsImg: 'http://img.ui.cn/data/file/7/7/6/992677.png',
-        //   goodsPrice: 6,
-        //   goodsNum: 6,
-        // }, {
-        //   goodsId: '7',
-        //   goodsName: '特别长特别长特别长特别长特别长的耳机',
-        //   goodsImg: 'http://img.ui.cn/data/file/7/7/6/992677.png',
-        //   goodsPrice: 7,
-        //   goodsNum: 7,
-        // }, {
-        //   goodsId: '8',
-        //   goodsName: '特别长特别长特别长特别长特别长的耳机',
-        //   goodsImg: 'http://img.ui.cn/data/file/7/7/6/992677.png',
-        //   goodsPrice: 8,
-        //   goodsNum: 8,
-        // }, {
-        //   goodsId: '9',
-        //   goodsName: '特别长特别长特别长特别长特别长的耳机',
-        //   goodsImg: 'http://img.ui.cn/data/file/7/7/6/992677.png',
-        //   goodsPrice: 9,
-        //   goodsNum: 9,
-        // }, {
+       // {
         //   goodsId: '10',
         //   goodsName: '特别长特别长特别长特别长特别长的耳机',
         //   goodsImg: 'http://img.ui.cn/data/file/7/7/6/992677.png',
@@ -136,18 +81,18 @@ Page({
 
 
         var list = getApp().globalData.goodsList
-        console.log('listaaa', list)
+       // console.log('listaaa', list)
         //var pre=""
         var exist = getApp().globalData.goodsList.find(function (el) {
-          console.log('el', el.goodsId)
-          console.log('goodsId', a.goodsId)
+          //console.log('el', el.goodsId)
+          //console.log('goodsId', a.goodsId)
           return el.goodsId == a.goodsId
         })
        
         //加数据
-        console.log('ex',exist)
+        //console.log('ex',exist)
         if (exist) {
-          console.log( getApp().globalData.goodsList.goodsNum,7777777)
+         // console.log( getApp().globalData.goodsList.goodsNum,7777777)
           exist.goodsNum = parseInt(exist.goodsNum) + 1
           //getApp().globalData.goodsList.goodsNum +1
         } else {
@@ -234,11 +179,11 @@ Page({
         // that.setData({
         //   show: this.show
         // })
-        // wx.showToast({
-        //   title: '成功',
-        //   icon: 'success',
-        //   duration: 2000
-        // })
+        wx.showToast({
+          title: '成功',
+          icon: 'success',
+          duration: 2000
+        })
         // wx.navigateTo({
         //   url: '../QRCodePayment/QRCodePayment',
 
@@ -259,10 +204,10 @@ Page({
  // ShoppingListDetails: function (e) {
   gotoGoodsDetails: function(e){
     //console.log(e.detail.current)
-    console.log('id',e.currentTarget.dataset.shopid);
+   // console.log('id',e.currentTarget.dataset.shopid);
     //console.log(getApp().aglobalDada.goodsList)
-    console.log('num',e.currentTarget.dataset.goodsnum);
-    console.log('e', e.currentTarget);
+   // console.log('num',e.currentTarget.dataset.goodsnum);
+  //  console.log('e', e.currentTarget);
     //console.log(e)
     wx.navigateTo({
       //url: '../goodsDetails/goodsDetails?goodsNum=' + e.currentTarget.dataset.goodsNum,
@@ -296,49 +241,16 @@ Page({
     that.setData({
       'shoppingCardData.ShoppingList': getApp().globalData.goodsList
     })
-    console.log("总", this.data.shoppingCardData.ShoppingList)
-    //console.log('okok', this.data.shoppingCardData.ShoppingList)
-    // var arr = this.data.shoppingCardData.ShoppingList
-    // //console.log(arr)
-    // if (arr.length > 0) {
-    //   for (var i in arr) {
-    //     console.log('for',arr[i])
-    //     that.data.total += Number(arr[i].goodsPrice) * Number(arr[i].goodsNum) * 100
-    //   }
-    //   // 更新数据
-    //   this.setData({
-    //     total: that.data.total,
-    //   });
-    //   console.log('money',that.data.total,)
-    // }
-
+    //console.log("总", this.data.shoppingCardData.ShoppingList)
+    
     that.getsumTotal()
-
-
-    // for (var i in arr) {
-    //   that.data.total += Number(arr[i].price) * Number(arr[i].count);
-    //   that.data.goodsCount += Number(arr[i].count);
-    // }
-    // for (var i in arr) {
-    //   console.log('i' ,arr[i])
-    //   // that.data.total += Number(arr[i].price) * Number(arr[i].count);
-    //   // that.data.goodsCount += Number(arr[i].count);
-    //   //that.data.total += (arr[i].goodsNum) * (arr[i].goodsPrice)
-
-    //   that.data.total += Number(arr[i].goodsPrice) * Number(arr[i].goodsNum);
-    //   //that.data.goodsCount += Number(arr[i].count);
-    //   console.log('all', that.data.total)
-    // }
-
-
-
 
   },
   // ===================================================== 删除
   sss: function (e) {
     var that = this
     e.prevent;
-    console.log('2222', e.currentTarget.dataset.index)
+   // console.log('2222', e.currentTarget.dataset.index)
     let curIndex = e.currentTarget.dataset.index
     this.data.shoppingCardData.ShoppingList.splice(curIndex, 1);
     this.setData({
@@ -357,37 +269,21 @@ Page({
   // 修改数量
 
   addNumber(e) {
-    console.log("+",e)
+  //  console.log("+",e)
     var that = this
-    console.log('ww', e);
+  //  console.log('ww', e);
     let curNum = 'shoppingCardData.ShoppingList[' + e.currentTarget.dataset.index + '].goodsNum';
-    console.log(e.detail.value,)
+  //  console.log(e.detail.value,)
     this.setData({
       [curNum]: e.detail.value,
     })
     
     that.getsumTotal()
-    // var arr = this.data.shoppingCardData.ShoppingList
-    // //console.log(arr)
-    // if (arr.length > 0) {
-    //   for (var i in arr) {
-    //     console.log('for', arr[i])
-    //     that.data.total += Number(arr[i].goodsPrice) * Number(arr[i].goodsNum) * 100
-    //   }
-    //   // 更新数据
-    //   this.setData({
-    //     total: that.data.total,
-    //   });
-    //   console.log('money', that.data.total, )
-    // }
-
-    
-
-
+  
   },
   // 提交付款
   gotoRetailOrderConfirm: function () {
-    console.log('222跳页')
+  //  console.log('222跳页')
     wx.navigateTo({
       url: '../OfflineOrderConfirm/OfflineOrderConfirm',
     })
@@ -436,7 +332,7 @@ Page({
 
 
     var arr = this.data.shoppingCardData.ShoppingList
-    console.log("arr1", this.data.shoppingCardData.ShoppingList)
+    //console.log("arr1", this.data.shoppingCardData.ShoppingList)
     if (this.data.shoppingCardData.ShoppingList)
     {
       for (var i = 0; i < that.data.shoppingCardData.ShoppingList.length; i++) {
@@ -445,18 +341,10 @@ Page({
         // console.log("arr", that.data.shoppingCardData.ShoppingList[i].goodsNum)
         
         sum += that.data.shoppingCardData.ShoppingList[i].goodsPrice * that.data.shoppingCardData.ShoppingList[i].goodsNum * 100
-        console.log(sum)
+        //console.log(sum)
       }
     }
     
-
-    // for (var i = 0; i < arr.length; i++) {
-    // //that.data.total += Number(arr[i].goodsPrice) * Number(arr[i].goodsNum) * 100
-    //   that.data.total = Number(arr[i].goodsPrice) * Number(arr[i].goodsNum) * 100
-    //   console.log("arr", arr)
-    //   console.log("arr", Number(arr[i].goodsPrice))
-    //   console.log("arr", Number(arr[i].goodsNum))
-    // }
     
     //更新数据
     that.setData({
