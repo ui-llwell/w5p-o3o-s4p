@@ -1,6 +1,6 @@
 <!--pages/navOffline/navOffline.wxml-->
 <!-- <text>pages/navOffline/navOffline.wxml</text> -->
-<view class='body'>
+<view class='body' hidden="{{shopId == ''}}">
   <view class='wrap'>
     <view class='content'>
       <view class='content_top'>

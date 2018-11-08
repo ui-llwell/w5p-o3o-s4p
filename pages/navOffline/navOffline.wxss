@@ -3,7 +3,9 @@ height:100%;
 background:#242a34;
 
 }
-
+.body {
+  width: 750rpx;
+}
 .wrap {
   width:660rpx;
   height:1055rpx;

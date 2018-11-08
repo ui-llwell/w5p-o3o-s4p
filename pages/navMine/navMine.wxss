@@ -61,7 +61,7 @@ page {
  
 }
 .main_theme {
-  width:435rpx;
+  width:430rpx;
   font-size: 34rpx;
   color: #888;
   display: block;
