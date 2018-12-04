@@ -11,30 +11,30 @@ App({
     goodsList: [],
   },
 
-  aglobalDada:{
-    register: false,
-    one: '',
-    goodsList: [
-      // {
-      //   goodsId: '10',
-      //   goodsName: '特别长特别长特别长特别长特别长的耳机',
-      //   goodsImg: 'http://img.ui.cn/data/file/7/7/6/992677.png',
-      //   goodsPrice: 10,
-      //   goodsNum: 10,
-      // }
-    ]
-  },
+  // aglobalDada:{
+  //   register: false,
+  //   one: '',
+  //   goodsList: [
+  //     // {
+  //     //   goodsId: '10',
+  //     //   goodsName: '特别长特别长特别长特别长特别长的耳机',
+  //     //   goodsImg: 'http://img.ui.cn/data/file/7/7/6/992677.png',
+  //     //   goodsPrice: 10,
+  //     //   goodsNum: 10,
+  //     // }
+  //   ]
+  // },
 
   onLaunch: function () {
     var that = this;
     var isDebug = false;//true调试状态使用本地服务器，非调试状态使用远程服务器
-    if (!isDebug) {
+    if (isDebug) {
       //远程域名
       wx.setStorageSync('domainName', "https://wxapp.llwell.net/api/oto/Wx/")
     }
     else {
       //本地测试域名
-      wx.setStorageSync('domainName', "http://192.168.0.11:55734/api/oto/Wx/")
+      wx.setStorageSync('domainName', "http://172.16.10.51:50989/api/oto/Wx/")
     }
 
 
@@ -58,10 +58,12 @@ App({
           { code: res.code },
 
           function (json) {
-            //console.log('~~~',json);
+           // console.log('~~~',json);
             if (json.success) {
               wx.setStorageSync('token', json.data.token);
               wx.setStorageSync('isReg', json.data.isReg);
+
+              wx.setStorageSync('userId', json.data.userId);
               //console.log(json.data.isReg);
               //console.log(options);
 

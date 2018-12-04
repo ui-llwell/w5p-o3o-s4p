@@ -105,11 +105,11 @@ Page({
   //   })
   // },
   gotoGoodsDetails: function (e) {
-    console.log('num',e.currentTarget.dataset.index)
-    console.log('跳页gotoGoodsDetails')
+    //console.log('num',e.currentTarget.dataset.index)
+    //console.log('跳页gotoGoodsDetails')
     wx.navigateTo({
      // url: '../RetailGoodsDetails/RetailGoodsDetails?shopid=' + e.currentTarget.dataset.index,
-      url: "../RetailGoodsDetails/RetailGoodsDetails?shopid=" + e.currentTarget.dataset.index
+      url: "../RetailGoodsDetails/RetailGoodsDetails?goodsid=" + 3233
                                         
     })
   },
@@ -127,7 +127,7 @@ Page({
   // },
   // 提交付款
   gotoRetailOrderConfirm: function () {
-    console.log('跳页')
+    //console.log('跳页')
     wx.navigateTo({
       url: '../RetailOrderConfirm/RetailOrderConfirm',
     })

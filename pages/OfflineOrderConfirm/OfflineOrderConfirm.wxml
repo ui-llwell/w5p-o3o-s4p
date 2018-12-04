@@ -16,21 +16,13 @@
   </view>
   <view class='hot'>共1件商品 合计：¥1596.00（含运费 ¥0.00）</view>
   <view style='height:10rpx;'></view>
+
   <view class='wrap'>
+    <view style='width:100%; height:10rpx; background:#F2F2F2;'></view>
     <view class='nav'>
       <view class='nav_h1 fl'>收货人</view>
       <view class='nav_h2 fl'>*</view>
       <input class='nav_h3 fl'  data-name="{{consignee}}" bindinput="consignee" value='{{consignee}}' placeholder='请输入收货人姓名' maxlength='11'></input>
-    </view>
-    <view class='nav'>
-      <view class='nav_h1 fl'>真实姓名</view>
-      <view class='nav_h2 fl'>*</view>
-      <input class='nav_h3 fl' data-name="{{realName}}" bindinput="realName" value='{{realName}}' placeholder='请输入收货人真实姓名' maxlength='11'></input>
-    </view>
-    <view class='nav'>
-      <view class='nav_h1 fl'>身份证号</view>
-      <view class='nav_h2 fl'>*</view>
-      <input class='nav_h3 fl'  data-name="{{idNum}}" bindinput="idNum" value='{{idNum}}' placeholder='请输入收货人身份证号' maxlength='18'></input>
     </view>
     <view class='nav'>
       <view class='nav_h1 fl'>手机号码</view>
@@ -48,6 +40,18 @@
       </view>
     </view>
     <view class='map' bindtap='getmap'>获取微信地址信息</view>
+    <view style='width:100%; height:10rpx; background:#F2F2F2;'></view>
+    <view class='nav'>
+      <view class='nav_h1 fl'>真实姓名</view>
+      <view class='nav_h2 fl'>*</view>
+      <input class='nav_h3 fl' data-name="{{realName}}" bindinput="realName" value='{{realName}}' placeholder='请输入收货人真实姓名' maxlength='11'></input>
+    </view>
+    <view class='nav'>
+      <view class='nav_h1 fl'>身份证号</view>
+      <view class='nav_h2 fl'>*</view>
+      <input class='nav_h3 fl'  data-name="{{idNum}}" bindinput="idNum" value='{{idNum}}' placeholder='请输入收货人身份证号' maxlength='18'></input>
+    </view>
+    
   </view>
   
   <view class='main'>

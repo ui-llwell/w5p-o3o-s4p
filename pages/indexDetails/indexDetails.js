@@ -17,34 +17,34 @@ Page({
     afterColor: "coral",//当前选中的指示点颜色
     previousmargin: '20px',//前边距
     nextmargin: '20px',//后边距
-    All: {
-      list:{
-        img: 'http://img.ui.cn/data/file/7/7/6/992677.png',
-        logo: 'http://llwell-wxapp.oss-cn-beijing.aliyuncs.com/O2OShop/heart@3x.png',
-        text1: '北京首都机场T3蔚蓝书店',
-        text2: '北京市首都机场T3航站楼21-23',
-        text3: '8012-44356',
-        text4: '北京首都机场蔚蓝书店正式入驻流连O2O',
-        text5: '		从即日起，蔚蓝书店北京首都机场T3航站楼店正式入驻流连O2O啦！各位流连会员可凭手中APP于店内进行消费，更可享受多种折扣服务！流连会员积分可以在店内享受与该店会员卡相同等级的折扣，详情请留意店内公告。流连O2O期待为您服务！',
-        text6: '商家留言',
-        text7: '本店营业时间为：24小时 全年无休',
-        text8: '暑期阅读促销火热进行中，总价满200减80。流连会员更可凭积分兑换折扣或免费书籍哦',
-        text9: '新上架商品'
-      },
-      arr: [{
-        images:'http://img.ui.cn/data/file/7/7/6/992677.png',
-        text1:'1三小时免费体验阅读时间',
-        text2:'￥10.00'
-        }, {
-          images: 'http://img.ui.cn/data/file/7/7/6/992677.png',
-          text1: '2三小时免费体验阅读时间',
-          text2: '￥20.00'
-        }, {
-          images: 'http://img.ui.cn/data/file/7/7/6/992677.png',
-          text1: '3三小时免费体验阅读时间',
-          text2: '￥30.00'
-        }]
-    },
+    // All: {
+    //   list:{
+    //     img: 'http://img.ui.cn/data/file/7/7/6/992677.png',
+    //     logo: 'http://llwell-wxapp.oss-cn-beijing.aliyuncs.com/O2OShop/heart@3x.png',
+    //     text1: '北京首都机场T3蔚蓝书店',
+    //     text2: '北京市首都机场T3航站楼21-23',
+    //     text3: '8012-44356',
+    //     text4: '北京首都机场蔚蓝书店正式入驻流连O2O',
+    //     text5: '		从即日起，蔚蓝书店北京首都机场T3航站楼店正式入驻流连O2O啦！各位流连会员可凭手中APP于店内进行消费，更可享受多种折扣服务！流连会员积分可以在店内享受与该店会员卡相同等级的折扣，详情请留意店内公告。流连O2O期待为您服务！',
+    //     text6: '商家留言',
+    //     text7: '本店营业时间为：24小时 全年无休',
+    //     text8: '暑期阅读促销火热进行中，总价满200减80。流连会员更可凭积分兑换折扣或免费书籍哦',
+    //     text9: '新上架商品'
+    //   },
+    //   arr: [{
+    //     images:'http://img.ui.cn/data/file/7/7/6/992677.png',
+    //     text1:'1三小时免费体验阅读时间',
+    //     text2:'￥10.00'
+    //     }, {
+    //       images: 'http://img.ui.cn/data/file/7/7/6/992677.png',
+    //       text1: '2三小时免费体验阅读时间',
+    //       text2: '￥20.00'
+    //     }, {
+    //       images: 'http://img.ui.cn/data/file/7/7/6/992677.png',
+    //       text1: '3三小时免费体验阅读时间',
+    //       text2: '￥30.00'
+    //     }]
+    // },
   },
   
   //轮播图的切换事件
@@ -66,7 +66,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    console.log('shopid', options.shopid)
+    //console.log('shopid', options.shopid)
     this.getShopInfo(options.shopid)
   },
 
@@ -79,7 +79,7 @@ Page({
       'GetHomeShopInfo',
       { id: shopId },
       function (json) {
-        //console.log('shopIdjson', json);
+       // console.log('shopIdjson', json);
         if (json.success) {
           that.setData({
             Alls: json.data

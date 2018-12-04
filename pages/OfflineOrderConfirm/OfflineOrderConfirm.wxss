@@ -184,6 +184,6 @@ font-size: 24rpx;
 color: #A1A1A1;
 letter-spacing: -0.29px;
 text-align: right;
-padding:10rpx 35rpx 94rpx 0;
+padding:10rpx 35rpx 64rpx 0;
 
 }

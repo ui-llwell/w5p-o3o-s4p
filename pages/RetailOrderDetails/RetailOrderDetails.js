@@ -1,4 +1,6 @@
 // pages/RetailOrderDetails/RetailOrderDetails.js
+
+const app = getApp();
 Page({
 
   /**
@@ -36,7 +38,8 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    console.log(options)
+    this.getOrdercode(options.ordercode)
   },
 
   /**
@@ -86,5 +89,33 @@ Page({
    */
   onShareAppMessage: function () {
 
-  }
+  },
+  getOrdercode: function (shopId) {
+    const that = this;
+    app.Ajax(
+      'Order',
+      'POST',
+      'GetOrderDetails',
+      { ordercode: shopId },
+      function (json) {
+        //console.log('shopIdjson', json);
+        if (json.success) {
+          that.setData({
+            All: json.data
+          })
+          console.log('getOrdercode',that.data.All)
+          // wx.setNavigationBarTitle({
+          //   title: json.data.shopName
+          // })
+        } else {
+          app.Toast('', 'none', 3000, json.msg.code);
+          // wx.showToast({
+          //   title: json.msg.msg,
+          //   icon: 'none',
+          //   duration: 2500
+          // });
+        }
+      }
+    )
+  },
 })

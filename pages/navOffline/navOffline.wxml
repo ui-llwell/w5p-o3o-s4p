@@ -4,9 +4,9 @@
   <view class='wrap'>
     <view class='content'>
       <view class='content_top'>
-        <image src='{{All.shopImg}}'></image>
-        <view class='con_title'>{{All.shopName}}</view>
-        <view class='con_name'>{{All.shopDesc}}</view>
+        <image src='{{shopHeader.shopImg}}'></image>
+        <view class='con_title'>{{shopHeader.shopName}}</view>
+        <view class='con_name'>{{shopHeader.shopDesc}}</view>
         <view class="con_color"></view>
       </view>
       <view class='content_bottom'>

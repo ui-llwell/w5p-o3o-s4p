@@ -112,7 +112,7 @@ Page({
       register: wx.getStorageSync('isReg')
     })
     // console.log('indexglobaol.register111~~~', getApp().aglobalDada.register)
-    console.log('hree', wx.getStorageSync('isReg'))
+    //console.log('hree', wx.getStorageSync('isReg'))
 
   },
   getShopShow: function () {
@@ -124,12 +124,13 @@ Page({
       'GetHomeShopList',
       {},
       function (json) {
-         //console.log('json..', json)
+        // console.log('indexjson..', json)
         if (json.success) {
           // that.imageLoad();
           // that.setData({
           //   listShop: json.data
           // })
+
           that.setData({
             listShop: json.data.homeShopList
           })
@@ -158,7 +159,7 @@ Page({
   // },
 
   next: function(e){
-    //console.log(e.currentTarget.dataset.shopid)
+   // console.log(e.currentTarget)
     wx.navigateTo({
       url: '../indexDetails/indexDetails?shopid=' + e.currentTarget.dataset.shopid,
     })

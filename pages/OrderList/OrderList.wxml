@@ -24,185 +24,188 @@
                         <image class='noData_img' src='{{getData.imglog}}'></image>
                       </view>
                     </view> -->
-                    <view class='content' wx:for="{{getData.unpayData.orderList}}" wx:key="{{index}}">
-                      <view class='con_title'>{{item.orderType == 0 ? '蔚蓝书店北京机场店-零售订单' : '流连旗舰店-O2O订单'}}</view>
+                    <view class='content' wx:for="{{getData.orderlistDpay}}" wx:key="{{index}}">
+                      <view class='con_title'>{{item.ordertitle}}</view>
                       <view class='line'></view>
                       <view class='con_main'>
-                        <view class='con_main_list' wx:for="{{item.goodsList}}" wx:key="{{index}}">
+                        <view class='con_main_list' wx:for="{{item.orderGoods}}" wx:key="{{index}}">
                           <view class='con_main_list_left fl'>
-                            <image src='{{item.goodsSrc}}' mode='aspectFit'></image>
+                            <image src='{{item.goodsImg}}' mode='aspectFit'></image>
                           </view>
                           <view class='con_main_list_center fl'>
                             <text>{{item.goodsName}}</text>
                           </view>
                           <view class='con_main_list_right fl'>
                             <text>¥{{item.goodsPrice}}</text>
-                            <view>X{{item.goodsNum}}</view>
+                            <view>X{{item.num}}</view>
                           </view>
                         </view>
                       </view>
                       <view class='con_total'>
-                        共{{item.totalNum}}件商品 合计：¥{{item.totalPrice}}（含运费 ¥{{item.freight}}）
+                        共{{item.allnum}}件商品 合计：¥{{item.allprice}}（含运费 ¥{{item.freight}}）
                       </view>
                       <view class='line'></view>
                       <view class='con_all'>
                 
-                        <text class='hot color'>{{item.payment}}</text>
+                        <!-- <text class='hot color'>{{item.payment}}</text>
                         <text class='hot' bindtap='cancel'>{{item.cancelL}}</text>
-                        <text class='hot'  bindtap="{{item.orderType == 0 ? 'retail' : 'details'}}">{{item.details}}</text>
+                        <text class='hot'  bindtap="{{item.orderType == 0 ? 'retail' : 'details'}}">{{item.details}}</text> -->
+                        <text class='hot color'>立即付款</text>
+                        <text class='hot' bindtap='cancel'>取消订单</text>
+                        <text class='hot' data-ordercode='{{item.ordercode}}'  bindtap="retail">查看详细</text>
                         <!-- <text class='hot'  bindtap='retail'>{{item.details}}</text> -->
                       </view>
                     </view>
-                    <view class='noData'  wx:if="{{getData.unpayData.orderList == ''}}">
+                    <view class='noData'  wx:if="{{getData.orderlistDpay == ''}}">
                       <view class='noData_text'>
                         您还没有相关记录哦
                       </view>
-                      <view>
-                        <image class='noData_img' src='{{getData.imglog}}'></image>
+                      <view >
+                        <image class='noData_img' src='{{imglog}}'></image>
                       </view>
                     </view>
-                    <view class='footer' wx:if="{{getData.unpayData.orderList != ''}}">
-                      <image src='{{getData.imglog}}'></image>
+                    <view class='footer' wx:if="{{getData.orderlistDpay != ''}}">
+                      <image src='{{imglog}}'></image>
                     </view>    
                   </view>
               <!-- *******已付款****** -->    
                   <view class="weui-tab__content" hidden="{{activeIndex != 1}}">
 
-                    <view class='content' wx:for="{{getData.payData.orderList}}" wx:key="{{index}}">
-                      <view class='con_title'>{{item.orderType == 0 ? '蔚蓝书店北京机场店-零售订单' : '流连旗舰店-O2O订单'}}</view>
+                    <view class='content' wx:for="{{getData.orderlistPayed}}" wx:key="{{index}}">
+                      <view class='con_title'>{{item.ordertitle}}</view>
                       <view class='line'></view>
                       <view class='con_main'>
-                        <view class='con_main_list' wx:for="{{item.goodsList}}" wx:key="{{index}}">
+                        <view class='con_main_list' wx:for="{{item.orderGoods}}" wx:key="{{index}}">
                           <view class='con_main_list_left fl'>
-                            <image mode='aspectFit' src='{{item.goodsSrc}}'></image>
+                            <image mode='aspectFit' src='{{item.goodsImg}}'></image>
                           </view>
                           <view class='con_main_list_center fl'>
                             <text>{{item.goodsName}}</text>
                           </view>
                           <view class='con_main_list_right fl'>
                             <text>¥{{item.goodsPrice}}</text>
-                            <view>X{{item.goodsNum}}</view>
-                            <view class='sale' bindtap='sale'>{{item.sale}}</view>
-                          </view>
-                        </view>
-                      </view>
-                      <view class='con_total'>
-                        共{{item.totalNum}}件商品 合计：¥{{item.totalPrice}}（含运费 ¥{{item.freight}}）
-                      </view>
-                      <view class='line'></view>
-                      <view class='con_all'>
-                
-                        <!-- <text class='hot color'>{{item.payment}}</text>
-                        <text class='hot' bindtap='details'>{{item.cancelL}}</text> -->
-                        <text class='hot' bindtap="{{item.orderType == 0 ? 'retail' : 'details'}}">{{item.details}}</text>
-                      </view>
-                    </view>
-                    
-                    <view class='noData'  wx:if="{{getData.payData.orderList == ''}}">
-                      <view class='noData_text'>
-                        您还没有相关记录哦
-                      </view>
-                      <view>
-                        <image class='noData_img' src='{{getData.imglog}}'></image>
-                      </view>
-                    </view>
-
-                    <view class='footer' wx:if="{{getData.payData.orderList != ''}}">
-                      <image src='{{getData.imglog}}'></image>
-                    </view> 
-                  </view>
-              <!-- *******已发货****** -->    
-                  <view class="weui-tab__content" hidden="{{activeIndex != 2}}">
-
-                    <view class='content' wx:if="{{item.orderType != 0}}" wx:for="{{getData.deliverGoods.orderList}}" wx:key="{{index}}">
-                      <view class='con_title'>{{item.orderType == 0 ? '蔚蓝书店北京机场店-零售订单' : '流连旗舰店-O2O订单'}}</view>
-                      <view class='line'></view>
-                      <view class='con_main'>
-                        <view class='con_main_list' wx:for="{{item.goodsList}}" wx:key="{{index}}">
-                          <view class='con_main_list_left fl'>
-                            <image mode='aspectFit' src='{{item.goodsSrc}}'></image>
-                          </view>
-                          <view class='con_main_list_center fl'>
-                            <text>{{item.goodsName}}</text>
-                          </view>
-                          <view class='con_main_list_right fl'>
-                            <text>¥{{item.goodsPrice}}</text>
-                            <view>X{{item.goodsNum}}</view>
+                            <view>X{{item.num}}</view>
                             <!-- <view class='sale' bindtap='sale'>{{item.sale}}</view> -->
                           </view>
                         </view>
                       </view>
                       <view class='con_total'>
-                        共{{item.totalNum}}件商品 合计：¥{{item.totalPrice}}（含运费 ¥{{item.freight}}）
+                        共{{item.allnum}}件商品 合计：¥{{item.allprice}}（含运费 ¥{{item.freight}}）
                       </view>
                       <view class='line'></view>
                       <view class='con_all'>
                 
                         <!-- <text class='hot color'>{{item.payment}}</text>
                         <text class='hot' bindtap='details'>{{item.cancelL}}</text> -->
-                        <text class='hot' bindtap='logistics'>{{item.logistics}}</text>
-                        <text class='hot' bindtap="{{item.orderType == 0 ? 'retail' : 'details'}}">{{item.details}}</text>
+                        <text class='hot' bindtap="{{item.orderType == 0 ? 'retail' : 'details'}}">查看详情</text>
                       </view>
                     </view>
-
-                    <view class='noData'  wx:if="{{getData.deliverGoods.orderList == ''}}">
+                    
+                    <view class='noData'  wx:if="{{getData.orderlistPayed == ''}}">
                       <view class='noData_text'>
                         您还没有相关记录哦
                       </view>
                       <view>
-                        <image class='noData_img' src='{{getData.imglog}}'></image>
+                        <image class='noData_img' src='{{imglog}}'></image>
                       </view>
                     </view>
 
-                    <view class='footer' wx:if="{{getData.deliverGoods.orderList != ''}}">
-                      <image src='{{getData.imglog}}'></image>
+                    <view class='footer' wx:if="{{getData.orderlistPayed != ''}}">
+                      <image src='{{imglog}}'></image>
+                    </view> 
+                  </view>
+              <!-- *******已发货****** -->    
+                  <view class="weui-tab__content" hidden="{{activeIndex != 2}}">
+
+                    <view class='content' wx:if="{{item.orderType != 0}}" wx:for="{{getData.orderlistDeliver}}" wx:key="{{index}}">
+                      <view class='con_title'>{{item.ordertitle}}</view>
+                      <view class='line'></view>
+                      <view class='con_main'>
+                        <view class='con_main_list' wx:for="{{item.orderGoods}}" wx:key="{{index}}">
+                          <view class='con_main_list_left fl'>
+                            <image mode='aspectFit' src='{{item.goodsImg}}'></image>
+                          </view>
+                          <view class='con_main_list_center fl'>
+                            <text>{{item.goodsName}}</text>
+                          </view>
+                          <view class='con_main_list_right fl'>
+                            <text>¥{{item.goodsPrice}}</text>
+                            <view>X{{item.num}}</view>
+                            <!-- <view class='sale' bindtap='sale'>{{item.sale}}</view> -->
+                          </view>
+                        </view>
+                      </view>
+                      <view class='con_total'>
+                        共{{item.allnum}}件商品 合计：¥{{item.allprice}}（含运费 ¥{{item.freight}}）
+                      </view>
+                      <view class='line'></view>
+                      <view class='con_all'>
+                
+                        <!-- <text class='hot color'>{{item.payment}}</text>
+                        <text class='hot' bindtap='details'>{{item.cancelL}}</text> -->
+                        <!-- <text class='hot' bindtap='logistics'>{{item.logistics}}</text> -->
+                        <text class='hot' bindtap="{{item.orderType == 0 ? 'retail' : 'details'}}">查看详情</text>
+                      </view>
+                    </view>
+
+                    <view class='noData'  wx:if="{{getData.orderlistDeliver == ''}}">
+                      <view class='noData_text'>
+                        您还没有相关记录哦
+                      </view>
+                      <view>
+                        <image class='noData_img' src='{{imglog}}'></image>
+                      </view>
+                    </view>
+
+                    <view class='footer' wx:if="{{getData.orderlistDeliver != ''}}">
+                      <image src='{{imglog}}'></image>
                     </view> 
 
                   </view>
               <!-- *******已完成****** -->    
                   <view class="weui-tab__content" hidden="{{activeIndex != 3}}">
                   
-                    <view class='content' wx:for="{{getData.finishData.orderList}}" wx:key="{{index}}">
-                        <view class='con_title'>{{item.orderType == 0 ? '蔚蓝书店北京机场店-零售订单' : '流连旗舰店-O2O订单'}}</view>
+                    <view class='content' wx:for="{{getData.orderlistOver}}" wx:key="{{index}}">
+                        <view class='con_title'>{{item.ordertitle}}</view>
                         <view class='line'></view>
                         <view class='con_main'>
-                          <view class='con_main_list' wx:for="{{item.goodsList}}" wx:key="{{index}}">
+                          <view class='con_main_list' wx:for="{{item.orderGoods}}" wx:key="{{index}}">
                             <view class='con_main_list_left fl'>
-                              <image mode='aspectFit' src='{{item.goodsSrc}}'></image>
+                              <image mode='aspectFit' src='{{item.goodsImg}}'></image>
                             </view>
                             <view class='con_main_list_center fl'>
                               <text>{{item.goodsName}}</text>
                             </view>
                             <view class='con_main_list_right fl'>
                               <text>¥{{item.goodsPrice}}</text>
-                              <view>X{{item.goodsNum}}</view>
-                              <view class='sale' bindtap='sale'>{{item.sale}}</view>
+                              <view>X{{item.num}}</view>
+                              <!-- <view class='sale' bindtap='sale'>{{item.sale}}</view> -->
                             </view>
                           </view>
                         </view>
                         <view class='con_total'>
-                          共{{item.totalNum}}件商品 合计：¥{{item.totalPrice}}（含运费 ¥{{item.freight}}）
+                          共{{item.allnum}}件商品 合计：¥{{item.allprice}}（含运费 ¥{{item.freight}}）
                         </view>
                         <view class='line'></view>
                         <view class='con_all'>
                   
                           <!-- <text class='hot color'>{{item.payment}}</text>
                           <text class='hot' bindtap='details'>{{item.cancelL}}</text> -->
-                          <text class='hot' bindtap="{{item.orderType == 0 ? 'retail' : 'details'}}">{{item.details}}</text>
+                          <text class='hot' bindtap="{{item.orderType == 0 ? 'retail' : 'details'}}">查看详情</text>
                         </view>
                       </view>
                       
-                      <view class='noData'  wx:if="{{getData.finishData.orderList == ''}}">
+                      <view class='noData'  wx:if="{{getData.orderlistOver == ''}}">
                         <view class='noData_text'>
                           您还没有相关记录哦
                         </view>
                         <view>
-                          <image class='noData_img' src='{{getData.imglog}}'></image>
+                          <image class='noData_img' src='{{imglog}}'></image>
                         </view>
                       </view>
 
-                      <view class='footer' wx:if="{{getData.finishData.orderList != ''}}">
-                        <image src='{{getData.imglog}}'></image>
+                      <view class='footer' wx:if="{{getData.orderlistOver != ''}}">
+                        <image src='{{imglog}}'></image>
                       </view> 
 
                   </view>

@@ -8,6 +8,7 @@ Page({
    */
   data: {
     All: {},
+    shopHeader: {},
     shopId:"",
     // getData:{
     //   arr:{
@@ -59,6 +60,7 @@ Page({
    */
   onLoad: function (options) {
     //console.log('传值shopid', app.globalData.shopid)
+    //console.log('传值shopida', options.nums)
     var that = this
     if (app.globalData.shopidSign){
       that.setData({
@@ -66,7 +68,7 @@ Page({
       })
     //console.log('okoko', that.data.shopId)
       this.getShopShow(that.data.shopId)
-
+      this.getShopHeader(that.data.shopId)
     }else{
 
     }
@@ -152,13 +154,44 @@ Page({
       'GetShopInfo',
       { shopId: op},
       function (json) {
-        console.log('qajson..', json.data.shopId)
+        //console.log('qajson..', json.data.shopId)
         if (json.success) {
           // that.imageLoad();
           that.setData({
             All: json.data
           })
           //console.log('All',that.data.All)
+          //console.log('data', that.data.listShop)
+        } else {
+          app.Toast('', 'none', 3000, json.msg.code);
+          // wx.showToast({
+          //   title: json.msg.msg,
+          //   icon: 'none',
+          //   duration: 2500
+          // });
+        }
+      }
+    )
+  },
+
+
+  getShopHeader: function (op) {
+    const that = this;
+    // 方法组名称为：User（代购用户），不是系统通用用户Users
+    app.Ajax(
+      'Shop',
+      'POST',
+      'GetShopInfoHead',
+      { shopId: op },
+      function (json) {
+        //console.log('qajsonhead..', json.data.shopId)
+        if (json.success) {
+          // that.imageLoad();
+          that.setData({
+            shopHeader: json.data
+          })
+          //console.log('All',that.data.All)
+        // console.log('shopHeader', that.data.shopHeader)
           //console.log('data', that.data.listShop)
         } else {
           app.Toast('', 'none', 3000, json.msg.code);

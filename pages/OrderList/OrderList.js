@@ -1,5 +1,6 @@
 // pages/OrderList/OrderList.js
 var sliderWidth = 35; // 需要设置slider的宽度，用于计算中间位置
+const app = getApp();
 
 
 Page({
@@ -12,6 +13,8 @@ Page({
     activeIndex: 0,
     sliderOffset: 0,
     sliderLeft: 0,
+    imglog: 'http://llwell-wxapp.oss-cn-beijing.aliyuncs.com/O2OShop/copyright@3x.png',
+    userId:"",
     getData:{
       imglog:'http://llwell-wxapp.oss-cn-beijing.aliyuncs.com/O2OShop/copyright@3x.png',
       unpayData:{
@@ -224,14 +227,16 @@ Page({
   cancel: function(){
     console.log('取消订单')
   },
-  details: function(){
+  detcails: function(){
+    console.log('details')
     wx.navigateTo({
       url: '../OfflineOrderDetails/OfflineOrderDetails',
     })
   },
-  retail: function(){
+  retail: function(e){
+    //console.log('www', e.currentTarget.dataset.ordercode)
     wx.navigateTo({
-      url: '../RetailOrderDetails/RetailOrderDetails',
+      url: '../RetailOrderDetails/RetailOrderDetails?ordercode=' + e.currentTarget.dataset.ordercode,
     })
   },
 
@@ -246,6 +251,7 @@ Page({
   onLoad: function (options) {
     // 选项卡
     //console.log(options)
+    var that = this
     this.setData({
       activeIndex: options.num
     })
@@ -258,7 +264,12 @@ Page({
         });
       }
     });
+    this.setData({
+      userId: wx.getStorageSync('userId')
+    });
+    console.log('fs',this.data.userId)
     // 选项卡
+    this.getMyOrder(that.data.userId)
   },
     // 选项卡
   tabClick: function (e) {
@@ -315,5 +326,35 @@ Page({
    */
   onShareAppMessage: function () {
 
-  }
+  },
+  getMyOrder: function (op) {
+    const that = this;
+    // 方法组名称为：User（代购用户），不是系统通用用户Users
+    app.Ajax(
+      'Order',
+      'POST',
+      'GetOrderList',
+      { userId: op },
+      function (json) {
+       // console.log('qajson..', json.data.shopId)
+        if (json.success) {
+          // that.imageLoad();
+          that.setData({
+            getData: json.data
+          })
+          console.log('getData', that.data.getData)
+          //console.log('data', that.data.listShop)
+        } else {
+          app.Toast('', 'none', 3000, json.msg.code);
+          // wx.showToast({
+          //   title: json.msg.msg,
+          //   icon: 'none',
+          //   duration: 2500
+          // });
+        }
+      }
+    )
+  },
+
+  
 })

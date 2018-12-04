@@ -18,31 +18,63 @@ Page({
     var show;
     wx.scanCode({
       success: (res) => {
-        this.show = "结果:" + res.result + "二维码类型:" + res.scanType + "字符集:" + res.charSet + "路径:" + res.path;
-        that.setData({
-          show: this.show
-        })
-        wx.showToast({
-          title: '成功',
-          icon: 'success',
-          duration: 2000
-        })
-        app.globalData.shopid = 1
-        app.globalData.shopidSign = true
-        wx.switchTab({
-          
-          //url: '../navOffline/navOffline?shopid=1',
-          url: '../navOffline/navOffline',
-         
-        })
+        //this.show = "结果:" + res.result + "二维码类型:" + res.scanType + "字符集:" + res.charSet + "路径:" + res.path;
+        // that.setData({
+        //   show: this.show
+        // })
+       // console.log(res)
+        if (res.path !== undefined) {
+          //console.log('bbbb', res)
+          wx.showToast({
+            title: '成功',
+            icon: 'success',
+            duration: 2000
+          })
+          app.globalData.shopid = 1
+          app.globalData.shopidSign = true
 
+          // app.globalData.shopid = res.path.split('=')[1]
+          // app.globalData.shopidSign = true
+          // console.log('fs', res.path.split('=')[1])
+          // console.log('11', app.globalData.shopid)
+          wx.switchTab({
+            //url: '../navOffline/navOffline?shopid=1',
+            url: '../navOffline/navOffline',
+
+          })
+        } else {
+          wx.showToast({
+            title: '失败',
+            icon: 'loading',
+            duration: 2000
+          })
+          // console.log('重新扫码')
+        }
       },
+        
+        // app.Ajax(
+        //   'Shop',
+        //   'POST',
+        //   'GetShopInfoHead',
+        //   { scanCode: res.result },
+        //   function (json) {
+        //     console.log('sss', json);
+        //     if (json.success) {
+        //       wx.navigateTo({
+        //         url: '../QRCodePayment/QRCodePayment?SweepCodeResults=' + JSON.stringify({ ...json.data, scanCode: res.result }),
+        //       })
+        //     } else {
+        //       app.Toast('', 'none', 2500, json.msg.code)
+        //     }
+        //   }
+        // )
+
       fail: (res) => {
-        wx.showToast({
-          title: '失败',
-          icon: 'loading',
-          duration: 2000
-        })
+        // wx.showToast({
+        //   title: '失败',
+        //   icon: 'loading',
+        //   duration: 2000
+        // })
       },
       complete: (res) => {
       }
@@ -50,7 +82,7 @@ Page({
   },
 
   bank:function(){
-    console.log(111)
+    //console.log(111)
     wx.switchTab({
       url: '../index/index',
     })
@@ -62,7 +94,7 @@ Page({
   onLoad: function (options) {
 
   },
-
+  
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

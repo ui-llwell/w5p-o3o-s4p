@@ -1,11 +1,12 @@
 // pages/goodsDetails/goodsDetails.js
+const app = getApp();
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    
     getData: {
       listindex: '',
       logo: 'http://img.ui.cn/data/file/7/7/6/992677.png',
@@ -55,7 +56,7 @@ Page({
   // },
   // 提交付款
   gotoRetailOrderConfirm: function () {
-    console.log('跳页')
+    //console.log('跳页')
     wx.navigateTo({
       url: '../OfflineOrderConfirm/OfflineOrderConfirm',
     })
@@ -65,13 +66,15 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    console.log(options)
+    //console.log('xxx',options)
+    this.getGoodsId(options.goodsid)
   },
   bank:function(){
     wx.navigateBack({
       delta: 1
     })
   },
+  
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
@@ -140,5 +143,34 @@ Page({
    */
   onShareAppMessage: function () {
 
-  }
+  },
+
+  getGoodsId: function (barcode) {
+    const that = this;
+    app.Ajax(
+      'Shop',
+      'POST',
+      'GetShopGoodsDetails',
+      { barcode: barcode },
+      function (json) {
+        //console.log('shopIdjson', json);
+        if (json.success) {
+          that.setData({
+            getData: json.data
+          })
+          //console.log('Alls',that.data.Alls)
+          // wx.setNavigationBarTitle({
+          //   title: json.data.shopName
+          // })
+        } else {
+          app.Toast('', 'none', 3000, json.msg.code);
+          // wx.showToast({
+          //   title: json.msg.msg,
+          //   icon: 'none',
+          //   duration: 2500
+          // });
+        }
+      }
+    )
+  },
 })

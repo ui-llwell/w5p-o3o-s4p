@@ -1,11 +1,12 @@
 // pages/goodsDetails/goodsDetails.js
+const app = getApp();
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    
+    numx:'',
     getData: {
       listindex:'',
       logo: 'http://img.ui.cn/data/file/7/7/6/992677.png',
@@ -53,15 +54,31 @@ Page({
     e.prevent;
   },
   // 修改数量
+  // addNumber(e) {
+  //  // console.log('ww', e);
+  //  // console.log(e.detail.value,)
+  //   //let curNum = 'getData.ShoppingList.goodsNum'; this.data.shoppingCardData.shopCommodity
+  //   let curNum = 'shoppingCardData.shopCommodity.goodsNum'; 
+  //   console.log('///',this.data.numx)
+  //   this.setData({
+  //     [curNum]: e.detail.value,
+  //   })
+  // },
   addNumber(e) {
-   // console.log('ww', e);
-   // console.log(e.detail.value,)
+    // console.log('ww', e);
+    // console.log(e.detail.value,)
     //let curNum = 'getData.ShoppingList.goodsNum'; this.data.shoppingCardData.shopCommodity
-    let curNum = 'shoppingCardData.shopCommodity.goodsNum'; 
+
+    //let curNum = 'shoppingCardData.ShoppingList[' + e.currentTarget.dataset.index + '].goodsnum';
+
+    let curNum = 'this.data.getData.ShoppingList.goodsnum';
+    console.log('///', this.data.getData.ShoppingList.goodsnum)
     this.setData({
       [curNum]: e.detail.value,
     })
   },
+
+
   // 提交付款
   gotoRetailOrderConfirm: function () {
    // console.log('跳页')
@@ -74,6 +91,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    console.log('options',options)
   //   var that = this
   //  // console.log('index',options.index)
   //   that.setData({
@@ -83,7 +101,10 @@ Page({
 
     this.data.getData.listindex = options.index
     //console.log('x',this.data.getData.listindex)
-
+    this.getGoodsid(options.barcode)
+    this.setData({
+      numx: options.goodsnum
+    })
   },
 
   /**
@@ -153,5 +174,30 @@ Page({
    */
   onShareAppMessage: function () {
 
-  }
+  },
+  getGoodsid: function (shopId) {
+    const that = this;
+    app.Ajax(
+      'Shop',
+      'POST',
+      'GetShopGoodsDetails',
+      { barcode: shopId },
+      function (json) {
+        //console.log('shopIdjson', json);
+        if (json.success) {
+          that.setData({
+            'getData.ShoppingList': json.data
+          })
+          console.log('getData', that.data.getData.ShoppingList)
+        } else {
+          app.Toast('', 'none', 3000, json.msg.code);
+          // wx.showToast({
+          //   title: json.msg.msg,
+          //   icon: 'none',
+          //   duration: 2500
+          // });
+        }
+      }
+    )
+  },
 })

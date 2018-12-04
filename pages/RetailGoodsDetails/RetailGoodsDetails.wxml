@@ -3,7 +3,7 @@
 <view class='body'>
   <view class='header'>
     <view class='header_logo'>
-      <image mode='aspectFit' src='{{getData.ShoppingList.goodsImg}}'></image>
+      <image mode='aspectFit' src='{{getData.slt}}'></image>
     </view>
   </view>
   <view class='content'>
@@ -14,19 +14,19 @@
 
     <view class='con_wrap_top'>
       <view class='con_wrap_top_left fl' >
-        {{getData.ShoppingList.ShoppingList}}
+        {{getData.goodsName}}
       </view>
       
     </view> 
 
     <view class='con_wrap_bottom'>
       <view class='con_wrap_bottom_left fl'>
-        <view class='wrap_h1'>价格：￥{{getData.ShoppingList.goodsPrice}}</view>
-        <view class='wrap_h1'>毛重/净含量：{{getData.ShoppingList.goodsWight}}</view>
+        <view class='wrap_h1'>价格：￥{{getData.goodsPrice}}</view>
+        <view class='wrap_h1'>毛重/净含量：{{getData.gw}}</view>
       </view>
       <view class='con_wrap_bottom_right fl'>
-        <view class='wrap_h1'>原产国/地：{{getData.ShoppingList.goodsMadeIn}}</view>
-        <view class='wrap_h1'>规格：{{getData.ShoppingList.goodsSpecifications}}</view>
+        <view class='wrap_h1'>原产国/地：{{getData.country}}</view>
+        <view class='wrap_h1'>规格：{{getData.model}}</view>
       </view>
     </view>
 
