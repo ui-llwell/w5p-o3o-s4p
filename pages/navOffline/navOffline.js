@@ -49,9 +49,10 @@ Page({
     //   }]
     // }
   },
-  start:function(){
+  start:function(e){
+    app.globalData.goodsList = []
     wx.navigateTo({
-      url: '../OfflineShoppingCard/OfflineShoppingCard',
+      url: '../OfflineShoppingCard/OfflineShoppingCard?shopName=' + e.currentTarget.dataset.shopname ,
     })
   },
 

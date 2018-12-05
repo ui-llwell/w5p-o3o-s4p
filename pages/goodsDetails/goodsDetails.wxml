@@ -24,7 +24,7 @@
 
         <i-panel slot="right-icon">
           <!-- <i-input-number i-class="inputNumber" style="display:inline-block; win-width：30rpx;" data-index="{{index}}" value="{{shoppingCardData.shopCommodity.goodsNum}}" min="1" max="100"  bindchange="addNumber" /> -->
-           <i-input-number i-class="inputNumber" style="display:inline-block; win-width：30rpx;" data-index="{{index}}" value="{{getData.ShoppingList.goodsnum}}" min="1" max="100"  bindchange="addNumber" />
+           <i-input-number i-class="inputNumber" style="display:inline-block; win-width：30rpx;" data-index="{{index}}" value="{{shoppingCardData.shopCommodity.goodsnumx}}" min="1" max="{{shoppingCardData.shopCommodity.num}}"  bindchange="addNumber" />
         </i-panel>
       </view>
     </view> 

@@ -24,7 +24,7 @@ Page({
       }
     ],
     shoppingCardData: {
-      title: "首都机场零售店",
+      title: "",
       lists: [],
       ShoppingList: [
        
@@ -44,28 +44,34 @@ Page({
         // console.log('shuzu',getApp().aglobalDada.goodsList)
         // var arr = getApp().aglobalDada.goodsList
 
+        // var a = {
+        //   goodsId: '9',
+        //   goodsName: '特别长特别长特别长特别长特别长的耳机',
+        //   goodsImg: 'http://img.ui.cn/data/file/7/7/6/992677.png',
+        //   goodsPrice: 9,
+        //   goodsNum: 1,
+        // }
+
         var a = {
           goodsId: '9',
           goodsName: '特别长特别长特别长特别长特别长的耳机',
           goodsImg: 'http://img.ui.cn/data/file/7/7/6/992677.png',
           goodsPrice: 9,
-          goodsNum: 1,
-        }
-
-       
+          goodsnumx: 1,
+        } 
 
         this.setData({
           goodsid:'3233'
         })
 
-      var list = getApp().globalData.goodsList
+        var list = getApp().globalData.goodsList
         
         var exist = getApp().globalData.goodsList.find(function (el) {
         
-          console.log('goodsIda', el.goodsId)
-          console.log('goodsIdb', getApp().globalData.goodsList[0].goodsId)
+         // console.log('goodsIda', el.goodsId)
+         // console.log('goodsIdb', getApp().globalData.goodsList[0].goodsId)
           for (let i = 0; i < getApp().globalData.goodsList.length; i++) {
-            console.log('qqq', el.goodsId === getApp().globalData.goodsList[i].goodsId)
+           // console.log('qqq', el.goodsId === getApp().globalData.goodsList[i].goodsId)
             return el.goodsId === getApp().globalData.goodsList[i].goodsId
           }
 
@@ -77,15 +83,17 @@ Page({
         //加数据
         //console.log('ex',exist)
         if (exist) {
-           //console.log( getApp().globalData.goodsList.goodsnum,7777777)
-          exist.goodsnumx = parseInt(exist.goodsnumx) + 1
-         
+           //console.log( getApp().globalData.goodsList,7777777)
+          if (exist.num == exist.goodsnumx){
+          } else {
+            exist.goodsnumx = parseInt(exist.goodsnumx) + 1    
+          }
         } else {
          
           //list.push(a)
       
          
-          this.getaddgoods(this.data.goodsid)
+         this.getaddgoods(this.data.goodsid)
          
         }
 
@@ -125,8 +133,8 @@ Page({
   },
   // ShoppingListDetails: function (e) {
   gotoGoodsDetails: function (e) {
-    console.log('eeee',e)
-    console.log('1', e.currentTarget.dataset.barcode)
+    //console.log('eeee',e)
+  //  console.log('1', e.currentTarget.dataset.barcode)
     wx.navigateTo({
       url: "../goodsDetails/goodsDetails?shopid=" + e.currentTarget.dataset.shopid + "&goodsnumx=" + e.currentTarget.dataset.goodsnumx + "&index=" + e.currentTarget.dataset.index + '&barcode=' + e.currentTarget.dataset.barcode,
     })
@@ -144,7 +152,11 @@ Page({
     // that.setData({
     //   'shoppingCardData.ShoppingList': getApp().globalData.goodsList
     // })
-    
+    //console.log('options', options.shopName)
+    this.setData({
+      'shoppingCardData.title': options.shopName
+      
+    })
   },
 
   /**
@@ -165,7 +177,26 @@ Page({
     //console.log("总", this.data.shoppingCardData.ShoppingList)
 
     //that.getsumTotal()
-    console.log('[]',this.data.shoppingCardData.ShoppingList)
+    //console.log('[]',this.data.shoppingCardData.ShoppingList)
+
+    let that = this
+    getApp().globalData.goodsList
+    this.setData({
+      'shoppingCardData.ShoppingList': getApp().globalData.goodsList
+    })
+    // var cartItems = getApp().globalData.goodsList[that.data.getData.listindex]
+    that.getsumTotal()  
+    console.log("DDDD", getApp().globalData.goodsList)
+
+    // console.log("DDDD", getApp().globalData.goodsList)
+    // // console.log('11', this.data.getData)
+    // // console.log('22', cartItems)
+
+    // that.setData({
+    //   'shoppingCardData.shopCommodity': cartItems
+    // })
+
+
   },
   // ===================================================== 删除
   sss: function (e) {
@@ -199,7 +230,10 @@ Page({
       [curNum]: e.detail.value,
     })
 
+    console.log("XX总", getApp().globalData.goodsList)
+
     that.getsumTotal()
+
 
   },
   // 提交付款

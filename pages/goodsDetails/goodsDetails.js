@@ -11,18 +11,10 @@ Page({
       listindex:'',
       logo: 'http://img.ui.cn/data/file/7/7/6/992677.png',
       logo1: 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1540189555679&di=2c62a3f6b3455aa09ec4a8364623e104&imgtype=0&src=http%3A%2F%2Fe.hiphotos.baidu.com%2Fimage%2Fpic%2Fitem%2Fbba1cd11728b4710fde1beb7cecec3fdfd0323fa.jpg',
+      goodsnumx:'',
       ShoppingList: 
         {
-          goodsId: '1',
-          ShoppingList: '特别长特特别长特别长特别长特别长特别长特别长特别长特别长别长特别长特别长',
-          goodsImg: 'http://img.ui.cn/data/file/7/7/6/992677.png',
-          goodsPrice: 1,
-          goodsNum: 1,
-          goodsMoney: '100',
-          goodsMadeIn: '中国',
-          goodsWight: '350g',
-          goodsSpecifications: '本',
-          shopCommodity: {},
+          
         },
      
     },
@@ -53,29 +45,25 @@ Page({
   prevent: function (e) {
     e.prevent;
   },
+ 
+
   // 修改数量
-  // addNumber(e) {
-  //  // console.log('ww', e);
-  //  // console.log(e.detail.value,)
-  //   //let curNum = 'getData.ShoppingList.goodsNum'; this.data.shoppingCardData.shopCommodity
-  //   let curNum = 'shoppingCardData.shopCommodity.goodsNum'; 
-  //   console.log('///',this.data.numx)
-  //   this.setData({
-  //     [curNum]: e.detail.value,
-  //   })
-  // },
   addNumber(e) {
-    // console.log('ww', e);
-    // console.log(e.detail.value,)
+    console.log('e', e);
+    console.log('e.detail.value', e.detail.value, )
     //let curNum = 'getData.ShoppingList.goodsNum'; this.data.shoppingCardData.shopCommodity
-
-    //let curNum = 'shoppingCardData.ShoppingList[' + e.currentTarget.dataset.index + '].goodsnum';
-
-    let curNum = 'this.data.getData.ShoppingList.goodsnum';
-    console.log('///', this.data.getData.ShoppingList.goodsnum)
+    let curNum = 'shoppingCardData.shopCommodity.goodsnumx';
+    //let curNum = 'getData.goodsNum.goodsNum'; 
+    //getData
+    console.log('curNum', curNum)
     this.setData({
       [curNum]: e.detail.value,
     })
+
+    console.log("总", getApp().globalData.goodsList)
+
+
+
   },
 
 
@@ -91,7 +79,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    console.log('options',options)
+   // console.log('options',options)
   //   var that = this
   //  // console.log('index',options.index)
   //   that.setData({
@@ -103,8 +91,9 @@ Page({
     //console.log('x',this.data.getData.listindex)
     this.getGoodsid(options.barcode)
     this.setData({
-      numx: options.goodsnum
+      'getData.goodsnumx': options.goodsnumx
     })
+   // console.log('globalDada',getApp().globalDada.goodsList)
   },
 
   /**
@@ -118,27 +107,22 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function (options) {
+    let that = this
    
-   // console.log('fff', getApp().globalData.goodsList)
-    var cartItems = getApp().globalData.goodsList[this.data.getData.listindex]
-  //  console.log('11', cartItems)
+    var cartItems = getApp().globalData.goodsList[that.data.getData.listindex]
+    
+    
+    console.log("DDDD", getApp().globalData.goodsList)
+    // console.log('11', this.data.getData)
+    // console.log('22', cartItems)
 
-  //  console.log('xx', this.data.getData.listindex)
-
-    // let that = this  shopCommodity
-    // that.setData({
-    //   'shoppingCardData.ShoppingList': getApp().aglobalDada.goodsList
-    // })
-
-    let that = this 
     that.setData({
       'shoppingCardData.shopCommodity': cartItems
     })
-  //  console.log('qa', this.data.shoppingCardData.shopCommodity)
 
+   
+   
 
-    
-    
   },
 
   /**
@@ -188,7 +172,7 @@ Page({
           that.setData({
             'getData.ShoppingList': json.data
           })
-          console.log('getData', that.data.getData.ShoppingList)
+         // console.log('getData', that.data.getData.ShoppingList)
         } else {
           app.Toast('', 'none', 3000, json.msg.code);
           // wx.showToast({

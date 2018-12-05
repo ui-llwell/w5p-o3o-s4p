@@ -26,7 +26,7 @@
         </view>
       </view>
     </view>
-    <view class='mian' bindtap='start'>
+    <view class='mian' bindtap='start' data-shopName="{{shopHeader.shopName}}">
       <button >开始购物</button>
     </view>
 
