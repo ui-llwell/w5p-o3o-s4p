@@ -46,6 +46,8 @@
     price-class="price-class"
     button-class="button-class"
     disabled="{{ total =='0.00' }}"
+    data-price = "{{total}}"
+    formType="submit"
   />
     </view>
   </view>

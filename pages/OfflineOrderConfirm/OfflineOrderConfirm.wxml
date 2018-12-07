@@ -1,90 +1,95 @@
 <!--pages/OfflineOrderConfirm/OfflineOrderConfirm.wxml-->
 <!-- <text>pages/OfflineOrderConfirm/OfflineOrderConfirm.wxml</text> -->
 <view class='body'>
- <form bindsubmit="formSubmit" bindreset="formReset" wx:key="{{index}}"> 
+ <form bindsubmit="formSubmit"  bindreset="formReset" wx:key="{{index}}"> 
  <view style='height:20rpx;'></view>
   <view class='content_wrap' wx:for='{{getData.list}}'  wx:key="{{index}}">
     <view class='content_bottom'>
       <view class='content_bottom_left'>
-        <image   src='{{item.retailImg}}' mode='aspectFit'></image>
+        <image   src='{{item.slt}}' mode='aspectFit'></image>
       </view>
       <view class='content_bottom_right'>
-        <text class='content_bottom_right_h1'>{{item.retailTitle}}</text>
-        <view>数量  <text class='color'>{{item.retailNum}}</text>，单价 <text class='color'>￥{{item.retailMoney}}</text></view>
+        <text class='content_bottom_right_h1'>{{item.goodsName}}</text>
+        <view>数量  <text class='color'>{{item.goodsnumx}}</text>，单价 <text class='color'>￥{{item.goodsPrice}}</text></view>
       </view>
     </view>
   </view>
-  <view class='hot'>共1件商品 合计：¥1596.00（含运费 ¥0.00）</view>
+  <view class='hot'>合计：¥1596.00（含运费 ¥{{All.list.freight}}）</view>
   <view style='height:10rpx;'></view>
-
-  <view class='wrap'>
-    <view style='width:100%; height:10rpx; background:#F2F2F2;'></view>
-    <view class='nav'>
-      <view class='nav_h1 fl'>收货人</view>
-      <view class='nav_h2 fl'>*</view>
-      <input class='nav_h3 fl'  data-name="{{consignee}}" bindinput="consignee" value='{{consignee}}' placeholder='请输入收货人姓名' maxlength='11'></input>
-    </view>
-    <view class='nav'>
-      <view class='nav_h1 fl'>手机号码</view>
-      <view class='nav_h2 fl'>*</view>
-      <input class='nav_h3 fl'  data-name="{{iphoneNum}}" bindinput="iphoneNum" value='{{iphoneNum}}' placeholder='请输入收货人手机号码' maxlength='11'></input>
-    </view>
-    <view class='nav'>
-      <view class='nav_h1 fl'>收货地址</view>
-      <view class='nav_h2 fl'>*</view>
-      <!-- <input class='nav_h3 fl' placeholder='请输入详细收货地址' maxlength='11'></input> -->
-      <view class="page-section fl">
-        <view class="textarea-wrp">
-          <textarea  data-name="{{address}}" bindinput="address" value='{{address}}' maxlength="50" bindblur="bindTextAreaBlur" placeholder='请输入详细收货地址' auto-height />
+  
+    <view class='wrap'>
+      <view style='width:100%; height:10rpx; background:#F2F2F2;'></view>
+      <view class='nav'>
+        <view class='nav_h1 fl'>收货人</view>
+        <view class='nav_h2 fl'>*</view>
+        <input class='nav_h3 fl'  data-name="{{consignee}}" name="consignee" bindinput="consignee" value='{{getData.information.consignee}}' placeholder='请输入收货人姓名' maxlength='11'></input>
+      </view>
+      <view class='nav'>
+        <view class='nav_h1 fl'>手机号码</view>
+        <view class='nav_h2 fl'>*</view>
+        <input class='nav_h3 fl'  data-name="{{phone}}" name="phone" bindinput="iphonphoneeNum" value='{{getData.information.phone}}' placeholder='请输入收货人手机号码' maxlength='11'></input>
+      </view>
+      <view class='nav'>
+        <view class='nav_h1 fl'>收货地址</view>
+        <view class='nav_h2 fl'>*</view>
+        <!-- <input class='nav_h3 fl' placeholder='请输入详细收货地址' maxlength='11'></input> -->
+        <view class="page-section fl">
+          <view class="textarea-wrp">
+            <textarea  data-name="{{addr}}" bindinput="addr" name="addr" value='{{getData.information.addr}}' maxlength="50" bindblur="addr" placeholder='请输入详细收货地址' auto-height />
+          </view>
         </view>
       </view>
+      <view class='map' bindtap='getmap'>获取微信地址信息</view>
+      <view style='width:100%; height:10rpx; background:#F2F2F2;'></view>
+      <view class='nav'>
+        <view class='nav_h1 fl'>真实姓名</view>
+        <view class='nav_h2 fl'>*</view>
+        <input class='nav_h3 fl' data-name="{{relname}}" name="relname" bindinput="relname" value='{{getData.information.relname}}' placeholder='请输入收货人真实姓名' maxlength='11'></input>
+      </view>
+      <view class='nav'>
+        <view class='nav_h1 fl'>身份证号</view>
+        <view class='nav_h2 fl'>*</view>
+        <input class='nav_h3 fl'  data-name="{{idcard}}" name="idcard" bindinput="idcard" value='{{getData.information.idcard}}' placeholder='请输入收货人身份证号' maxlength='18'></input>
+      </view>
+      
     </view>
-    <view class='map' bindtap='getmap'>获取微信地址信息</view>
-    <view style='width:100%; height:10rpx; background:#F2F2F2;'></view>
-    <view class='nav'>
-      <view class='nav_h1 fl'>真实姓名</view>
-      <view class='nav_h2 fl'>*</view>
-      <input class='nav_h3 fl' data-name="{{realName}}" bindinput="realName" value='{{realName}}' placeholder='请输入收货人真实姓名' maxlength='11'></input>
-    </view>
-    <view class='nav'>
-      <view class='nav_h1 fl'>身份证号</view>
-      <view class='nav_h2 fl'>*</view>
-      <input class='nav_h3 fl'  data-name="{{idNum}}" bindinput="idNum" value='{{idNum}}' placeholder='请输入收货人身份证号' maxlength='18'></input>
-    </view>
-    
-  </view>
   
   <view class='main'>
     <view class='main_wrap'>
       <view class='main_wrap_left fl'>商品小计</view>
-      <view class='main_wrap_right fr'>¥{{All.list.text10}}</view>
+      <view class='main_wrap_right fr'>¥{{getData.subtotal.price}}</view>
     </view>
     <view class='main_wrap'>
       <view class='main_wrap_left fl'>运费</view>
-      <view class='main_wrap_right fr'>¥{{All.list.text11}}</view>
+      <view class='main_wrap_right fr'>¥{{getData.subtotal.freight}}</view>
     </view>
     <view class='main_wrap'>
       <view class='main_wrap_left fl'>活动减免</view>
-      <view class='main_wrap_right fr'>¥{{All.list.text12}}</view>
+      <view class='main_wrap_right fr'>¥{{getData.subtotal.derate}}</view>
     </view>
     <view class='main_wrap'>
       <view class='main_wrap_left fl'>流连优惠券</view>
-      <view class='main_wrap_right fr'>¥{{All.list.text13}}</view>
+      <view class='main_wrap_right fr'>¥{{getData.subtotal.coupon}}</view>
     </view>
   </view>
   <view class='title'>*根据国家政策，清关所用姓名须与收件人姓名相同</view>
 
 
- <button disabled='true' class='footer'>
+ <button  class='footer' formType="submit">
+ 
       <van-submit-bar
-    price="{{ 10050 }}"
+    price="{{ getData.subtotal.payable * 100}}"
     label="应支付："
     button-text="立即付款"
-    bind:submit="gotoRetailOrderConfirm"
+    bind:submit="submit"
     bar-class="bar-class"
     price-class="price-class"
     button-class="button-class"
+    
   />
   </button>
-</form>
+    
+
+
+  </form>
 </view>

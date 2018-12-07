@@ -8,52 +8,20 @@ Page({
    */
   data: {
     All: {},
-    shopHeader: {},
+    shopHeader: '',
     shopId:"",
-    // getData:{
-    //   arr:{
-    //     img: 'http://llwell-wxapp.oss-cn-beijing.aliyuncs.com/PurchasingAssistantPersonal/shop_img_rebate@3x.png',
-    //     title: '北京首都机场T3蔚蓝书店',
-    //     name: '本店主营书籍、唱片、文具'
-    //   },
-    //   List: [{
-    //     logo: 'http://llwell-wxapp.oss-cn-beijing.aliyuncs.com/PurchasingAssistantPersonal/top_img_consumption@3x.png',
-    //     name: 'MCM',
-    //     num: '15',
-    //     hand: 'http://llwell-wxapp.oss-cn-beijing.aliyuncs.com/PurchasingAssistantPersonal/shop_icon_recommend@3x.png',
-    //     recommend: '掌柜推荐',
-    //   }, {
-    //     logo: 'http://llwell-wxapp.oss-cn-beijing.aliyuncs.com/PurchasingAssistantPersonal/top_img_receipt@3x.png',
-    //     name: 'DOSHISHA',
-    //     num: '7',
-    //     hand: 'http://llwell-wxapp.oss-cn-beijing.aliyuncs.com/PurchasingAssistantPersonal/shop_icon_recommend@3x.png',
-    //     recommend: '掌柜推荐',
-    //   }, {
-    //     logo: 'http://llwell-wxapp.oss-cn-beijing.aliyuncs.com/PurchasingAssistantPersonal/top_img_consumption@3x.png',
-    //     name: 'ELFA PHARM',
-    //     num: '37',
-    //     hand: 'http://llwell-wxapp.oss-cn-beijing.aliyuncs.com/PurchasingAssistantPersonal/shop_icon_hot@3x.png',
-    //     recommend: '热销品牌',
-    //   }, {
-    //     logo: 'http://llwell-wxapp.oss-cn-beijing.aliyuncs.com/PurchasingAssistantPersonal/top_img_receipt@3x.png',
-    //     name: 'DOSHISHA',
-    //     num: '27',
-    //     hand: 'http://llwell-wxapp.oss-cn-beijing.aliyuncs.com/PurchasingAssistantPersonal/shop_icon_hot@3x.png',
-    //     recommend: '热销品牌',
-    //   }, {
-    //     logo: 'http://llwell-wxapp.oss-cn-beijing.aliyuncs.com/PurchasingAssistantPersonal/top_img_consumption@3x.png',
-    //     name: 'Roboto-Light',
-    //     num: '37',
-    //     hand: 'http://llwell-wxapp.oss-cn-beijing.aliyuncs.com/PurchasingAssistantPersonal/shop_icon_recommend@3x.png',
-    //     recommend: '掌柜推荐',
-    //   }]
-    // }
+    
   },
   start:function(e){
     app.globalData.goodsList = []
-    wx.navigateTo({
-      url: '../OfflineShoppingCard/OfflineShoppingCard?shopName=' + e.currentTarget.dataset.shopname ,
-    })
+    if (this.data.shopHeader == undefined){
+        
+    } else {
+      wx.navigateTo({
+        url: '../OfflineShoppingCard/OfflineShoppingCard?shopName=' + e.currentTarget.dataset.shopname,
+      })
+    }
+    
   },
 
   /**
@@ -192,7 +160,7 @@ Page({
             shopHeader: json.data
           })
           //console.log('All',that.data.All)
-        // console.log('shopHeader', that.data.shopHeader)
+         //console.log('shopHeader', that.data.shopHeader)
           //console.log('data', that.data.listShop)
         } else {
           app.Toast('', 'none', 3000, json.msg.code);

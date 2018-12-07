@@ -1,90 +1,75 @@
-// pages/OfflineOrderConfirm/OfflineOrderConfirm.js
+
+const app = getApp();
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    
+   
+    nums:'',
     getData: {
       list: [{
-        retailImg: 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1539685745806&di=e57bfede68f06cca9d72b2df1005e7f3&imgtype=0&src=http%3A%2F%2Fpic1.win4000.com%2Fpic%2F9%2F44%2Fb6869a0cc5_250_350.jpg',
-        retailTitle: '第四次工业革命 作者：李登辉',
-        retailNum: '7',
-        retailMoney: '178'
-      }, {
-        retailImg: 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1540189555679&di=2c62a3f6b3455aa09ec4a8364623e104&imgtype=0&src=http%3A%2F%2Fe.hiphotos.baidu.com%2Fimage%2Fpic%2Fitem%2Fbba1cd11728b4710fde1beb7cecec3fdfd0323fa.jpg',
-        retailTitle: '第四次工业革命 作者：李登辉',
-        retailNum: '7',
-        retailMoney: '178'
+        
       }],
-      consignee: '',
-      realName: '',
-      idNum: '',
-      iphoneNum: '',
-      address: ''
-    },
-    All: {
-      list: {
-        text1: '售后服务类型',
-        text2: '退货退款',
-        text3: '74865912793465765',
-        text4: '第四次工业革命 作者：李登辉',
-        text5: '1',
-        text6: '168',
-        text7: '退款说明',
-        text8: 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1539685745806&di=e57bfede68f06cca9d72b2df1005e7f3&imgtype=0&src=http%3A%2F%2Fpic1.win4000.com%2Fpic%2F9%2F44%2Fb6869a0cc5_250_350.jpg',
-        text9: '上传图片',
-        text10: '45',
-        text11: '158',
-        text12: '30',
-        text13: '20'
+      information: {
+        consignee: '',
+        phone: '',
+        addr: '',
+        relname: '',
+        idcard: '',
       },
-      
+      subtotal: {
 
-    }
+      },
+      useer:{},
+      ordertype:'1',
+      shopId:''
+    },
   },
+  
   consignee:function(e){
     this.setData({
-      consignee: e.detail.value,
+      "getData.information.consignee": e.detail.value,
     })
   },
-  realName: function (e) {
+
+  relname: function (e) {
     this.setData({
-      realName: e.detail.value,
+      "getData.information.relname": e.detail.value,
     })
   },
-  idNum: function (e) {
+  idcard: function (e) {
     this.setData({
-      idNum: e.detail.value,
+      "getData.information.idcard": e.detail.value,
     })
   },
-  iphoneNum: function (e) {
+  phone: function (e) {
     this.setData({
-      iphoneNum: e.detail.value,
+      "getData.information.phone": e.detail.value,
     })
   },
-  address: function (e) {
+  addr: function (e) {
     this.setData({
-      address: e.detail.value,
+      "getData.information.addr": e.detail.value,
     })
   },
-  getmap:function(e){
+ 
+  getmap: function (e) {
     console.log(e.detail.value)
     if (wx.chooseAddress) {
       let that = this
       wx.chooseAddress({
         success: function (res) {
-          console.log(JSON.stringify(res))
-          console.log(res.userName)
-          that.setData({
-            consignee: res.userName,
-            realName: res.userName,
-            iphoneNum: res.telNumber,
-            address: res.provinceName + res.cityName + res.countyName + res.detailInfo
+          console.log('JSON', JSON.stringify(res))
+          console.log('JSON.res', res.userName)
 
+          that.setData({
+            "getData.information.consignee": res.userName,
+            "getData.information.relname": res.userName,
+            "getData.information.phone": res.telNumber,
+            "getData.information.addr": res.provinceName + res.cityName + res.countyName + res.detailInfo
           })
-          
         },
         fail: function (err) {
           console.log(JSON.stringify(err))
@@ -95,12 +80,45 @@ Page({
     }
   },
 
-
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    console.log('options', options)
+    //console.log('goodslist', JSON.pares(options.goodsList))
+    const params = JSON.parse(options.goodsList)
+    //console.log('asdadsads', params)
+    console.log('asdadsads', getApp().globalData.goodsList)
 
+    this.getPriceInfo(options.price * 0.01)
+    console.log(getApp().globalData.goodsList)
+
+    console.log(111111)
+    console.log('true',!!wx.getStorageSync('consignee'))
+
+    if (!!wx.getStorageSync('consignee') ){
+      console.log('222222222', wx.getStorageSync('consignee'))
+      console.log('222222222', wx.getStorageSync('consignee'))
+
+
+     // app.globalData.shopid = 1
+      this.setData({
+        'getData.list': getApp().globalData.goodsList,
+        'getData.userId': wx.getStorageSync('userId'),
+        'getData.shopid': getApp().globalData.shopid,
+        "getData.information.consignee": wx.getStorageSync('consignee'),
+        "getData.information.idcard": wx.getStorageSync('idcard'),
+        "getData.information.addr": wx.getStorageSync('addr'),
+        "getData.information.phone": wx.getStorageSync('phone'),
+        "getData.information.relname": wx.getStorageSync('relname'),
+      })
+      console.log('ffff', this.data.getData.list)
+    }
+    
+    
+    
+   
+  
   },
 
   /**
@@ -110,45 +128,107 @@ Page({
 
   },
 
+  //
+  formSubmit: function (e) {
+    console.log('form发生了submit事件，携带数据为：', e.detail.value)
+    var ccc = e.detail.value;
+    // console.log(111, e.detail.value)
+    console.log(1222, this.data.getData)
+    // console.log(1222222222, e.detail.value)
+    
+
+
+    if (ccc.consignee && ccc.phone && ccc.relname && ccc.idcard && ccc.addr  ) {
+      wx.setStorageSync('consignee', ccc.consignee)
+      wx.setStorageSync('phone', ccc.phone)
+      wx.setStorageSync('relname', ccc.relname)
+      wx.setStorageSync('idcard', ccc.idcard)
+      wx.setStorageSync('addr', ccc.addr)
+
+      this.sendOut()
+      console.log('aaaonShow', this.data.getData)  
+    } else {
+      // console.log("请添必填项")
+      wx.showModal({
+        title: "注意",
+        content: "请输入完整信息",
+        showCancel: false,
+        confirmText: "确定"
+      })
+    }
+    
+    app.globalData.goodsList = []
+    
+  },
+
+
   /**
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+   // console.log('onShow',this.data.getData)     
+  
   },
 
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
+  getPriceInfo: function (shopId) {
+    const that = this;
+    app.Ajax(
+      'Order',
+      'POST',
+      'GetConfirmOrder',
+      {
+        price: shopId, ...app.globalData.goodsList},
+      function (json) {
+         console.log('shopIdjson', json);
+        if (json.success) {
+          that.setData({
+            'getData.subtotal': json.data
+          })
+          console.log('getData', that.data.getData)
+        } else {
+          app.Toast('', 'none', 3000, json.msg.code);
+          // wx.showToast({
+          //   title: json.msg.msg,
+          //   icon: 'none',
+          //   duration: 2500
+          // });
+        }
+      }
+    )
   },
 
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
 
+  sendOut: function (shopId) {
+    const that = this;
+    app.Ajax(
+      'Order',
+      'POST',
+      'ConfirmOrder',
+      {
+        list: this.data.getData.list, 
+        ...this.data.getData.information, 
+        ...this.data.getData.subtotal, 
+        ordertype: this.data.getData.ordertype,
+        userId: this.data.getData.userId,
+        shopid: this.data.getData.shopid,
+      },
+      function (json) {
+        console.log('shopIdjson', json);
+        if (json.success) {
+          // that.setData({
+          //   'All.list': json.data
+          // })
+          console.log('getData', that.data.getData)
+        } else {
+          app.Toast('', 'none', 3000, json.msg.code);
+          // wx.showToast({
+          //   title: json.msg.msg,
+          //   icon: 'none',
+          //   duration: 2500
+          // });
+        }
+      }
+    )
   },
 
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
-  }
 })

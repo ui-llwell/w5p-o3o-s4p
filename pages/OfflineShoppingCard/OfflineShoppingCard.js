@@ -53,11 +53,11 @@ Page({
         // }
 
         var a = {
-          goodsId: '9',
-          goodsName: '特别长特别长特别长特别长特别长的耳机',
-          goodsImg: 'http://img.ui.cn/data/file/7/7/6/992677.png',
-          goodsPrice: 9,
-          goodsnumx: 1,
+          // goodsId: '9',
+          // goodsName: '特别长特别长特别长特别长特别长的耳机',
+          // goodsImg: 'http://img.ui.cn/data/file/7/7/6/992677.png',
+          // goodsPrice: 9,
+          // goodsnumx: 1,
         } 
 
         this.setData({
@@ -70,10 +70,10 @@ Page({
         
          // console.log('goodsIda', el.goodsId)
          // console.log('goodsIdb', getApp().globalData.goodsList[0].goodsId)
-          for (let i = 0; i < getApp().globalData.goodsList.length; i++) {
-           // console.log('qqq', el.goodsId === getApp().globalData.goodsList[i].goodsId)
-            return el.goodsId === getApp().globalData.goodsList[i].goodsId
-          }
+          // for (let i = 0; i < getApp().globalData.goodsList.length; i++) {
+          //  // console.log('qqq', el.goodsId === getApp().globalData.goodsList[i].goodsId)
+          //   return el.goodsId === getApp().globalData.goodsList[i].goodsId
+          // }
 
 
           // console.log(el.goodsId == q)
@@ -186,7 +186,7 @@ Page({
     })
     // var cartItems = getApp().globalData.goodsList[that.data.getData.listindex]
     that.getsumTotal()  
-    console.log("DDDD", getApp().globalData.goodsList)
+    //console.log("DDDD", getApp().globalData.goodsList)
 
     // console.log("DDDD", getApp().globalData.goodsList)
     // // console.log('11', this.data.getData)
@@ -230,17 +230,18 @@ Page({
       [curNum]: e.detail.value,
     })
 
-    console.log("XX总", getApp().globalData.goodsList)
+    //console.log("XX总", getApp().globalData.goodsList)
 
     that.getsumTotal()
 
 
   },
   // 提交付款
-  gotoRetailOrderConfirm: function () {
-    //  console.log('222跳页')
+  gotoRetailOrderConfirm: function (e) {
+    console.log('222跳页', e.currentTarget.dataset.price)
+   // var z = ...getApp().globalData.goodsList
     wx.navigateTo({
-      url: '../OfflineOrderConfirm/OfflineOrderConfirm',
+      url: '../OfflineOrderConfirm/OfflineOrderConfirm?price=' + e.currentTarget.dataset.price + "&goodsList=" + JSON.stringify(getApp().globalData.goodsList),
     })
   },
  
@@ -273,7 +274,7 @@ Page({
       'Shop',
       'POST',
       'GetShopGoodsDetails',
-      { barcode: shopId },
+      { barcode: shopId, },
       function (json) {
        // console.log('shopIdjson', json);
         if (json.success) {
@@ -290,7 +291,7 @@ Page({
            
           })
           that.getsumTotal()
-          console.log('oklist', app.globalData.goodsList)
+          //console.log('oklist', app.globalData.goodsList)
           // console.log('getaddgoods', that.data.shoppingCardData.ShoppingList)
         } else {
           app.Toast('', 'none', 3000, json.msg.code);
